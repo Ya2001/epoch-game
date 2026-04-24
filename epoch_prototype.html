@@ -1,0 +1,1352 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no"/>
+<meta name="theme-color" content="#0b1020"/>
+<title>Epoch — History Guessing Game</title>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
+<style>
+:root{
+  --bg-0:#0a0f1c;
+  --ink:#f5ecd4;
+  --ink-dim:#c3b99c;
+  --accent:#e8b059;
+  --cool:#6fb3d9;
+  --danger:#e36a6a;
+  --good:#7bd389;
+  --slot:#25325a;
+  /* era-driven, updated by JS */
+  --era-h:240;
+  --era-s:32%;
+  --era-l:22%;
+  --yearNorm:0.48;
+}
+*{box-sizing:border-box}
+html,body{
+  margin:0;padding:0;height:100%;
+  background:var(--bg-0);color:var(--ink);overflow:hidden;
+  font-family:-apple-system,BlinkMacSystemFont,"Inter","Segoe UI",Roboto,sans-serif;
+  -webkit-tap-highlight-color:transparent;
+  user-select:none;-webkit-user-select:none;
+}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;padding:0}
+.serif{font-family:"EB Garamond","Cormorant Garamond",Georgia,serif;font-variant:small-caps;letter-spacing:.04em}
+
+/* ── layout ── */
+.app{
+  position:fixed;inset:0;display:flex;flex-direction:column;
+  background:
+    radial-gradient(1200px 800px at 50% -10%,hsl(var(--era-h),42%,18%) 0%,transparent 55%),
+    radial-gradient(900px 700px at 10% 110%,hsl(var(--era-h),35%,12%) 0%,transparent 55%),
+    linear-gradient(180deg,#07091a 0%,#0a0f1c 100%);
+  transition:background 900ms ease-out;
+}
+
+/* ── topbar ── */
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 18px 6px;gap:10px;flex-shrink:0}
+.brand{font-family:"EB Garamond",Georgia,serif;font-size:20px;letter-spacing:.08em}
+.brand b{color:var(--accent)}
+.mode-toggle{display:flex;background:#151e3a;border-radius:999px;padding:3px;gap:2px;border:1px solid rgba(255,255,255,.06)}
+.mode-toggle button{padding:6px 12px;border-radius:999px;font-size:12px;color:var(--ink-dim);letter-spacing:.02em;transition:background .3s,color .3s}
+.mode-toggle button.active{background:linear-gradient(180deg,#223463,#1b2850);color:var(--ink);box-shadow:inset 0 0 0 1px rgba(255,255,255,.07)}
+
+/* ── prompt ── */
+.prompt{
+  margin:6px 18px 0;padding:14px 16px;flex-shrink:0;
+  background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.015));
+  border:1px solid rgba(255,255,255,.07);border-radius:14px;
+  position:relative;overflow:hidden;
+  box-shadow:0 12px 40px rgba(0,0,0,.35);
+}
+.prompt::before{
+  content:"";position:absolute;inset:-1px;border-radius:inherit;pointer-events:none;
+  background:linear-gradient(120deg,transparent 40%,rgba(232,176,89,.12) 50%,transparent 60%);
+  transform:translateX(calc(var(--yearNorm)*80% - 40%));
+  transition:transform 600ms cubic-bezier(.2,.7,.2,1);
+}
+.prompt-kicker{font-size:10px;letter-spacing:.24em;color:var(--ink-dim);text-transform:uppercase;margin-bottom:6px;display:flex;gap:8px;align-items:center}
+.prompt-kicker .pill{background:#1a2546;padding:3px 8px;border-radius:999px;color:var(--accent);letter-spacing:.16em}
+.prompt-text{font-family:"EB Garamond",Georgia,serif;font-size:18px;line-height:1.35}
+.prompt-origin{margin-top:6px;font-size:12px;color:var(--ink-dim)}
+.prompt-origin b{color:var(--cool)}
+.streak{font-size:11px;color:var(--ink-dim);letter-spacing:.14em;text-transform:uppercase}
+.streak b{color:var(--accent)}
+
+/* ── map ── */
+.map-wrap{
+  flex:1;position:relative;margin:12px 12px 0;border-radius:16px;
+  background:#070a18;
+  border:1px solid rgba(255,255,255,.06);
+  overflow:hidden;box-shadow:inset 0 0 60px rgba(0,0,0,.5);
+  min-height:0;touch-action:none;
+}
+.era-tint{
+  position:absolute;inset:0;pointer-events:none;z-index:2;
+  background:linear-gradient(180deg,
+    hsl(var(--era-h),55%,38%,.22),
+    hsl(calc(var(--era-h) - 20),50%,28%,.06));
+  mix-blend-mode:screen;
+  transition:background 900ms ease-out;
+}
+.map-svg{
+  position:absolute;inset:0;width:100%;height:100%;
+  display:block;cursor:grab;
+  touch-action:none;
+}
+.map-svg:active{cursor:grabbing}
+.map-svg.panning{cursor:grabbing}
+
+/* country paths */
+.cp{
+  fill:hsl(var(--era-h),var(--era-s),var(--era-l));
+  stroke:rgba(255,255,255,.1);stroke-width:.35;
+  transition:fill 700ms ease-out,filter 300ms;
+  vector-effect:non-scaling-stroke;
+}
+.cp.has-data{fill:hsl(var(--era-h),calc(var(--era-s) + 8%),calc(var(--era-l) + 4%));stroke:rgba(255,255,255,.18)}
+.cp.hot{
+  fill:hsl(calc(var(--era-h) + 15),50%,38%);
+  filter:drop-shadow(0 0 5px hsla(var(--era-h),65%,65%,.5));
+  cursor:pointer;
+}
+.cp.used{fill:hsl(var(--era-h),18%,18%);opacity:.7;filter:none}
+.cp.hot:hover{filter:drop-shadow(0 0 9px hsla(var(--era-h),75%,72%,.7)) brightness(1.18)}
+
+/* borders line */
+.borders-line{fill:none;stroke:rgba(255,255,255,.12);stroke-width:.3;vector-effect:non-scaling-stroke;pointer-events:none}
+
+/* event marker dots */
+.edot{
+  fill:hsla(42,85%,65%,.55);
+  stroke:hsla(42,80%,70%,.35);stroke-width:.5;
+  pointer-events:none;
+  transition:fill .25s,opacity .25s,filter .25s;
+  opacity:.6;
+}
+.edot.hot{fill:#ffd47a;opacity:1;filter:drop-shadow(0 0 5px rgba(255,212,122,.9))}
+.edot.used{fill:#364068;opacity:.35;filter:none}
+
+/* country labels */
+.clabel{
+  font-size:5px;fill:rgba(245,236,212,.6);text-anchor:middle;
+  pointer-events:none;transition:opacity .3s;opacity:0;
+  font-family:"Inter",sans-serif;letter-spacing:.05em;
+}
+.map-wrap.zoomed .clabel{opacity:1}
+
+/* ornaments */
+.orn{
+  font-size:13px;text-anchor:middle;dominant-baseline:middle;
+  pointer-events:none;opacity:0;
+  transition:opacity 1.4s ease;
+}
+.orn.vis{opacity:.45}
+
+/* era ribbon */
+.era-ribbon{
+  position:absolute;top:10px;right:10px;z-index:3;
+  background:rgba(10,15,30,.75);backdrop-filter:blur(8px);
+  padding:6px 10px;border-radius:999px;font-size:11px;
+  color:var(--ink-dim);letter-spacing:.1em;
+  border:1px solid rgba(255,255,255,.07);
+  transition:color .7s;
+}
+.zoom-back{
+  position:absolute;top:10px;left:10px;z-index:4;
+  width:36px;height:36px;border-radius:10px;
+  background:rgba(10,15,30,.82);backdrop-filter:blur(6px);
+  display:none;align-items:center;justify-content:center;
+  border:1px solid rgba(255,255,255,.08);color:var(--ink);font-size:16px;
+}
+.map-wrap.zoomed .zoom-back{display:flex}
+
+/* hint toast */
+.hint-toast{
+  position:absolute;left:12px;right:12px;bottom:12px;z-index:5;
+  background:linear-gradient(180deg,rgba(22,34,70,.97),rgba(12,18,40,.97));
+  border:1px solid rgba(255,212,122,.28);border-radius:12px;padding:12px 14px;
+  transform:translateY(120%);opacity:0;
+  transition:transform .45s cubic-bezier(.2,.7,.15,1),opacity .3s;
+  box-shadow:0 12px 40px rgba(0,0,0,.55);
+}
+.hint-toast.show{transform:translateY(0);opacity:1}
+.hint-toast .ht-k{font-size:10px;letter-spacing:.24em;color:var(--accent);margin-bottom:4px}
+.hint-toast .ht-b{font-family:"EB Garamond",Georgia,serif;font-size:15px;line-height:1.4}
+
+/* map loading */
+.map-load{
+  position:absolute;inset:0;z-index:10;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;
+  background:rgba(7,10,24,.92);
+}
+.map-load .spin{
+  width:26px;height:26px;border:2px solid rgba(255,255,255,.08);
+  border-top-color:var(--accent);border-radius:50%;
+  animation:spin .75s linear infinite;
+}
+.map-load p{font-size:11px;color:var(--ink-dim);letter-spacing:.18em;margin:0}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* year pulse on decade crossing */
+@keyframes yearPulse{
+  0%{transform:scale(1)}
+  40%{transform:scale(1.06);text-shadow:0 0 28px hsla(var(--era-h),65%,65%,.6)}
+  100%{transform:scale(1)}
+}
+.year-read.pulse{animation:yearPulse .35s cubic-bezier(.2,.8,.2,1) forwards}
+
+/* ── slider area ── */
+.slider-area{padding:8px 16px 16px;display:flex;flex-direction:column;gap:10px;flex-shrink:0;background:linear-gradient(180deg,transparent,rgba(0,0,0,.28))}
+.year-row{display:flex;align-items:baseline;justify-content:space-between}
+.year-read{
+  font-family:"EB Garamond",Georgia,serif;font-size:56px;line-height:1;letter-spacing:.02em;
+  font-variant-numeric:tabular-nums;
+  text-shadow:0 2px 20px hsla(var(--era-h),60%,55%,.22);
+  transition:text-shadow .8s;
+}
+.year-read .tiny{font-size:14px;color:var(--ink-dim);margin-left:8px;letter-spacing:.2em;text-transform:uppercase}
+.score-chip{display:flex;gap:6px;align-items:center;background:#0f1628;padding:6px 10px;border-radius:999px;font-size:12px;color:var(--ink-dim);border:1px solid rgba(255,255,255,.06)}
+.score-chip b{color:var(--ink)}
+
+.range{appearance:none;-webkit-appearance:none;width:100%;height:44px;background:transparent;margin:0}
+.range::-webkit-slider-runnable-track{
+  height:10px;border-radius:999px;
+  background:linear-gradient(90deg,#1e1240 0%,#1e2d60 30%,#1c3a60 60%,#3a2a10 85%,#5a3a10 100%);
+  border:1px solid rgba(255,255,255,.07);
+}
+.range::-webkit-slider-thumb{
+  -webkit-appearance:none;width:28px;height:28px;border-radius:50%;margin-top:-10px;
+  background:radial-gradient(circle at 30% 30%,#fff7d9,#e8b059 60%,#8a5a1e 100%);
+  border:2px solid #fff7d9;
+  box-shadow:0 0 0 4px rgba(232,176,89,.18),0 8px 18px rgba(0,0,0,.5);
+}
+.range::-moz-range-track{height:10px;border-radius:999px;background:linear-gradient(90deg,#1e1240,#1e2d60,#1c3a60,#3a2a10,#5a3a10);border:1px solid rgba(255,255,255,.07)}
+.range::-moz-range-thumb{width:28px;height:28px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#fff7d9,#e8b059 60%,#8a5a1e 100%);border:2px solid #fff7d9;box-shadow:0 0 0 4px rgba(232,176,89,.18),0 8px 18px rgba(0,0,0,.5)}
+.slider-endcaps{display:flex;justify-content:space-between;font-size:10px;color:var(--ink-dim);letter-spacing:.14em;margin-top:-4px}
+
+.nudge-row{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:4px}
+.nudges{display:flex;gap:6px}
+.nudges button{background:#10192e;border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:8px 10px;font-size:12px;color:var(--ink-dim);min-width:44px}
+.nudges button:active{background:#182240;color:var(--ink)}
+
+.cta{display:flex;gap:8px}
+.cta button{
+  flex:1;padding:12px 14px;border-radius:12px;font-weight:600;letter-spacing:.04em;font-size:14px;
+  border:1px solid rgba(255,255,255,.08);
+  background:linear-gradient(180deg,#1a2850,#121a35);color:var(--ink);
+  transition:transform .1s,box-shadow .3s,background .3s;
+}
+.cta button.primary{
+  background:linear-gradient(180deg,#ecc47a,#b97e2a);color:#21170a;border-color:rgba(0,0,0,.2);
+  box-shadow:0 6px 22px rgba(232,176,89,.35),inset 0 1px 0 rgba(255,255,255,.4);
+}
+.cta button:active{transform:scale(.97)}
+.cta button:disabled{opacity:.55;filter:grayscale(.5)}
+
+/* 6 hint slots in 2×3 grid */
+.hint-slots{display:grid;grid-template-columns:repeat(3,10px);gap:4px;align-items:center}
+.hint-slots .slot{width:10px;height:10px;border-radius:50%;background:var(--slot);transition:background .3s,transform .3s}
+.hint-slots .slot.used{background:var(--accent);transform:scale(.75)}
+
+/* ── reveal ── */
+.reveal{
+  position:absolute;inset:0;z-index:20;
+  background:radial-gradient(800px 600px at 50% 40%,rgba(18,30,66,.96),rgba(6,8,18,.98));
+  backdrop-filter:blur(12px);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:24px;text-align:center;gap:14px;
+  opacity:0;pointer-events:none;transition:opacity .4s;
+}
+.reveal.show{opacity:1;pointer-events:auto}
+.reveal .headline{font-family:"EB Garamond",Georgia,serif;font-size:18px;color:var(--ink-dim);letter-spacing:.08em}
+.reveal .years{display:flex;gap:24px;align-items:center;margin:6px 0 2px}
+.reveal .y-block{display:flex;flex-direction:column;align-items:center}
+.reveal .y-block .lbl{font-size:10px;letter-spacing:.22em;color:var(--ink-dim);text-transform:uppercase}
+.reveal .y-block .val{font-family:"EB Garamond",Georgia,serif;font-size:48px;letter-spacing:.02em}
+.reveal .y-block.target .val{color:var(--accent)}
+.reveal .delta{font-size:14px;color:var(--ink-dim);letter-spacing:.04em;min-height:1.4em}
+.reveal .score-burst{
+  font-family:"EB Garamond",Georgia,serif;font-size:56px;color:var(--accent);
+  text-shadow:0 4px 30px rgba(232,176,89,.5);
+  transform:scale(.7);opacity:0;
+  transition:transform .5s cubic-bezier(.2,.8,.2,1.4),opacity .4s;
+}
+.reveal.show .score-burst{transform:scale(1);opacity:1;transition-delay:.3s}
+.reveal .epilogue{
+  margin-top:8px;max-width:420px;
+  font-family:"EB Garamond",Georgia,serif;font-size:16px;color:var(--ink);line-height:1.45;font-style:italic;
+}
+.reveal .epilogue::before{content:"\201C ";color:var(--accent);font-size:24px;vertical-align:-4px}
+.reveal .epilogue::after{content:" \201D";color:var(--accent);font-size:24px;vertical-align:-4px}
+.reveal .next{
+  margin-top:14px;padding:12px 22px;border-radius:999px;
+  background:linear-gradient(180deg,#ecc47a,#b97e2a);color:#21170a;
+  font-weight:700;letter-spacing:.06em;
+  box-shadow:0 8px 22px rgba(232,176,89,.35);
+}
+.reveal.good .score-burst{color:var(--good);text-shadow:0 4px 30px rgba(123,211,137,.5)}
+.reveal.good .delta{color:var(--good)}
+.reveal.bad  .score-burst{color:var(--danger);text-shadow:0 4px 30px rgba(227,106,106,.4)}
+.reveal.bad  .delta{color:var(--danger)}
+
+/* ── start ── */
+.start{
+  position:absolute;inset:0;z-index:30;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:24px;gap:12px;
+  background:radial-gradient(900px 700px at 50% 30%,#1a2850 0%,#070a16 70%);
+}
+.start h1{font-family:"EB Garamond",Georgia,serif;font-size:52px;letter-spacing:.1em;margin:0}
+.start h1 b{color:var(--accent)}
+.start .tag{color:var(--ink-dim);max-width:360px;font-size:14px;line-height:1.5}
+.start .play{
+  margin-top:14px;padding:14px 28px;border-radius:999px;
+  background:linear-gradient(180deg,#ecc47a,#b97e2a);
+  color:#21170a;font-weight:700;letter-spacing:.08em;font-size:14px;
+  box-shadow:0 10px 30px rgba(232,176,89,.45);
+}
+.start .modes{display:flex;gap:8px;margin-top:10px}
+.hidden{display:none!important}
+
+/* ── pause button ── */
+.pause-btn{
+  width:36px;height:36px;border-radius:10px;flex-shrink:0;
+  background:#151e3a;border:1px solid rgba(255,255,255,.08);
+  display:flex;align-items:center;justify-content:center;
+  font-size:20px;color:var(--ink-dim);line-height:1;
+  transition:background .2s,color .2s;
+}
+.pause-btn:active{background:#1e2a50;color:var(--ink)}
+
+/* ── menu modal ── */
+.menu-modal{
+  position:absolute;inset:0;z-index:40;
+  display:flex;flex-direction:column;align-items:center;
+  padding:20px 24px 28px;gap:0;
+  background:radial-gradient(900px 700px at 50% 25%,#1a2850 0%,#07091a 70%);
+  opacity:0;pointer-events:none;transition:opacity .3s;
+  overflow-y:auto;
+}
+.menu-modal.show{opacity:1;pointer-events:auto}
+.mm-close{
+  align-self:flex-end;width:34px;height:34px;border-radius:10px;
+  background:#151e3a;border:1px solid rgba(255,255,255,.08);
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;color:var(--ink-dim);flex-shrink:0;
+}
+.mm-logo{font-family:"EB Garamond",Georgia,serif;font-size:36px;letter-spacing:.1em;margin:12px 0 2px}
+.mm-logo b{color:var(--accent)}
+.mm-tagline{font-size:11px;color:var(--ink-dim);letter-spacing:.2em;text-transform:uppercase;margin-bottom:20px}
+.mm-section{
+  font-size:10px;letter-spacing:.22em;color:var(--ink-dim);text-transform:uppercase;
+  align-self:flex-start;margin:14px 0 8px;
+}
+.mode-btns{display:flex;gap:8px;width:100%}
+.mode-btns button{
+  flex:1;padding:11px;border-radius:12px;font-size:13px;font-weight:600;
+  letter-spacing:.03em;border:1px solid rgba(255,255,255,.08);
+  background:#151e3a;color:var(--ink-dim);transition:background .25s,color .25s;
+}
+.mode-btns button.active{
+  background:linear-gradient(180deg,#223463,#1b2850);color:var(--ink);
+  border-color:rgba(255,255,255,.12);
+}
+.decks-grid{display:flex;flex-direction:column;gap:7px;width:100%}
+.deck-card{
+  border-radius:12px;padding:11px 13px;
+  border:1px solid rgba(255,255,255,.06);background:#101828;
+  display:flex;align-items:center;gap:10px;
+}
+.deck-card.unlocked{border-color:rgba(232,176,89,.28);background:#131c30;cursor:pointer;transition:background .2s}
+.deck-card.unlocked:active{background:#1a2540}
+.deck-card.deck-active{border-color:var(--accent);background:#1a2845}
+.dc-icon{font-size:20px;flex-shrink:0;width:28px;text-align:center}
+.dc-body{flex:1;min-width:0}
+.dc-name{font-size:13px;font-weight:600;color:var(--ink);margin-bottom:2px}
+.dc-sub{font-size:11px;color:var(--ink-dim)}
+.dc-badge{
+  font-size:11px;padding:4px 8px;border-radius:999px;flex-shrink:0;
+  background:#1e2d50;color:var(--ink-dim);white-space:nowrap;
+}
+.deck-card.unlocked .dc-badge{background:linear-gradient(180deg,#ecc47a,#b97e2a);color:#21170a;font-weight:700}
+.deck-card.deck-active .dc-badge{background:var(--good);color:#0a1a0a;font-weight:700}
+.dc-progress{height:3px;border-radius:999px;background:rgba(255,255,255,.07);margin-top:5px;overflow:hidden}
+.dc-progress-fill{height:100%;border-radius:999px;background:var(--accent);transition:width .4s}
+.mm-play{
+  margin-top:18px;padding:13px 28px;border-radius:999px;width:100%;
+  background:linear-gradient(180deg,#ecc47a,#b97e2a);
+  color:#21170a;font-weight:700;letter-spacing:.06em;font-size:14px;
+  box-shadow:0 8px 22px rgba(232,176,89,.3);flex-shrink:0;
+}
+
+/* deck-unlocked toast badge */
+.unlock-badge{
+  display:inline-block;background:var(--accent);color:#21170a;
+  font-size:10px;font-weight:700;padding:2px 6px;border-radius:999px;
+  letter-spacing:.08em;margin-left:6px;vertical-align:1px;
+}
+
+/* ── hint area (replaces hint button) ── */
+.hint-area{
+  flex:1.3;display:flex;flex-direction:column;justify-content:center;gap:5px;
+  padding:8px 10px;border-radius:12px;min-width:0;
+  border:1px solid rgba(255,255,255,.06);
+  background:rgba(12,18,44,.7);
+}
+.hint-info{display:flex;align-items:flex-start;gap:7px}
+.hint-info-icon{font-size:13px;flex-shrink:0;margin-top:1px}
+.hint-info-text{font-size:11px;color:var(--ink-dim);line-height:1.4}
+.digit-reveal-btn{
+  width:100%;padding:6px 8px;border-radius:8px;
+  background:linear-gradient(180deg,#1a2d54,#121e38);
+  border:1px solid rgba(100,160,255,.22);
+  color:var(--cool);font-size:11px;font-weight:600;letter-spacing:.04em;
+  transition:background .2s,opacity .2s;
+  display:flex;align-items:center;gap:6px;
+}
+.digit-reveal-btn:active{background:#1e3060}
+.digit-reveal-btn:disabled{opacity:.4;cursor:not-allowed}
+.dr-year{
+  font-family:"EB Garamond",Georgia,serif;font-size:15px;letter-spacing:.2em;
+  font-variant-numeric:tabular-nums;color:var(--accent);margin-left:2px;
+}
+</style>
+</head>
+<body>
+<div class="app">
+
+  <!-- Start screen -->
+  <div class="start" id="start">
+    <div class="brand serif"><b>EPOCH</b> — A GAME OF WHEN</div>
+    <h1 class="serif">The World, In Time.</h1>
+    <div class="tag">Guess the year a major event happened. Explore the map for clues — because history rhymes across continents.</div>
+    <button class="play" onclick="startGame('daily')">Play today's Chronicle</button>
+    <div class="modes">
+      <button class="play" style="background:linear-gradient(180deg,#3a4a80,#1e2a50);color:var(--ink)" onclick="startGame('endless')">Endless Run</button>
+    </div>
+  </div>
+
+  <!-- Top bar -->
+  <div class="topbar">
+    <div class="brand serif"><b>EPOCH</b> · <span id="modeLabel">Daily Chronicle</span></div>
+    <button class="pause-btn" id="pauseBtn" aria-label="Menu">☰</button>
+  </div>
+
+  <!-- Prompt -->
+  <div class="prompt" id="promptCard">
+    <div class="prompt-kicker">
+      <span class="pill">Round</span>
+      <span id="roundTag">Daily</span>
+      <span class="streak" style="margin-left:auto">Streak <b id="streakVal">0</b></span>
+    </div>
+    <div class="prompt-text" id="promptText">—</div>
+    <div class="prompt-origin"><b id="promptCountry">—</b> · <span id="promptContinent">—</span></div>
+  </div>
+
+  <!-- Map -->
+  <div class="map-wrap" id="mapWrap">
+    <div class="era-tint"></div>
+    <div class="era-ribbon" id="eraRibbon">Renaissance</div>
+    <button class="zoom-back" id="zoomBack" aria-label="Zoom out">←</button>
+
+    <div class="map-load" id="mapLoad">
+      <div class="spin"></div>
+      <p>Loading world map…</p>
+    </div>
+
+    <svg class="map-svg" id="mapSvg" viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid meet">
+      <defs>
+        <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+          <feGaussianBlur stdDeviation="2.5" result="b"/>
+          <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+      </defs>
+      <!-- Camera group — all transforms live here -->
+      <g id="mapGroup">
+        <g id="land"></g>
+        <g id="bords"></g>
+        <g id="markers"></g>
+        <g id="clabels"></g>
+        <g id="orns"></g>
+      </g>
+    </svg>
+  </div>
+
+  <!-- Slider + controls -->
+  <div class="slider-area">
+    <div class="year-row">
+      <div class="year-read"><span id="yearVal">1500</span></div>
+      <div class="score-chip"><span>Score</span><b id="scoreVal">0</b></div>
+    </div>
+    <input class="range" id="range" type="range" min="1000" max="2026" step="1" value="1500"/>
+    <div class="slider-endcaps"><span>1000</span><span>2026</span></div>
+    <div class="nudge-row">
+      <div class="nudges">
+        <button data-d="-10">−10</button>
+        <button data-d="-1">−1</button>
+        <button data-d="+1">+1</button>
+        <button data-d="+10">+10</button>
+      </div>
+      <div class="hint-slots" id="hintSlots"></div>
+    </div>
+    <div class="cta">
+      <div class="hint-area" id="hintArea">
+        <div class="hint-info">
+          <span class="hint-info-icon">🗺</span>
+          <span class="hint-info-text" id="hintInfoText">Tap any glowing country on the map for a historical clue</span>
+        </div>
+        <button class="digit-reveal-btn hidden" id="digitRevealBtn">
+          <span id="drLabel">🔢 Reveal a year digit</span>
+          <span class="dr-year hidden" id="drYear"></span>
+        </button>
+      </div>
+      <button id="lockBtn" class="primary">Lock in guess</button>
+    </div>
+  </div>
+
+  <!-- Menu / home overlay -->
+  <div class="menu-modal" id="menuModal">
+    <button class="mm-close" id="menuClose" aria-label="Close">✕</button>
+    <div class="mm-logo serif"><b>EPOCH</b></div>
+    <div class="mm-tagline">A game of when</div>
+
+    <div class="mm-section">Mode</div>
+    <div class="mode-btns">
+      <button id="mmDailyBtn" class="active">📅 Daily Chronicle</button>
+      <button id="mmEndlessBtn">∞ Endless Run</button>
+    </div>
+
+    <div class="mm-section">Unlockable Decks</div>
+    <div class="decks-grid" id="decksGrid"></div>
+
+    <button class="mm-play" id="menuResume">Resume Round →</button>
+  </div>
+
+  <!-- Reveal overlay -->
+  <div class="reveal" id="reveal">
+    <div class="headline serif">THE YEAR WAS</div>
+    <div class="years">
+      <div class="y-block"><div class="lbl">Your guess</div><div class="val" id="rGuess">—</div></div>
+      <div class="y-block target"><div class="lbl">Actual</div><div class="val" id="rActual">—</div></div>
+    </div>
+    <div class="delta" id="rDelta"></div>
+    <div class="score-burst" id="rScore">+0</div>
+    <div class="epilogue" id="rEpilogue">—</div>
+    <button class="next" id="nextBtn">Next round →</button>
+  </div>
+
+</div>
+<script>
+/* ================================================================
+   EPOCH v2 — real world map, pan/zoom, 6 hints, era animations
+   ================================================================ */
+
+// ── country meta (equirectangular positions for labels/dots) ──
+const COUNTRIES = {
+  GB:{name:"England",       x:463, y:116, cont:"EU"},
+  FR:{name:"France",        x:497, y:140, cont:"EU"},
+  DE:{name:"Germany",       x:524, y:126, cont:"EU"},
+  IT:{name:"Italy",         x:523, y:157, cont:"EU"},
+  ES:{name:"Spain",         x:489, y:160, cont:"EU"},
+  PL:{name:"Poland",        x:547, y:121, cont:"EU"},
+  BE:{name:"Belgium",       x:508, y:128, cont:"EU"},
+  AT:{name:"Austria",       x:533, y:138, cont:"EU"},
+  PT:{name:"Portugal",      x:474, y:160, cont:"EU"},
+  NL:{name:"Netherlands",   x:508, y:121, cont:"EU"},
+  RU:{name:"Russia",        x:720, y:97,  cont:"EU"},
+  GR:{name:"Greece",        x:550, y:163, cont:"EU"},
+  SE:{name:"Sweden",        x:528, y:100, cont:"EU"},
+  TR:{name:"Türkiye",       x:601, y:155, cont:"AS"},
+  MN:{name:"Mongolia",      x:784, y:121, cont:"AS"},
+  CN:{name:"China",         x:812, y:165, cont:"AS"},
+  JP:{name:"Japan",         x:899, y:170, cont:"AS"},
+  IN:{name:"India",         x:736, y:232, cont:"AS"},
+  IQ:{name:"Iraq",          x:617, y:185, cont:"AS"},
+  IR:{name:"Iran",          x:643, y:178, cont:"AS"},
+  SA:{name:"Saudi Arabia",  x:625, y:210, cont:"AS"},
+  KR:{name:"Korea",         x:868, y:175, cont:"AS"},
+  VN:{name:"Vietnam",       x:820, y:218, cont:"AS"},
+  TH:{name:"Thailand",      x:804, y:218, cont:"AS"},
+  PH:{name:"Philippines",   x:857, y:222, cont:"AS"},
+  EG:{name:"Egypt",         x:579, y:210, cont:"AF"},
+  ZA:{name:"South Africa",  x:554, y:347, cont:"AF"},
+  MA:{name:"Morocco",       x:487, y:188, cont:"AF"},
+  NG:{name:"Nigeria",       x:515, y:258, cont:"AF"},
+  ET:{name:"Ethiopia",      x:590, y:255, cont:"AF"},
+  GH:{name:"Ghana",         x:497, y:263, cont:"AF"},
+  MX:{name:"Mexico",        x:213, y:210, cont:"NA"},
+  US:{name:"United States", x:190, y:170, cont:"NA"},
+  CA:{name:"Canada",        x:200, y:130, cont:"NA"},
+  HT:{name:"Haiti",         x:267, y:218, cont:"NA"},
+  CU:{name:"Cuba",          x:257, y:211, cont:"NA"},
+  PE:{name:"Peru",          x:284, y:315, cont:"SA"},
+  BR:{name:"Brazil",        x:328, y:308, cont:"SA"},
+  AR:{name:"Argentina",     x:308, y:388, cont:"SA"},
+  CL:{name:"Chile",         x:289, y:375, cont:"SA"},
+  BO:{name:"Bolivia",       x:299, y:330, cont:"SA"},
+  CO:{name:"Colombia",      x:275, y:276, cont:"SA"},
+  AU:{name:"Australia",     x:873, y:363, cont:"OC"},
+  NZ:{name:"New Zealand",   x:963, y:403, cont:"OC"},
+};
+
+// ISO numeric → alpha-2 for topojson feature lookup
+const NUM_TO_A2 = {
+  "826":"GB","250":"FR","276":"DE","380":"IT","724":"ES","616":"PL",
+  "056":"BE","040":"AT","620":"PT","528":"NL","643":"RU","300":"GR",
+  "752":"SE","792":"TR","496":"MN","156":"CN","392":"JP","356":"IN",
+  "368":"IQ","364":"IR","682":"SA","410":"KR","704":"VN","764":"TH",
+  "608":"PH","818":"EG","710":"ZA","504":"MA","566":"NG","231":"ET",
+  "288":"GH","484":"MX","840":"US","124":"CA","332":"HT","192":"CU",
+  "604":"PE","076":"BR","032":"AR","152":"CL","068":"BO","170":"CO",
+  "036":"AU","554":"NZ",
+};
+
+// ── event library — populated async from events.json ──
+const EVENTS = [
+/* events.json is loaded at runtime — see loadAssets() */
+];
+
+// ── Deck definitions ──
+const DECK_DEFS = [
+  {tag:'war',        icon:'⚔️', name:'War & Conflict',      threshold:5},
+  {tag:'empire',     icon:'👑', name:'Empires & Dynasties',  threshold:5},
+  {tag:'revolution', icon:'✊', name:'Revolutions',          threshold:5},
+  {tag:'exploration',icon:'⛵', name:'Age of Exploration',   threshold:5},
+  {tag:'technology', icon:'⚙️', name:'Technology',           threshold:5},
+  {tag:'science',    icon:'🔭', name:'Science & Discovery',  threshold:5},
+  {tag:'independence',icon:'🏳',name:'Independence Movements',threshold:5},
+  {tag:'culture',    icon:'🎭', name:'Culture & Society',    threshold:5},
+  {tag:'gaming',     icon:'🎮', name:'Gaming History',       threshold:5},
+];
+
+// ── Lookup indices — built after events.json loads ──
+const byCountry = {}, byYear = {}, byContinent = {};
+function buildEventIndices(){
+  for(const e of EVENTS){
+    (byCountry[e.country]||=[]).push(e);
+    (byYear[e.year]||=[]).push(e);
+    (byContinent[COUNTRIES[e.country]?.cont||'XX']||=[]).push(e);
+  }
+}
+
+// ── Camera state ──
+const CAM = {s:1, tx:0, ty:0};
+let isDragging = false;
+const COUNTRY_BBOXES = {}; // alpha-2 → SVGRect
+
+function applyCamera(animate){
+  const g = document.getElementById('mapGroup');
+  g.style.transition = animate ? 'transform 520ms cubic-bezier(.2,.7,.15,1)' : 'none';
+  g.style.transformOrigin = '0 0';
+  g.style.transform = `translate(${CAM.tx}px,${CAM.ty}px) scale(${CAM.s})`;
+}
+
+function setCamera(s, tx, ty, animate=true){
+  // Clamp so at least half the world stays visible on each axis
+  const mx = Math.min(200, 1000*(s-1)/2);
+  const my = Math.min(150, 500*(s-1)/2);
+  CAM.s = s;
+  CAM.tx = Math.min(mx, Math.max(-(1000*s - 1000 + mx), tx));
+  CAM.ty = Math.min(my, Math.max(-(500*s  - 500  + my), ty));
+  applyCamera(animate);
+}
+
+function zoomToCountry(code){
+  const bbox = COUNTRY_BBOXES[code];
+  if(!bbox) return;
+  const cx = bbox.x + bbox.width/2;
+  const cy = bbox.y + bbox.height/2;
+  const span = Math.max(bbox.width, bbox.height);
+  // Choose scale so the country fills ~35% of the viewport
+  const s = Math.min(10, Math.max(2.5, 350/span));
+  setCamera(s, 500 - cx*s, 250 - cy*s);
+  mapWrap.classList.add('zoomed');
+  STATE.zoom = 1;
+}
+
+function zoomOut(){
+  setCamera(1, 0, 0);
+  mapWrap.classList.remove('zoomed');
+  STATE.zoom = 0;
+  STATE.zoomedCountry = null;
+}
+
+// ── Map projection (equirectangular, 1000×500) ──
+function project([lon, lat]){
+  return [(lon+180)/360*1000, (90-lat)/180*500];
+}
+
+function lineToD(coords, close){
+  if(coords.length < 2) return '';
+  let d='', prevLon=null;
+  for(let i=0;i<coords.length;i++){
+    const [lon,lat]=coords[i];
+    const jump = prevLon !== null && Math.abs(lon-prevLon) > 170;
+    const [x,y] = project([lon,lat]);
+    d += `${(i===0||jump)?'M':'L'}${x.toFixed(2)},${y.toFixed(2)}`;
+    prevLon = lon;
+  }
+  return d + (close?'Z':'');
+}
+
+function geomToD(geom){
+  if(!geom) return '';
+  const {type,coordinates:c}=geom;
+  if(type==='Polygon')           return c.map(r=>lineToD(r,true)).join('');
+  if(type==='MultiPolygon')      return c.flatMap(p=>p.map(r=>lineToD(r,true))).join('');
+  if(type==='LineString')        return lineToD(c,false);
+  if(type==='MultiLineString')   return c.map(l=>lineToD(l,false)).join('');
+  if(type==='GeometryCollection') return geom.geometries.map(geomToD).join('');
+  return '';
+}
+
+// ── Asset loading — world map + events in parallel ──
+async function loadAssets(){
+  try {
+    const [world, eventsData] = await Promise.all([
+      fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json').then(r=>r.json()),
+      fetch('events.json').then(r=>r.json()),
+    ]);
+    EVENTS.push(...eventsData);
+    buildEventIndices();
+    const countriesGeo = topojson.feature(world, world.objects.countries);
+    const bordersGeo   = topojson.mesh(world, world.objects.countries, (a,b)=>a!==b);
+
+    const landG   = document.getElementById('land');
+    const bordsG  = document.getElementById('bords');
+    const NS      = 'http://www.w3.org/2000/svg';
+
+    // Country fills
+    countriesGeo.features.forEach(feat=>{
+      if(!feat.geometry) return;
+      const numId = String(feat.id??'');
+      if(numId==='010') return; // skip Antarctica
+      const a2 = NUM_TO_A2[numId]??null;
+      const d  = geomToD(feat.geometry);
+      if(!d) return;
+      const p = document.createElementNS(NS,'path');
+      p.setAttribute('d',d);
+      p.setAttribute('class','cp'+(a2?' has-data':''));
+      if(a2){
+        p.setAttribute('data-code',a2);
+        p.addEventListener('click', e=>handleCountryClick(a2,e));
+      }
+      landG.appendChild(p);
+    });
+
+    // Country borders (single merged path — more efficient)
+    const bd = geomToD(bordersGeo);
+    if(bd){
+      const bp = document.createElementNS(NS,'path');
+      bp.setAttribute('d',bd);
+      bp.setAttribute('class','borders-line');
+      bordsG.appendChild(bp);
+    }
+
+    // Cache bounding boxes (used for zoom-to-country centering)
+    landG.querySelectorAll('[data-code]').forEach(el=>{
+      const code = el.getAttribute('data-code');
+      COUNTRY_BBOXES[code] = el.getBBox();
+    });
+
+    buildMarkers();
+    buildLabels();
+    buildOrnaments();
+    document.getElementById('mapLoad').classList.add('hidden');
+
+  } catch(err){
+    console.error('Asset load failed:', err);
+    const ml = document.getElementById('mapLoad');
+    ml.querySelector('p').textContent = 'Load failed — serve via a local server (not file://)';
+    ml.querySelector('.spin').style.display = 'none';
+  }
+}
+
+// Event marker dots (placed at country centroid from bbox or fallback)
+function getCenter(code){
+  const b = COUNTRY_BBOXES[code];
+  if(b) return {x: b.x+b.width/2, y: b.y+b.height/2};
+  return COUNTRIES[code] ?? {x:500,y:250};
+}
+
+function buildMarkers(){
+  const NS='http://www.w3.org/2000/svg';
+  const g = document.getElementById('markers');
+  g.innerHTML='';
+  for(const code of Object.keys(byCountry)){
+    if(!COUNTRIES[code]) continue;
+    const {x,y}=getCenter(code);
+    const c = document.createElementNS(NS,'circle');
+    c.setAttribute('cx',x);c.setAttribute('cy',y);c.setAttribute('r',3.5);
+    c.setAttribute('class','edot');
+    c.setAttribute('data-code',code);
+    c.setAttribute('pointer-events','none'); // clicks go through to country path
+    g.appendChild(c);
+  }
+}
+
+function buildLabels(){
+  const NS='http://www.w3.org/2000/svg';
+  const g=document.getElementById('clabels');g.innerHTML='';
+  for(const [code,meta] of Object.entries(COUNTRIES)){
+    const {x,y}=getCenter(code);
+    const t=document.createElementNS(NS,'text');
+    t.setAttribute('x',x);t.setAttribute('y',y-7);
+    t.setAttribute('class','clabel');
+    t.textContent=code;
+    g.appendChild(t);
+  }
+}
+
+// Ambient ornaments — era-keyed Unicode glyphs on the map
+const ORNAMENT_DEFS = [
+  {id:'sail', emoji:'⛵', x:370, y:195, yStart:1415, yEnd:1620},
+  {id:'caravel', emoji:'⛵', x:420, y:230, yStart:1480, yEnd:1600},
+  {id:'column', emoji:'🏛', x:548, y:166, yStart:1450, yEnd:1700},
+  {id:'compass', emoji:'🧭', x:700, y:150, yStart:1500, yEnd:1800},
+  {id:'loco', emoji:'🚂', x:520, y:155, yStart:1825, yEnd:1920},
+  {id:'loco2', emoji:'🚂', x:200, y:165, yStart:1830, yEnd:1920},
+  {id:'plane', emoji:'✈', x:200, y:155, yStart:1918, yEnd:1970},
+  {id:'rocket', emoji:'🚀', x:250, y:218, yStart:1957, yEnd:1990},
+  {id:'signal', emoji:'📡', x:200, y:160, yStart:1970, yEnd:2026},
+];
+
+function buildOrnaments(){
+  const NS='http://www.w3.org/2000/svg';
+  const g=document.getElementById('orns');g.innerHTML='';
+  for(const def of ORNAMENT_DEFS){
+    const t=document.createElementNS(NS,'text');
+    t.setAttribute('x',def.x);t.setAttribute('y',def.y);
+    t.setAttribute('class','orn');
+    t.setAttribute('data-id',def.id);
+    t.textContent=def.emoji;
+    g.appendChild(t);
+  }
+}
+
+function updateOrnaments(y){
+  document.querySelectorAll('.orn').forEach(el=>{
+    const id=el.getAttribute('data-id');
+    const def=ORNAMENT_DEFS.find(d=>d.id===id);
+    if(!def) return;
+    const vis = y>=def.yStart && y<=def.yEnd;
+    el.classList.toggle('vis',vis);
+  });
+}
+
+// ── Pan gestures ──
+let _pan = null;
+const mapSvg = document.getElementById('mapSvg');
+mapSvg.addEventListener('pointerdown', e=>{
+  if(CAM.s<=1.05) return;
+  _pan={x:e.clientX,y:e.clientY,tx0:CAM.tx,ty0:CAM.ty,moved:false};
+  mapSvg.setPointerCapture(e.pointerId);
+  e.preventDefault();
+});
+mapSvg.addEventListener('pointermove', e=>{
+  if(!_pan) return;
+  const dx=e.clientX-_pan.x, dy=e.clientY-_pan.y;
+  if(!_pan.moved && Math.hypot(dx,dy)>6){ _pan.moved=true; isDragging=true; }
+  if(!_pan.moved) return;
+  const rect=mapSvg.getBoundingClientRect();
+  const k = 1000/rect.width; // screen px → SVG units
+  setCamera(CAM.s, _pan.tx0+dx*k, _pan.ty0+dy*k, false);
+});
+mapSvg.addEventListener('pointerup', ()=>{
+  _pan=null;
+  setTimeout(()=>{ isDragging=false; },80);
+});
+mapSvg.addEventListener('pointercancel', ()=>{ _pan=null; isDragging=false; });
+
+// ── Country click handler ──
+function handleCountryClick(code, e){
+  e?.stopPropagation();
+  if(isDragging) return;
+  if(CAM.s<=1.05){
+    zoomToCountry(code);
+  } else {
+    onCountryHint(code);
+  }
+}
+
+// ── Hint toast ──
+function showToast(body, kicker){
+  let el=document.querySelector('.hint-toast');
+  if(!el){
+    el=document.createElement('div');el.className='hint-toast';
+    document.getElementById('mapWrap').appendChild(el);
+  }
+  el.innerHTML=`<div class="ht-k">${kicker||'Hint'}</div><div class="ht-b">${body}</div>`;
+  requestAnimationFrame(()=>el.classList.add('show'));
+  clearTimeout(el._t);
+  el._t=setTimeout(()=>el.classList.remove('show'),4500);
+}
+
+// ── Era color system ──
+// Each entry: [yearFrom, hue, sat%, light%]
+const ERA_PALETTE = [
+  [1000, 240, 32, 22],
+  [1300, 248, 30, 22],
+  [1500, 28,  40, 24],
+  [1650, 210, 32, 22],
+  [1800, 198, 28, 20],
+  [1900, 355, 22, 20],
+  [1945, 220, 38, 22],
+  [1991, 175, 32, 22],
+  [2026, 175, 32, 22],
+];
+
+function lerpEra(y){
+  for(let i=ERA_PALETTE.length-2;i>=0;i--){
+    const [ya,ha,sa,la]=ERA_PALETTE[i];
+    const [yb,hb,sb,lb]=ERA_PALETTE[i+1];
+    if(y>=ya){
+      const t=Math.min(1,(y-ya)/(yb-ya));
+      return {h:Math.round(ha+(hb-ha)*t), s:Math.round(sa+(sb-sa)*t), l:Math.round(la+(lb-la)*t)};
+    }
+  }
+  return {h:240,s:32,l:22};
+}
+
+const ERAS=[
+  [1000,1300,'High Middle Ages'],
+  [1300,1500,'Late Medieval'],
+  [1500,1650,'Early Modern · Renaissance'],
+  [1650,1800,'Age of Enlightenment'],
+  [1800,1900,'Industrial Age'],
+  [1900,1945,'World Wars'],
+  [1945,1991,'Cold War'],
+  [1991,2026,'Contemporary'],
+];
+
+// ── Slider & year state ──
+const STATE={
+  mode:'daily', roundEvent:null, currentYear:1500,
+  hintsUsed:0, maxHints:6,
+  hintedCountries:new Set(), usedInPrompts:new Set(),
+  zoom:0, zoomedCountry:null,
+  score:0, streak:0, locked:false,
+  // deck system
+  tagProgress:{},      // tag → # of completed rounds
+  unlockedDecks:new Set(),
+  activeDeckTag:null,  // null = all events
+  // digit reveal
+  digitRevealed:false,
+  revealedDigits:{},   // digit position (0-3) → revealed char
+};
+
+const range    = document.getElementById('range');
+const yearVal  = document.getElementById('yearVal');
+const scoreVal = document.getElementById('scoreVal');
+const promptText     = document.getElementById('promptText');
+const promptCountry  = document.getElementById('promptCountry');
+const promptContinent= document.getElementById('promptContinent');
+const roundTag       = document.getElementById('roundTag');
+const hintSlotsEl    = document.getElementById('hintSlots');
+const lockBtn  = document.getElementById('lockBtn');
+const eraRibbon= document.getElementById('eraRibbon');
+const zoomBack = document.getElementById('zoomBack');
+const mapWrap  = document.getElementById('mapWrap');
+const reveal   = document.getElementById('reveal');
+const rGuess   = document.getElementById('rGuess');
+const rActual  = document.getElementById('rActual');
+const rDelta   = document.getElementById('rDelta');
+const rScore   = document.getElementById('rScore');
+const rEpilogue= document.getElementById('rEpilogue');
+const nextBtn  = document.getElementById('nextBtn');
+const streakVal= document.getElementById('streakVal');
+const modeLabel= document.getElementById('modeLabel');
+const digitRevealBtn = document.getElementById('digitRevealBtn');
+const drYear   = document.getElementById('drYear');
+const drLabel  = document.getElementById('drLabel');
+
+let _lastDecade = null;
+
+function setYear(y){
+  y=Math.max(1000,Math.min(2026,Math.round(y)));
+  const prev=STATE.currentYear;
+  STATE.currentYear=y;
+  yearVal.textContent=y;
+  range.value=y;
+  const norm=(y-1000)/1026;
+  document.documentElement.style.setProperty('--yearNorm',norm.toFixed(4));
+  // Era color — drives background, country fills, tint, year glow
+  const {h,s,l}=lerpEra(y);
+  document.documentElement.style.setProperty('--era-h',h);
+  document.documentElement.style.setProperty('--era-s',s+'%');
+  document.documentElement.style.setProperty('--era-l',l+'%');
+  // Era ribbon text
+  const era=ERAS.find(e=>y>=e[0]&&y<e[1])||ERAS[ERAS.length-1];
+  eraRibbon.textContent=era[2];
+  // Decade pulse — fire when crossing a decade boundary
+  const decade=Math.floor(y/10);
+  if(_lastDecade!==null && decade!==_lastDecade){
+    const el=document.querySelector('.year-read');
+    el.classList.remove('pulse');
+    void el.offsetWidth; // reflow to restart animation
+    el.classList.add('pulse');
+  }
+  _lastDecade=decade;
+  updateDotsForYear(y);
+  updateOrnaments(y);
+}
+
+function updateDotsForYear(y){
+  document.querySelectorAll('.edot').forEach(d=>{
+    const code=d.getAttribute('data-code');
+    const events=byCountry[code]||[];
+    const near=events.some(e=>Math.abs(e.year-y)<=15);
+    d.classList.toggle('hot', near && !STATE.hintedCountries.has(code));
+    if(STATE.hintedCountries.has(code)) d.classList.add('used');
+  });
+  document.querySelectorAll('.cp.has-data').forEach(p=>{
+    const code=p.getAttribute('data-code');
+    if(!code) return;
+    const events=byCountry[code]||[];
+    const near=events.some(e=>Math.abs(e.year-y)<=15);
+    p.classList.toggle('hot', near && !STATE.hintedCountries.has(code));
+    if(STATE.hintedCountries.has(code)) p.classList.add('used');
+  });
+}
+
+// ── Hint logic ──
+function onCountryHint(code){
+  if(STATE.locked) return;
+  if(!COUNTRIES[code]){ showToast(`No data for this country yet.`,'Nothing here'); return; }
+  if(STATE.hintsUsed>=STATE.maxHints){ showToast('You\'ve used all your hints for this round.','Out of hints'); return; }
+  if(STATE.hintedCountries.has(code)){ showToast(`You've already drawn from ${COUNTRIES[code].name}.`,'Already used'); return; }
+
+  const y=STATE.currentYear;
+  const pool=(byCountry[code]||[])
+    .filter(e=>e.id!==STATE.roundEvent?.id)
+    .filter(e=>!STATE.usedInPrompts.has(e.id))
+    .sort((a,b)=>Math.abs(a.year-y)-Math.abs(b.year-y));
+  const pick=pool[0];
+  if(!pick){ showToast(`Nothing nearby from ${COUNTRIES[code].name} this round.`,'No hint available'); return; }
+
+  STATE.hintsUsed++;
+  STATE.hintedCountries.add(code);
+  STATE.usedInPrompts.add(pick.id);
+  updateHintSlots();
+
+  // Relative phrasing based on proximity
+  const diff=pick.year-y;
+  const rel=Math.abs(diff)<10
+    ? 'Around the same time'
+    : diff<0
+      ? `About ${Math.abs(diff)} years before your guess`
+      : `About ${diff} years after your guess`;
+  showToast(`${rel}: ${pick.hint} — ${COUNTRIES[code].name}.`, 'Historical hint');
+  updateDotsForYear(y);
+}
+
+function updateHintSlots(){
+  const slots=hintSlotsEl.querySelectorAll('.slot');
+  slots.forEach((s,i)=>s.classList.toggle('used',i<STATE.hintsUsed));
+  updateHintArea();
+}
+
+function buildHintSlots(){
+  hintSlotsEl.innerHTML='';
+  for(let i=0;i<STATE.maxHints;i++){
+    const d=document.createElement('div');d.className='slot';
+    hintSlotsEl.appendChild(d);
+  }
+}
+
+// ── Slider input ──
+range.addEventListener('input',e=>setYear(+e.target.value));
+document.querySelectorAll('.nudges button').forEach(b=>{
+  b.addEventListener('click',()=>setYear(STATE.currentYear+parseInt(b.dataset.d,10)));
+});
+
+zoomBack.addEventListener('click',zoomOut);
+
+// ── Digit reveal ──
+function updateHintArea(){
+  const infoText = document.getElementById('hintInfoText');
+  if(!infoText) return;
+  if(STATE.locked){
+    digitRevealBtn.disabled = true;
+    return;
+  }
+  const used = STATE.hintsUsed;
+  const remaining = STATE.maxHints - used;
+  if(STATE.digitRevealed){
+    digitRevealBtn.classList.remove('hidden');
+    digitRevealBtn.disabled = true;
+    drLabel.textContent = 'Year digit hint:';
+    drYear.textContent  = getRevealedYearDisplay();
+    drYear.classList.remove('hidden');
+    infoText.textContent = remaining + ' hint' + (remaining!==1?'s':'') + ' remaining · Tap a glowing country';
+  } else if(used >= 2){
+    digitRevealBtn.classList.remove('hidden');
+    digitRevealBtn.disabled = (remaining <= 0);
+    drLabel.textContent = '🔢 Reveal a year digit';
+    drYear.classList.add('hidden');
+    infoText.textContent = remaining + ' hint' + (remaining!==1?'s':'') + ' remaining · Tap a glowing country';
+  } else {
+    digitRevealBtn.classList.add('hidden');
+    const needed = 2 - used;
+    if(used === 0){
+      infoText.textContent = 'Tap any glowing country on the map for a historical clue';
+    } else {
+      infoText.textContent = 'Use ' + needed + ' more country hint' + (needed!==1?'s':'') + ' to unlock: reveal a year digit';
+    }
+  }
+}
+
+function getRevealedYearDisplay(){
+  const yearStr = String(STATE.roundEvent.year).padStart(4,'0');
+  return yearStr.split('').map((d,i)=>
+    STATE.revealedDigits[i] !== undefined ? d : '_'
+  ).join(' ');
+}
+
+digitRevealBtn.addEventListener('click', ()=>{
+  if(STATE.locked || STATE.digitRevealed || STATE.hintsUsed < 2) return;
+  if(STATE.hintsUsed >= STATE.maxHints) return;
+  const yearStr = String(STATE.roundEvent.year).padStart(4,'0');
+  const unrevealed = [0,1,2,3].filter(i => STATE.revealedDigits[i] === undefined);
+  if(!unrevealed.length) return;
+  const pos = unrevealed[Math.floor(Math.random() * unrevealed.length)];
+  STATE.revealedDigits[pos] = yearStr[pos];
+  STATE.digitRevealed = true;
+  STATE.hintsUsed++;
+  updateHintSlots();
+  const posNames = ['first','second','third','fourth'];
+  showToast(`The ${posNames[pos]} digit of the year is <b>${yearStr[pos]}</b>.`, '🔢 Year digit revealed');
+});
+
+// ── Menu modal ──
+const pauseBtn   = document.getElementById('pauseBtn');
+const menuModal  = document.getElementById('menuModal');
+const menuClose  = document.getElementById('menuClose');
+const menuResume = document.getElementById('menuResume');
+
+pauseBtn.addEventListener('click', ()=>{ buildDecksGrid(); menuModal.classList.add('show'); });
+menuClose.addEventListener('click', ()=>menuModal.classList.remove('show'));
+menuResume.addEventListener('click', ()=>menuModal.classList.remove('show'));
+
+document.getElementById('mmDailyBtn').addEventListener('click', function(){
+  setMenuMode('daily', this);
+});
+document.getElementById('mmEndlessBtn').addEventListener('click', function(){
+  setMenuMode('endless', this);
+});
+
+function setMenuMode(mode, btn){
+  document.querySelectorAll('.mode-btns button').forEach(b=>b.classList.toggle('active', b===btn));
+  STATE.activeDeckTag = null;
+  if(STATE.mode === mode){ menuModal.classList.remove('show'); return; }
+  STATE.mode = mode;
+  modeLabel.textContent = mode==='daily' ? 'Daily Chronicle' : 'Endless Run';
+  STATE.score=0; STATE.streak=0; scoreVal.textContent=0; streakVal.textContent=0;
+  STATE.usedInPrompts.clear();
+  menuModal.classList.remove('show');
+  newRound();
+}
+
+function buildDecksGrid(){
+  const grid = document.getElementById('decksGrid');
+  grid.innerHTML='';
+  for(const def of DECK_DEFS){
+    const progress = STATE.tagProgress[def.tag]||0;
+    const unlocked = STATE.unlockedDecks.has(def.tag);
+    const isActive = STATE.activeDeckTag===def.tag;
+    const card = document.createElement('div');
+    card.className = 'deck-card'+(unlocked?' unlocked':'')+(isActive?' deck-active':'');
+    const pct = Math.min(100, progress/def.threshold*100);
+    card.innerHTML = `
+      <div class="dc-icon">${def.icon}</div>
+      <div class="dc-body">
+        <div class="dc-name">${def.name}</div>
+        <div class="dc-sub">${unlocked ? (isActive?'Currently active deck':'Deck unlocked — tap to play') : `${progress} / ${def.threshold} rounds to unlock`}</div>
+        ${!unlocked ? `<div class="dc-progress"><div class="dc-progress-fill" style="width:${pct}%"></div></div>` : ''}
+      </div>
+      <div class="dc-badge">${isActive ? 'Active' : unlocked ? 'Play →' : progress+'/'+def.threshold}</div>
+    `;
+    if(unlocked){
+      card.addEventListener('click', ()=>{
+        const nowActive = !isActive;
+        STATE.activeDeckTag = nowActive ? def.tag : null;
+        STATE.mode = 'endless';
+        modeLabel.textContent = nowActive ? def.name+' Deck' : 'Endless Run';
+        STATE.score=0; STATE.streak=0; scoreVal.textContent=0; streakVal.textContent=0;
+        STATE.usedInPrompts.clear();
+        menuModal.classList.remove('show');
+        newRound();
+      });
+    }
+    grid.appendChild(card);
+  }
+}
+
+// ── Lock / reveal ──
+// Hints reduce score by a percentage — scales with raw score, never wipes it out
+// multiplier per hint count: 0→100%, 1→85%, 2→70%, 3→57%, 4→44%, 5→33%, 6→22%
+const HINT_MULT = [1.0, 0.85, 0.70, 0.57, 0.44, 0.33, 0.22];
+
+function calcScore(err, hintsUsed){
+  // exp(-err/45): generous curve — 0yr→1000, 10yr→801, 25yr→574, 50yr→329, 80yr→170, 100yr→111, 200yr→12
+  // Floor of 20 so any guess gives something
+  const raw = Math.max(20, Math.round(1000 * Math.exp(-err / 45)));
+  const mult = HINT_MULT[Math.min(hintsUsed, HINT_MULT.length - 1)];
+  return Math.round(raw * mult);
+}
+
+function accuracyTier(err){
+  if(err === 0)  return {label:'Bullseye!',   cls:'good'};
+  if(err <= 3)   return {label:'Dead on',     cls:'good'};
+  if(err <= 10)  return {label:'Very close',  cls:'good'};
+  if(err <= 25)  return {label:'Close',       cls:''};
+  if(err <= 60)  return {label:'In the era',  cls:''};
+  if(err <= 120) return {label:'Off track',   cls:'bad'};
+  return               {label:'Way off',      cls:'bad'};
+}
+
+lockBtn.addEventListener('click',()=>{ if(!STATE.locked) lockIn(); });
+
+function lockIn(){
+  STATE.locked=true;
+  const guess  = STATE.currentYear;
+  const actual = STATE.roundEvent.year;
+  const err    = Math.abs(guess - actual);
+  const pts    = calcScore(err, STATE.hintsUsed);
+  const tier   = accuracyTier(err);
+
+  STATE.score += pts;
+  scoreVal.textContent = STATE.score;
+  if(err <= 15) STATE.streak++; else STATE.streak = 0;
+  streakVal.textContent = STATE.streak;
+
+  rGuess.textContent   = guess;
+  rActual.textContent  = '——';
+  rDelta.textContent   = tier.label;
+  rScore.textContent   = '+' + pts;
+  rEpilogue.textContent = STATE.roundEvent.epilogue;
+
+  reveal.classList.remove('good','bad');
+  if(tier.cls) reveal.classList.add(tier.cls);
+  reveal.classList.add('show');
+
+  // Track tag progress for deck unlocking
+  const tag = STATE.roundEvent.tag;
+  if(tag){
+    STATE.tagProgress[tag] = (STATE.tagProgress[tag]||0) + 1;
+    const def = DECK_DEFS.find(d=>d.tag===tag);
+    if(def && !STATE.unlockedDecks.has(tag) && STATE.tagProgress[tag] >= def.threshold){
+      STATE.unlockedDecks.add(tag);
+      setTimeout(()=>showToast(
+        `<b>${def.name}</b> deck unlocked! Open the menu to play it.`,
+        def.icon+' Deck Unlocked!'
+      ), 2200);
+    }
+  }
+
+  animateSliderTo(actual, ()=>{
+    rActual.textContent = actual;
+    const diff = err === 0 ? 'Bullseye!' : 'Off by ' + err + ' year' + (err === 1 ? '' : 's');
+    rDelta.textContent  = diff + ' · ' + tier.label;
+  });
+}
+
+function animateSliderTo(target,cb){
+  const start=STATE.currentYear;
+  const dur=950;const t0=performance.now();
+  function frame(t){
+    const p=Math.min(1,(t-t0)/dur);
+    const e=1-Math.pow(1-p,3);
+    const overshoot=1+(1-p)*0.025*Math.sin(p*10);
+    setYear(start+(target-start)*e*overshoot);
+    if(p<1) requestAnimationFrame(frame);
+    else{setYear(target);cb&&cb();}
+  }
+  requestAnimationFrame(frame);
+}
+
+nextBtn.addEventListener('click',()=>{
+  reveal.classList.remove('show');
+  setTimeout(newRound,420);
+});
+
+// ── Round management ──
+function dailyIndex(){
+  return Math.floor(Date.now()/86400000)%EVENTS.length;
+}
+
+function newRound(){
+  STATE.locked=false; STATE.hintsUsed=0; STATE.hintedCountries.clear();
+  STATE.digitRevealed=false; STATE.revealedDigits={};
+  buildHintSlots(); updateHintSlots(); zoomOut();
+  // reset digit reveal UI
+  digitRevealBtn.classList.add('hidden');
+  digitRevealBtn.disabled = false;
+  drLabel.textContent = '🔢 Reveal a year digit';
+  drYear.classList.add('hidden');
+  drYear.textContent = '';
+  const infoText = document.getElementById('hintInfoText');
+  if(infoText) infoText.textContent = 'Tap any glowing country on the map for a historical clue';
+
+  let pool=EVENTS.filter(e=>!STATE.usedInPrompts.has(e.id));
+  if(!pool.length){STATE.usedInPrompts.clear();pool=EVENTS.slice();}
+  // Filter to active deck tag if one is selected
+  if(STATE.activeDeckTag){
+    const deckPool = pool.filter(e=>e.tag===STATE.activeDeckTag);
+    if(deckPool.length) pool = deckPool;
+    else { STATE.activeDeckTag=null; modeLabel.textContent='Endless Run'; }
+  }
+  let pick;
+  if(STATE.mode==='daily'){
+    pick=EVENTS[dailyIndex()];
+    roundTag.textContent='Daily · '+new Date().toLocaleDateString(undefined,{month:'short',day:'numeric'});
+  } else {
+    pick=pool[Math.floor(Math.random()*pool.length)];
+    if(STATE.activeDeckTag){
+      const def=DECK_DEFS.find(d=>d.tag===STATE.activeDeckTag);
+      roundTag.textContent=def ? def.icon+' '+def.name : 'Deck';
+    } else {
+      roundTag.textContent='Endless Run';
+    }
+  }
+  STATE.roundEvent=pick;STATE.usedInPrompts.add(pick.id);
+  promptText.textContent=pick.prompt;
+  promptCountry.textContent=COUNTRIES[pick.country]?.name||pick.country;
+  const cnames={EU:'Europe',AS:'Asia',AF:'Africa',NA:'North America',SA:'South America',OC:'Oceania'};
+  promptContinent.textContent=cnames[COUNTRIES[pick.country]?.cont]||'—';
+
+  // Reset score dot states
+  document.querySelectorAll('.cp').forEach(p=>p.classList.remove('used'));
+  document.querySelectorAll('.edot').forEach(d=>d.classList.remove('used'));
+
+  setYear(1500);
+}
+
+// ── Start screen ──
+function startGame(mode){
+  if(EVENTS.length === 0){
+    showToast('Still loading events — try again in a moment.', 'Loading…');
+    return;
+  }
+  document.getElementById('start').classList.add('hidden');
+  STATE.mode=mode;
+  document.getElementById('mmDailyBtn').classList.toggle('active', mode==='daily');
+  document.getElementById('mmEndlessBtn').classList.toggle('active', mode==='endless');
+  modeLabel.textContent=mode==='daily'?'Daily Chronicle':'Endless Run';
+  newRound();
+  // Brief tutorial toast on first play
+  setTimeout(()=>showToast(
+    'Tap any <b>glowing country</b> on the map for a clue. After 2 hints, you can reveal a digit of the mystery year!',
+    '💡 How to play'
+  ), 1400);
+}
+window.startGame=startGame;
+
+// ── Init ──
+buildHintSlots();
+setYear(1500);
+loadAssets();
+</script>
+</body>
+</html>
