@@ -1,0 +1,467 @@
+id,label,year,country,tag,source_file
+Q171150,Kingdom of Hungary,1000,Kingdom of Hungary,independence,independence_gap
+Q145749,Kingdom of Nri,1000,,independence,independence_gap
+Q174306,Republic of Genoa,1005,Italy,independence,independence_gap
+Q154667,Kingdom of Georgia,1008,,independence,independence_gap
+Q276841,Taifa of Badajoz,1009,,independence,independence_gap
+Q252323,Taifa of Dénia,1010,Spain,independence,independence_gap
+Q205708,Taifa of Granada,1013,Spain,independence,independence_gap
+Q33061,Taifa of Zaragoza,1018,,independence,independence_gap
+Q276951,Taifa of Seville,1023,,independence,independence_gap
+Q267484,Taifa of Málaga,1026,Spain,independence,independence_gap
+Q10922467,Tsongkha,1032,,independence,independence_gap
+Q199442,Kingdom of Aragon,1035,Spain,independence,independence_gap
+Q75613,Almoravid dynasty,1040,Algeria,independence,independence_gap
+Q179293,Kingdom of Castile,1065,Spain,independence,independence_gap
+Q250515,Eastern Ganga dynasty,1078,,independence,independence_gap
+Q22880,Electoral Palatinate,1085,Electoral Palatinate,independence,independence_gap
+Q170390,County of Oldenburg,1091,Holy Roman Empire,independence,independence_gap
+Q11308294,Seljuk State of Syria,1092,,independence,independence_gap
+Q152420,Duchy of Guelders,1096,Holy Roman Empire,independence,independence_gap
+Q269109,Principality of Ryazan,1097,,independence,independence_gap
+Q232806,County of Edessa,1098,,independence,independence_gap
+Q235030,Principality of Antioch,1098,Principality of Antioch,independence,independence_gap
+Q55502,Kingdom of Jerusalem,1099,Lebanon,independence,independence_gap
+Q272033,County of Tripoli,1102,Kingdom of Jerusalem,independence,independence_gap
+Q148540,Republic of Florence,1115,Republic of Florence,independence,independence_gap
+Q199688,Almohad Caliphate,1121,,independence,independence_gap
+Q107380,Lippe,1123,Germany,independence,independence_gap
+Q83546,Grand Principality of Vladimir,1125,Grand Principality of Vladimir,independence,independence_gap
+Q189545,Zengid dynasty,1127,,independence,independence_gap
+Q188586,Kingdom of Sicily,1130,Kingdom of Sicily,independence,independence_gap
+Q11026135,Principality of Salm,1135,,independence,independence_gap
+Q151536,Novgorod Republic,1136,Novgorod Republic,independence,independence_gap
+Q45670,Kingdom of Portugal,1139,Kingdom of Portugal,independence,independence_gap
+Q11344632,Sultanate of the Maldives,1153,United Kingdom of Great Britain and Ireland,independence,independence_gap
+Q148499,Margraviate of Brandenburg,1157,Holy Roman Empire,independence,independence_gap
+Q200262,Kingdom of Navarre,1162,,independence,independence_gap
+Q204920,Crown of Aragon,1162,,independence,independence_gap
+Q10827839,Taira administration,1167,Japan,independence,independence_gap
+Q171203,Benin Empire,1170,Nigeria,independence,independence_gap
+Q180114,Ayyubid dynasty,1171,Ayyubid Sultanate,independence,independence_gap
+Q5790,Seuna Dynasty,1173,,independence,independence_gap
+Q15581,Principality of Catalonia,1173,Principality of Catalonia,independence,independence_gap
+Q159856,Duchy of Brabant,1183,Holy Roman Empire,independence,independence_gap
+Q149846,County palatine of Cephalonia and Zakynthos,1185,Kingdom of Sicily,independence,independence_gap
+Q213638,Kingdom of Cyprus,1192,Kingdom of Cyprus,independence,independence_gap
+Q42585,Kingdom of Bohemia,1198,Austria–Hungary,independence,independence_gap
+Q294652,House of Ögedei,1200,,independence,independence_gap
+Q320530,lordship of Lichtenberg,1200,Holy Roman Empire,independence,independence_gap
+Q178897,Latin Empire,1204,,independence,independence_gap
+Q178913,Empire of Trebizond,1204,,independence,independence_gap
+Q181254,Empire of Nicaea,1204,Turkey,independence,independence_gap
+Q124298,Marquisate of Bodonitsa,1204,,independence,independence_gap
+Q325461,Kingdom of Thessalonica,1204,,independence,independence_gap
+Q428634,Lordship of Negroponte,1204,,independence,independence_gap
+Q187684,Despotate of Epirus,1205,,independence,independence_gap
+Q332005,Principality of Achaea,1205,,independence,independence_gap
+Q334714,Duchy of Athens,1205,,independence,independence_gap
+Q12557,Mongol Empire,1206,,independence,independence_gap
+Q229411,Delhi Sultanate,1206,Delhi Sultanate,independence,independence_gap
+Q117020,Free Imperial City of Nuremberg,1219,Holy Roman Empire,independence,independence_gap
+Q1949209,Taifa of Lorca,1228,Spain,independence,independence_gap
+Q156020,State of the Teutonic Order,1230,,independence,independence_gap
+Q217196,Crown of Castile,1230,Crown of Castile,independence,independence_gap
+Q184536,Mali Empire,1235,,independence,independence_gap
+Q49683,Grand Duchy of Lithuania,1236,,independence,independence_gap
+Q1796198,Kingdom of Córdoba,1236,Spain,independence,independence_gap
+Q142417,Kingdom of Valencia,1238,Crown of Aragon,independence,independence_gap
+Q238445,Emirate of Granada,1238,Emirate of Granada,independence,independence_gap
+Q1796196,Kingdom of the Algarve,1242,Kingdom of Portugal,independence,independence_gap
+Q79965,Golden Horde,1243,Golden Horde,independence,independence_gap
+Q163268,Principality of Tver,1247,,independence,independence_gap
+Q1796239,Kingdom of Seville,1248,Spain,independence,independence_gap
+Q282428,Mamluk Sultanate of Egypt,1250,Egypt,independence,independence_gap
+Q462329,Duchy of Upper Bavaria,1255,,independence,independence_gap
+Q178084,Ilkhanate,1256,Mongol Empire,independence,independence_gap
+Q170770,Grand Principality of Moscow,1263,Grand Principality of Moscow,independence,independence_gap
+Q3284315,Samudra Pasai,1267,Aceh Sultanate,independence,independence_gap
+Q207521,Ethiopian Empire,1270,Ethiopia,independence,independence_gap
+Q424856,Kingdom of al-Abwab,1276,,independence,independence_gap
+Q173065,Kingdom of Naples,1282,,independence,independence_gap
+Q157727,Ifat Sultanate,1285,,independence,independence_gap
+Q206279,Waalo,1287,Senegal,independence,independence_gap
+Q435583,Old Swiss Confederacy,1291,Switzerland,independence,independence_gap
+Q49326,Majapahit,1293,Indonesia,independence,independence_gap
+Q313175,Saxe-Lauenburg,1296,,independence,independence_gap
+Q12560,Ottoman Empire,1299,Ottoman Empire,independence,independence_gap
+Q27842,Kingdom of Singapura,1299,,independence,independence_gap
+Q144395,Zainabad,1300,India,independence,independence_gap
+Q318987,Prince-Bishopric of Eichstätt,1305,Holy Roman Empire,independence,independence_gap
+Q1900716,Margraviate Hachberg-Sausenberg,1306,Germany,independence,independence_gap
+Q1968654,Beylik of Saruhan,1313,Turkey,independence,independence_gap
+Q55521,Chūzan,1314,,independence,independence_gap
+Q55522,Nanzan,1314,,independence,independence_gap
+Q55523,Hokuzan,1314,,independence,independence_gap
+Q373988,Beylik of Teke,1321,,independence,independence_gap
+Q385084,Great Perm,1323,,independence,independence_gap
+Q165154,Kingdom of Sardinia,1324,Italy,independence,independence_gap
+Q389004,Principality of Wallachia,1330,Principality of Wallachia,independence,independence_gap
+Q27260,Samma dynasty,1335,,independence,independence_gap
+Q167639,Vijayanagara Empire,1336,India,independence,independence_gap
+Q1931074,Sarbadars,1337,,independence,independence_gap
+Q1963593,Nagod State,1344,,independence,independence_gap
+Q374521,Bahmani Sultanate,1347,India,independence,independence_gap
+Q317078,Pskov Republic,1348,Pskov Republic,independence,independence_gap
+Q6821029,Song,1355,,independence,independence_gap
+Q156199,Electorate of Saxony,1356,Holy Roman Empire,independence,independence_gap
+Q208169,Republic of Ragusa,1358,Republic of Ragusa,independence,independence_gap
+Q178085,Principality of Zeta,1360,Serbia,independence,independence_gap
+Q6669561,Chen Han,1360,,independence,independence_gap
+Q473557,Land van Ravenstein,1360,,independence,independence_gap
+Q7126720,Palanpur State,1370,India,independence,independence_gap
+Q484195,Timurid Empire,1370,,independence,independence_gap
+Q324470,Qara Qoyunlu,1375,,independence,independence_gap
+Q555994,Aq Qoyunlu,1378,,independence,independence_gap
+Q481766,Amurru kingdom,1380,,independence,independence_gap
+Q157109,Burgundian Netherlands,1384,Burgundian State,independence,independence_gap
+Q171348,Crown of the Kingdom of Poland,1386,Crown of the Kingdom of Poland,independence,independence_gap
+Q6412645,Kingdom of Raigama,1391,,independence,independence_gap
+Q28179,Joseon,1392,Joseon,independence,independence_gap
+Q552033,Bavaria-Munich,1392,Holy Roman Empire,independence,independence_gap
+Q571775,Bavaria-Ingolstadt,1392,Holy Roman Empire,independence,independence_gap
+Q153529,Duchy of Milan,1395,Holy Roman Empire,independence,independence_gap
+Q264970,Anhalt-Köthen,1396,Germany,independence,independence_gap
+Q278874,Anhalt-Dessau,1396,Holy Roman Empire,independence,independence_gap
+Q62623,Kalmar Union,1397,,independence,independence_gap
+Q34762,Principality of Bayreuth,1398,Holy Roman Empire,independence,independence_gap
+Q42199,Principality of Ansbach,1398,Holy Roman Empire,independence,independence_gap
+Q537503,Principality of Piombino,1398,,independence,independence_gap
+Q266923,Kingdom of Mysore,1399,British Raj,independence,independence_gap
+Q46652,Malacca sultanate,1400,,independence,independence_gap
+Q6816525,Menceyato of Anaga,1400,Spain,independence,independence_gap
+Q80702,Spanish Empire,1402,Spain,independence,independence_gap
+Q6412684,Kingdom of the Canary Islands,1402,,independence,independence_gap
+Q422065,Sultanate of Sulu,1405,Sultanate of Sulu,independence,independence_gap
+Q507796,Gujarat Sultanate,1407,Gujarat Sultanate,independence,independence_gap
+Q200464,Portuguese Empire,1415,Portugal,independence,independence_gap
+Q426025,Duchy of Savoy,1416,Holy Roman Empire,independence,independence_gap
+Q473748,Buganda,1420,Uganda,independence,independence_gap
+Q322062,Duchy of Jülich-Berg,1423,Holy Roman Empire,independence,independence_gap
+Q430309,Dai Viet,1428,Vietnam,independence,independence_gap
+Q28025,Ryukyu Kingdom,1429,Ryukyu Kingdom,independence,independence_gap
+Q1885093,Mahra Sultanate,1432,Yemen,independence,independence_gap
+Q28573,Inca Empire,1438,,independence,independence_gap
+Q186537,Khanate of Qazan,1438,Khanate of Qazan,independence,independence_gap
+Q160440,Crimean Khanate,1441,,independence,independence_gap
+Q252580,Duchy of Modena and Reggio,1452,Duchy of Modena and Reggio,independence,independence_gap
+Q1760473,Principality of Abkhazia,1463,Ottoman Empire,independence,independence_gap
+Q202687,Songhai Empire,1464,,independence,independence_gap
+Q1951726,Mudhol State,1465,,independence,independence_gap
+Q195972,Kingdom of Kartli,1466,,independence,independence_gap
+Q210163,Astrakhan Khanate,1466,,independence,independence_gap
+Q49322,Sultanate of Demak,1475,Indonesia,independence,independence_gap
+Q330533,Seventeen Provinces,1482,Holy Roman Empire,independence,independence_gap
+Q1949848,Angoche Sultanate,1485,,independence,independence_gap
+Q519718,Taungoo dynasty,1485,Myanmar,independence,independence_gap
+Q83821,Bijapur Sultanate,1490,,independence,independence_gap
+Q190513,Siberian Khanate,1490,Russia,independence,independence_gap
+Q400998,Ahmadnagar Sultanate,1490,India,independence,independence_gap
+Q221474,first arrival of Christopher Columbus to America,1492,,science,science_gap
+Q66747128,Columbus explores Rum Cay Bahamas,1492,,science,science_gap
+Q66747509,Columbus explores Crooked Island,1492,,science,science_gap
+Q1796202,Kingdom of Granada,1492,Spain,independence,independence_gap
+Q951383,The Portuguese discovery of the sea route to India,1498,Portugal,science,science_gap
+Q3042917,discovery of Brazil,1500,France,science,science_gap
+Q121869,Nupe,1500,,independence,independence_gap
+Q150056,Kingdom of Cochin,1500,British Raj,independence,independence_gap
+Q369587,Kingdom of Kakongo,1500,,independence,independence_gap
+Q3106846,Wajo Kingdom,1500,Indonesia,independence,independence_gap
+Q3241025,Limbdi State,1500,India,independence,independence_gap
+Q2988343,Portuguese Malacca,1511,Malaysia,independence,independence_gap
+Q2627602,Mukhrani,1512,,independence,independence_gap
+Q248572,Sultanate of Maguindanao,1515,,independence,independence_gap
+Q3045696,Regency of Algiers,1516,Regency of Algiers,independence,independence_gap
+Q3324486,Prince-Bishopric of Montenegro,1516,,independence,independence_gap
+Q3136850,Kingdom of Sitawaka,1521,,independence,independence_gap
+Q38872,Prussia,1525,Prussia,independence,independence_gap
+Q153091,Duchy of Prussia,1525,Duchy of Prussia,independence,independence_gap
+Q33296,Mughal Empire,1526,,independence,independence_gap
+Q153136,Habsburg monarchy,1526,Habsburg monarchy,independence,independence_gap
+Q253094,Kingdom of Hungary,1526,Austrian Empire,independence,independence_gap
+Q119695,New Castile Governorate,1528,Spanish Empire,independence,independence_gap
+Q179023,French colonial empire,1534,France,independence,independence_gap
+Q62651,Denmark–Norway,1536,,independence,independence_gap
+Q373650,Sur Empire,1540,,independence,independence_gap
+Q215530,Kingdom of Ireland,1542,Kingdom of Ireland,independence,independence_gap
+Q186096,Tsardom of Russia,1547,Tsardom of Russia,independence,independence_gap
+Q1798703,Sonepur State,1556,,independence,independence_gap
+Q454436,Palatinate-Sulzbach,1557,,independence,independence_gap
+Q156038,Duchy of Courland and Semigallia,1561,,independence,independence_gap
+Q1759249,Real Audiencia de Quito,1563,Spanish Empire,independence,independence_gap
+Q928,Philippines,1565,Philippines,independence,independence_gap
+Q154849,Grand Duchy of Tuscany,1569,Italy,independence,independence_gap
+Q172107,Polish–Lithuanian Commonwealth,1569,Polish–Lithuanian Commonwealth,independence,independence_gap
+Q157013,Hohenzollern-Sigmaringen,1576,Germany,independence,independence_gap
+Q377350,Iberian Union,1580,Spain,independence,independence_gap
+Q170072,Dutch Republic,1581,Dutch Republic,independence,independence_gap
+Q1688822,Jhabua State,1584,India,independence,independence_gap
+Q1768252,Kingdom of Baluba,1585,,independence,independence_gap
+Q402145,Mataram Sultanate,1586,Mataram Sultanate,independence,independence_gap
+Q5518616,Galileo's Leaning Tower of Pisa experiment,1589,Grand Duchy of Tuscany,science,science_gap
+Q1784316,Koriya,1600,India,independence,independence_gap
+Q205662,Tokugawa shogunate,1603,Japan,independence,independence_gap
+Q382593,New Netherland,1609,Dutch Republic,independence,independence_gap
+Q1785349,Kota State,1613,British Raj,independence,independence_gap
+Q157367,Brandenburg-Prussia,1618,,independence,independence_gap
+Q2817348,Bima Sultanate,1620,Indonesia,independence,independence_gap
+Q256961,Electorate of Bavaria,1623,Holy Roman Empire,independence,independence_gap
+Q130654,Dutch Empire,1624,Netherlands,independence,independence_gap
+Q209327,Kuba Kingdom,1625,,independence,independence_gap
+Q1791839,Akwamu,1625,,independence,independence_gap
+Q463845,Landgraviate of Hesse-Rotenburg,1627,Holy Roman Empire,independence,independence_gap
+Q180235,Wadhwan State,1630,India,independence,independence_gap
+Q221357,Dutch Brazil,1630,Netherlands,independence,independence_gap
+Q2634240,Asahan Sultanate,1630,,independence,independence_gap
+Q8733,Qing dynasty,1636,,independence,independence_gap
+Q139948,Khanate of Kalat,1638,,independence,independence_gap
+Q310650,Schaumburg-Lippe,1643,,independence,independence_gap
+Q330362,Commonwealth of England,1649,,independence,independence_gap
+Q15824804,Kénédougou Kingdom,1650,,independence,independence_gap
+Q23361,Magdeburg hemispheres,1654,,science,science_gap
+Q152855,Kingdom of Tungning,1661,,independence,independence_gap
+Q11723502,Jaxa,1665,,independence,independence_gap
+Q1796223,Kingdom of Lunda,1665,,independence,independence_gap
+Q11944481,Raghogarh State,1673,India,independence,independence_gap
+Q83618,Maratha Empire,1674,,independence,independence_gap
+Q1740542,Quba Khanate,1680,,independence,independence_gap
+Q391189,Taiwan under Qing dynasty rule,1683,Qing dynasty,independence,independence_gap
+Q1281398,Gustav III of Sweden's coffee experiment,1700,,science,science_gap
+Q454941,Amarasi,1700,Indonesia,independence,independence_gap
+Q27306,Kingdom of Prussia,1701,German Empire,independence,independence_gap
+Q1778868,Kingdom of Gumma,1701,,independence,independence_gap
+Q161885,Kingdom of Great Britain,1707,Kingdom of Great Britain,independence,independence_gap
+Q338248,Kingdom of Luang Phrabang,1707,,independence,independence_gap
+Q1843786,Anhalt-Bernburg-Schaumburg-Hoym,1718,,independence,independence_gap
+Q34266,Russian Empire,1721,Russian Empire,independence,independence_gap
+Q12491400,Pelalawan Sultanate,1725,,independence,independence_gap
+Q404774,Sultanate of Lahej,1728,Yemen,independence,independence_gap
+Q150058,Kingdom of Thiruvithamkoor,1729,British Raj,independence,independence_gap
+Q1740533,Baku Khanate,1735,,independence,independence_gap
+Q83444,Kingdom of Corsica,1736,,independence,independence_gap
+Q180393,Kingdom of the Two Sicilies,1738,Kingdom of the Two Sicilies,independence,independence_gap
+Q1776972,Ramdurg State,1742,,independence,independence_gap
+Q1806438,Las Bela State,1742,British Raj,independence,independence_gap
+Q1703449,Shaki Khanate,1743,Russian Empire,independence,independence_gap
+Q146871,First Saudi State,1744,Saudi Arabia,independence,independence_gap
+Q210198,Erivan Khanate,1747,Afsharid Iran,independence,independence_gap
+Q12844379,Kazakh sultanate,1747,,independence,independence_gap
+Q1740529,Derbent Khanate,1747,Russia,independence,independence_gap
+Q1740536,Ganja khanate,1747,,independence,independence_gap
+Q467627,Durrani Empire,1747,,independence,independence_gap
+Q12191529,Emirate of Lengeh,1750,Iran,independence,independence_gap
+Q146597,Zand Iran,1751,,independence,independence_gap
+Q176466,Rewa State,1755,British Raj,independence,independence_gap
+Q2001966,Company rule in India,1757,British Empire,independence,independence_gap
+Q282475,Kingdom of Kartli-Kakheti,1762,,independence,independence_gap
+Q1728782,Kapurthala State,1772,British Raj,independence,independence_gap
+Q175934,Pratapgarh State,1775,,independence,independence_gap
+Q1806491,Transylvania Colony,1775,United States,independence,independence_gap
+Q501684,Kingdom of Gomma,1780,,independence,independence_gap
+Q21002732,discovery of Uranus,1781,,science,science_gap
+Q123376497,Pictet's experiment,1790,,science,science_gap
+Q1759078,Kingdom of Jimma,1790,,independence,independence_gap
+Q69323,French constitutional monarchy,1791,France,independence,independence_gap
+Q58296,French First Republic,1792,France,independence,independence_gap
+Q83536,Anglo-Corsican Kingdom,1794,,independence,independence_gap
+Q156418,Kingdom of Hawaiʻi,1795,Kingdom of Hawaiʻi,independence,independence_gap
+Q188553,Batavian Republic,1795,Batavian Republic,independence,independence_gap
+Q370736,Cape Colony,1795,British Empire,independence,independence_gap
+Q463289,Cispadane Republic,1796,,independence,independence_gap
+Q213353,Cisalpine Republic,1797,Cisalpine Republic,independence,independence_gap
+Q206696,Helvetic Republic,1798,Helvetic Republic,independence,independence_gap
+Q175881,Roman Republic,1798,Italy,independence,independence_gap
+Q514423,Parthenopean Republic,1799,Parthenopean Republic,independence,independence_gap
+Q188161,Dutch East Indies,1800,Kingdom of the Netherlands,independence,independence_gap
+Q129799,Bukey Horde,1801,Russian Empire,independence,independence_gap
+Q174193,United Kingdom of Great Britain and Ireland,1801,United Kingdom of Great Britain and Ireland,independence,independence_gap
+Q223793,Kingdom of Etruria,1801,,independence,independence_gap
+Q131964,Austrian Empire,1804,Austrian Empire,independence,independence_gap
+Q790,Haiti,1804,Haiti,independence,independence_gap
+Q223936,Kingdom of Italy,1805,Kingdom of Italy,independence,independence_gap
+Q153015,Kingdom of Saxony,1806,German Reich,independence,independence_gap
+Q154195,Kingdom of Bavaria,1806,German Reich,independence,independence_gap
+Q159631,Kingdom of Württemberg,1806,German Empire,independence,independence_gap
+Q186320,Grand Duchy of Baden,1806,Germany,independence,independence_gap
+Q20135,Grand Duchy of Hesse,1806,German Reich,independence,independence_gap
+Q212278,Kingdom of Holland,1806,Kingdom of Holland,independence,independence_gap
+Q249428,Grand Duchy of Berg,1806,Grand Duchy of Berg,independence,independence_gap
+Q152115,Duchy of Warsaw,1807,Duchy of Warsaw,independence,independence_gap
+Q153943,Kingdom of Westphalia,1807,Kingdom of Westphalia,independence,independence_gap
+Q8935,First Republic of Venezuela,1810,Venezuela,independence,independence_gap
+Q8950,Second Republic of Venezuela,1813,Venezuela,independence,independence_gap
+Q164079,Kingdom of Hanover,1814,,independence,independence_gap
+Q158445,Grand Duchy of Mecklenburg-Schwerin,1815,German Reich,independence,independence_gap
+Q161215,Grand Duchy of Mecklenburg-Strelitz,1815,,independence,independence_gap
+Q15864,United Kingdom of the Netherlands,1815,,independence,independence_gap
+Q207162,Bourbon Restoration in France,1815,France,independence,independence_gap
+Q209857,Kingdom of Lombardy–Venetia,1815,Austrian Empire,independence,independence_gap
+Q3733130,Oersted's law,1818,,science,science_gap
+Q146862,Second Saudi State,1818,,independence,independence_gap
+Q199821,Gran Colombia,1819,Gran Colombia,independence,independence_gap
+Q157734,Muscat and Oman,1820,,independence,independence_gap
+Q217230,Empire of Brazil,1822,Empire of Brazil,independence,independence_gap
+Q190025,Federal Republic of Central America,1823,,independence,independence_gap
+Q209065,Kingdom of Greece,1832,Kingdom of Greece,independence,independence_gap
+Q162192,Riograndense Republic,1836,,independence,independence_gap
+Q170588,Republic of Texas,1836,,independence,independence_gap
+Q664,New Zealand,1841,New Zealand,independence,independence_gap
+Q786,Dominican Republic,1844,Dominican Republic,independence,independence_gap
+Q1356165,discovery of Neptune,1846,United Kingdom,science,science_gap
+Q17557,California Republic,1846,United States,independence,independence_gap
+Q220167,Republic of Lydenburg,1849,,independence,independence_gap
+Q218023,Orange Free State,1854,,independence,independence_gap
+Q157904,Sultanate of Zanzibar,1856,Sultanate of Zanzibar,independence,independence_gap
+Q129286,British Raj,1858,British Empire,independence,independence_gap
+Q202775,Qu'aiti Sultanate,1858,Yemen,independence,independence_gap
+Q172579,Kingdom of Italy,1861,,independence,independence_gap
+Q214102,Union,1861,,independence,independence_gap
+Q134513300,Discovery of Christians,1865,,science,science_gap
+Q127861,Khedivate of Egypt,1867,Egypt,independence,independence_gap
+Q150981,North German Confederation,1867,,independence,independence_gap
+Q28513,Austria–Hungary,1867,Austria–Hungary,independence,independence_gap
+Q188712,Empire of Japan,1868,Japan,independence,independence_gap
+Q203493,Kingdom of Romania,1881,,independence,independence_gap
+Q241748,Kingdom of Serbia,1882,Kingdom of Serbia,independence,independence_gap
+Q153665,German South-West Africa,1884,German colonial empire,independence,independence_gap
+Q153963,German East Africa,1885,German Empire,independence,independence_gap
+Q185682,French Indochina,1887,People's Republic of China,independence,independence_gap
+Q319881,Republic of Formosa,1895,Republic of Formosa,independence,independence_gap
+Q28233,Korean Empire,1897,Korean Empire,independence,independence_gap
+Q241,Cuba,1898,Cuba,independence,independence_gap
+Q167360,First Portuguese Republic,1910,Portugal,independence,independence_gap
+Q865,Taiwan,1912,Taiwan,independence,independence_gap
+Q187035,Principality of Albania,1914,,independence,independence_gap
+Q175379,Empire of China,1915,,independence,independence_gap
+Q2184,Russian Soviet Federative Socialist Republic,1917,Soviet Union,independence,independence_gap
+Q139319,Russian Republic,1917,Russian Republic,independence,independence_gap
+Q190636,Centrocaspian Dictatorship,1918,,independence,independence_gap
+Q139670,First Republic of Armenia,1918,Armenia,independence,independence_gap
+Q140359,First Czechoslovak Republic,1918,,independence,independence_gap
+Q65041294,Eddington experiment,1919,,science,science_gap
+Q2895,Byelorussian Soviet Socialist Republic,1919,Soviet Union,independence,independence_gap
+Q133356,Ukrainian Soviet Socialist Republic,1919,Soviet Union,independence,independence_gap
+Q131337,Azerbaijan Soviet Socialist Republic,1920,Soviet Union,independence,independence_gap
+Q132856,Armenian Soviet Socialist Republic,1920,Soviet Union,independence,independence_gap
+Q146562,State of Damascus,1920,French colonial empire,independence,independence_gap
+Q146600,Arab Kingdom of Syria,1920,,independence,independence_gap
+Q156506,Serbian-Hungarian Baranya-Baja Republic,1921,,independence,independence_gap
+Q130229,Georgian Soviet Socialist Republic,1921,Soviet Union,independence,independence_gap
+Q15180,Soviet Union,1922,Soviet Union,independence,independence_gap
+Q124943,Kingdom of Egypt,1922,Kingdom of Egypt,independence,independence_gap
+Q139708,French Mandate for Syria and the Lebanon,1923,,independence,independence_gap
+Q137649300,Millikan cosmic ray experiment at Muir Lake (1925),1925,,science,science_gap
+Q145,United Kingdom,1927,United Kingdom,independence,independence_gap
+Q1590641,Rüchardt experiment,1929,,science,science_gap
+Q191077,Kingdom of Yugoslavia,1929,,independence,independence_gap
+Q178038,Second Spanish Republic,1931,Spain,independence,independence_gap
+Q1616753,Brocken Experiment,1932,,science,science_gap
+Q7318,Nazi Germany,1933,German Reich,independence,independence_gap
+Q176495,Federal State of Austria,1934,,independence,independence_gap
+Q138251,Asturian Peasants' and Workers' Republic,1934,,independence,independence_gap
+Q146328,Commonwealth of the Philippines,1935,,independence,independence_gap
+Q168811,Kazakh Soviet Socialist Republic,1936,Soviet Union,independence,independence_gap
+Q27,Ireland,1937,Ireland,independence,independence_gap
+Q116080,Polish Underground State,1939,,independence,independence_gap
+Q54974569,Bruno Rossi and David B. Hall experiment,1940,,science,science_gap
+Q130280,Estonian Soviet Socialist Republic,1940,Soviet Union,independence,independence_gap
+Q189,Iceland,1944,Iceland,independence,independence_gap
+Q252,Indonesia,1945,Indonesia,independence,independence_gap
+Q172640,North Vietnam,1945,Vietnam,independence,independence_gap
+Q28225391,Moon radar experiment,1946,Hungary,science,science_gap
+Q121932,People's Republic of Bulgaria,1946,Bulgaria,independence,independence_gap
+Q17,Japan,1947,Japan,independence,independence_gap
+Q16410,Hungarian People's Republic,1949,Hungarian People's Republic,independence,independence_gap
+Q16957,German Democratic Republic,1949,German Democratic Republic,independence,independence_gap
+Q25227,Netherlands Antilles,1954,Kingdom of the Netherlands,independence,independence_gap
+Q25279,Curaçao,1954,Kingdom of the Netherlands,independence,independence_gap
+Q180573,South Vietnam,1955,Vietnam,independence,independence_gap
+Q1303351,Wu experiment,1956,,science,science_gap
+Q1385044,Goldhaber experiment,1957,,science,science_gap
+Q170468,United Arab Republic,1958,,independence,independence_gap
+Q1019,Madagascar,1960,Madagascar,independence,independence_gap
+Q683,Samoa,1962,Samoa,independence,independence_gap
+Q766,Jamaica,1962,Jamaica,independence,independence_gap
+Q157535,People's Republic of Zanzibar,1964,Tanzania,independence,independence_gap
+Q334,Singapore,1965,Singapore,independence,independence_gap
+Q826,Maldives,1965,Maldives,independence,independence_gap
+Q26988,Cook Islands,1965,Cook Islands,independence,independence_gap
+Q244,Barbados,1966,Barbados,independence,independence_gap
+Q760,Saint Lucia,1967,Saint Lucia,independence,independence_gap
+Q763,Saint Kitts and Nevis,1967,Saint Kitts and Nevis,independence,independence_gap
+Q697,Nauru,1968,Nauru,independence,independence_gap
+Q1027,Mauritius,1968,Mauritius,independence,independence_gap
+Q678,Tonga,1970,Tonga,independence,independence_gap
+Q712,Fiji,1970,Fiji,independence,independence_gap
+Q5291089,Dominion of Fiji,1970,,independence,independence_gap
+Q398,Bahrain,1971,Bahrain,independence,independence_gap
+Q44642,Federation of Arab Republics,1972,,independence,independence_gap
+Q854,Sri Lanka,1972,Sri Lanka,independence,independence_gap
+Q488521,Fourth Republic of South Korea,1972,,independence,independence_gap
+Q769,Grenada,1974,Grenada,independence,independence_gap
+Q34020,Niue,1974,Niue,independence,independence_gap
+Q4250299,Autonomous Turkish Cypriot Administration,1974,Cyprus,independence,independence_gap
+Q574,Timor-Leste,1975,Timor-Leste,independence,independence_gap
+Q691,Papua New Guinea,1975,Papua New Guinea,independence,independence_gap
+Q970,Comoros,1975,Comoros,independence,independence_gap
+Q1011,Cape Verde,1975,Cape Verde,independence,independence_gap
+Q1039,São Tomé and Príncipe,1975,São Tomé and Príncipe,independence,independence_gap
+Q4393602,Republic of the North Solomons,1975,Papua New Guinea,independence,independence_gap
+Q2208280,People's Republic of Angola,1975,,independence,independence_gap
+Q2368688,Republic of Cabinda,1975,,independence,independence_gap
+Q189988,Central African Empire,1976,,independence,independence_gap
+Q754,Trinidad and Tobago,1976,Trinidad and Tobago,independence,independence_gap
+Q1042,Seychelles,1976,Seychelles,independence,independence_gap
+Q330988,Democratic Kampuchea,1976,Cambodia,independence,independence_gap
+Q4843701,Great Socialist People's Libyan Arab Jamahiriya,1977,Libya,independence,independence_gap
+Q672,Tuvalu,1978,Tuvalu,independence,independence_gap
+Q685,Solomon Islands,1978,Solomon Islands,independence,independence_gap
+Q784,Dominica,1978,Dominica,independence,independence_gap
+Q16674377,Federal Islamic Republic of the Comoros,1978,Federal Islamic Republic of the Comoros,independence,independence_gap
+Q476757,Democratic Republic of Afghanistan,1978,,independence,independence_gap
+Q710,Kiribati,1979,Kiribati,independence,independence_gap
+Q757,Saint Vincent and the Grenadines,1979,Saint Vincent and the Grenadines,independence,independence_gap
+Q3509510,Second Nigerian Republic,1979,Nigeria,independence,independence_gap
+Q686,Vanuatu,1980,Vanuatu,independence,independence_gap
+Q781,Antigua and Barbuda,1981,,independence,independence_gap
+Q482705,Fifth Republic of South Korea,1981,,independence,independence_gap
+Q23681,Northern Cyprus,1983,Northern Cyprus,independence,independence_gap
+Q1405344,first superstring revolution,1984,,science,science_gap
+Q5866720,Republic of Sudan,1985,Sudan,independence,independence_gap
+Q2908501,The Seas with Nemo & Friends,1986,United States,exploration,exploration_gap
+Q702,Federated States of Micronesia,1986,Federated States of Micronesia,independence,independence_gap
+Q709,Marshall Islands,1986,Marshall Islands,independence,independence_gap
+Q21203,Aruba,1986,Aruba,independence,independence_gap
+Q2067309,Republic of Afghanistan,1987,,independence,independence_gap
+Q2504040,Gagauz Republic,1989,Moldova,independence,independence_gap
+Q4416710,SAO Western Slavonia,1990,,independence,independence_gap
+Q1998866,Czech and Slovak Federal Republic,1990,,independence,independence_gap
+Q2354842,Community of Municipalities of Northern Dalmatia and Lika,1990,,independence,independence_gap
+Q65362,"SAO Eastern Slavonia, Baranja and Western Syrmia",1991,Socialist Republic of Croatia,independence,independence_gap
+Q244165,Republic of Artsakh,1991,,independence,independence_gap
+Q3456400,Republic of Georgia (1990–1992),1991,,independence,independence_gap
+Q116681951,Satellite Orbital Debris Characterization Impact Test,1992,,science,science_gap
+Q4114520,Military Council,1992,,independence,independence_gap
+Q192262,Autonomous Province of Western Bosnia,1993,,independence,independence_gap
+Q695,Palau,1994,Palau,independence,independence_gap
+Q3124829,HERMES experiment,1995,Germany,science,science_gap
+Q11401339,Human Bones Incident in Hokkaido University,1995,Japan,science,science_gap
+Q427941,Islamic Emirate of Afghanistan,1996,Afghanistan,independence,independence_gap
+Q5011260,CHOOZ,1999,,science,science_gap
+Q102253563,decoupling of median wages from productivity,2000,,science,science_gap
+Q4689103,Transitional Islamic State of Afghanistan,2002,Afghanistan,independence,independence_gap
+Q37024,Serbia and Montenegro,2003,Serbia and Montenegro,independence,independence_gap
+Q2552742,Northland State,2008,Somalia,independence,independence_gap
+Q124377954,Hawking's time traveller party,2009,,science,science_gap
+Q1233032,EisenEx,2009,,science,science_gap
+Q4327279,2009 Norwegian spiral anomaly,2009,Norway,science,science_gap
+Q26273,Sint Maarten,2010,Kingdom of the Netherlands,independence,independence_gap
+Q4624917,2012 Boeing 727 crash experiment,2012,Mexico,science,science_gap
+Q4170280,exhumation of Richard III of England,2012,United Kingdom,science,science_gap
+Q2621587,Waqooyi-Bari,2012,Somalia,independence,independence_gap
+Q3393969,Pokémania,2016,,science,science_gap
+Q56703616,NASA's TESS spacecraft reports its first exoplanet,2018,,science,science_gap
+Q72067697,2019 Grays incident,2019,United Kingdom,science,science_gap
+Q90297029,2020 toilet paper shortage,2020,,science,science_gap
+Q110894549,fusion experiment on 21 December 2021,2021,,science,science_gap
+Q131456418,fusion experiment on 3 October 2023,2023,,science,science_gap

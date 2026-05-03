@@ -1,0 +1,858 @@
+id,label,year,country,tag,source_file
+Q2890828,Battle of Val-de-Saire,1001,France,war,WarsRecord.csv
+Q2890236,Battle of Torà,1006,Spain,war,WarsRecord.csv
+Q3104848,Fitna of al-Andalus,1009,Caliphate of Córdoba,revolution,Coups.csv
+Q2888155,Battle of Bitola,1015,North Macedonia,war,WarsRecord.csv
+Q116251022,assassination of Prince Boris of Rostov,1015,Kievan Rus',culture,Disasters.csv
+Q130530282,assassination of Prince Gleb of Murom,1015,Kievan Rus',culture,Disasters.csv
+Q2637246,Battle of Sasireti,1042,Kingdom of Georgia,war,WarsRecord.csv
+Q2628015,Battle of Kapetron,1048,Turkey,war,WarsRecord.csv
+Q2855373,Battle of Petroe,1057,Byzantine Empire,war,WarsRecord.csv
+Q124428025,Civil War in Poland,1077,Kingdom of Poland,revolution,Coups.csv
+Q2888888,Battle of Kalavrye,1078,Turkey,war,WarsRecord.csv
+Q2781949,Battle of Mynydd Carn,1081,Wales,war,WarsRecord.csv
+Q2878470,Battle of Morella,1084,Spain,war,WarsRecord.csv
+Q3195891,Battle of Alnwick,1093,Kingdom of England,war,WarsRecord.csv
+Q16675405,Kievan Rus' Civil War of 1094–1097,1094,Kievan Rus',revolution,Coups.csv
+Q2724181,Battle of Alcoraz,1096,Spain,war,WarsRecord.csv
+Q2888093,Battle of Bairén,1097,Spain,war,WarsRecord.csv
+Q2888347,Battle of Consuegra,1097,Spain,war,WarsRecord.csv
+Q16675407,Kievan Rus' Civil War of 1097–1100,1097,Kievan Rus',revolution,Coups.csv
+Q334099,Orval Abbey,1101,Belgium,empire,Treaties.csv
+Q23491101,assassination of Minamoto no Yoshitada,1109,,culture,Disasters.csv
+Q2890297,Battle of Valtierra,1110,Spain,war,WarsRecord.csv
+Q2890239,Battle of Toury,1112,France,war,WarsRecord.csv
+Q2549350,Battle of Philomelion,1116,Sultanate of Rum,war,WarsRecord.csv
+Q2630913,Battle of Cutanda,1120,Spain,war,WarsRecord.csv
+Q2733432,Battle of São Mamede,1128,Portugal,war,WarsRecord.csv
+Q106839672,Danish Civil Wars,1131,Denmark,revolution,Coups.csv
+Q2888317,Battle of Clitheroe,1138,Kingdom of England,war,WarsRecord.csv
+Q4288100,Civil War in Rus' of 1146-1154,1146,Rus,revolution,Coups.csv
+Q51930478,Jerusalemite Civil War,1152,Kingdom of Jerusalem,revolution,Coups.csv
+Q842357,Hōgen rebellion,1156,Japan,revolution,Coups.csv
+Q4574512,Bloodfeast of Roskilde,1157,,culture,Disasters.csv
+Q2888248,Battle of Cassano,1158,Italy,war,WarsRecord.csv
+Q4288101,Civil War in Rus' of 1158-1161,1158,Kievan Rus',revolution,Coups.csv
+Q944859,Heiji rebellion,1160,Japan,revolution,Coups.csv
+Q4288096,"Internecine War in North-Eastern Rus', 1174-1177",1174,North-Eastern Rus',revolution,Coups.csv
+Q2888010,Battle of Ishibashiyama,1180,Japan,war,WarsRecord.csv
+Q737542,Genpei War,1180,Japan,revolution,Coups.csv
+Q2890114,Battle of Sunomata-gawa,1181,Japan,war,WarsRecord.csv
+Q2890415,Battle of Yahagi-gawa,1181,Japan,war,WarsRecord.csv
+Q2889511,Battle of Nicomédie,1182,Byzantine Empire,war,WarsRecord.csv
+Q2889980,Battle of Shinohara,1183,Japan,war,WarsRecord.csv
+Q2889028,Battle of Kurikara,1183,Japan,war,WarsRecord.csv
+Q2889433,Battle of Muroyama,1184,Japan,war,WarsRecord.csv
+Q2888057,Battle of Uji,1184,Japan,war,WarsRecord.csv
+Q2888964,Battle of Kojima,1185,Japan,war,WarsRecord.csv
+Q2888959,Battle of Koromo River,1189,Japan,war,WarsRecord.csv
+Q2888503,Battle of Florvåg,1194,Norway,war,WarsRecord.csv
+Q19692559,Civil War in Rus of 1195-1196,1195,Kievan Rus',revolution,Coups.csv
+Q913972,Order of Friars Minor,1201,Turkey,empire,Treaties.csv
+Q692799,Conventual Franciscans,1201,Ireland,empire,Treaties.csv
+Q450139,University Hospital Zurich,1201,Switzerland,empire,Treaties.csv
+Q2920414,Battle of Basian,1202,Kingdom of Georgia,war,WarsRecord.csv
+Q2669581,Loon War,1203,Netherlands,war,WarsRecord.csv
+Q165005,Franciscans,1209,Italy,empire,Treaties.csv
+Q2750179,Siege of Castelnòu d'Arri,1211,France,war,WarsRecord.csv
+Q4288098,"Internecine War in North-Eastern Rus', 1212-1216",1212,North-Eastern Rus',revolution,Coups.csv
+Q2890062,Battle of Steppes,1213,Belgium,war,WarsRecord.csv
+Q2086498,First Barons' War,1215,Kingdom of England,revolution,Coups.csv
+Q131479,Dominican Order,1215,Italy,empire,Treaties.csv
+Q2692278,Battle of Lihula,1220,Estonia,war,WarsRecord.csv
+Q1372308,Jōkyū War,1221,Japan,revolution,Coups.csv
+Q2563577,Battle of Samara Bend,1223,Volga Bulgaria,war,WarsRecord.csv
+Q2916261,Battle of Garni,1225,Armenia,war,WarsRecord.csv
+Q28667604,Internecine War in the Principality of Chernihiv,1226,Principality of Chernigov,revolution,Coups.csv
+Q2570116,Drenther Crusade,1228,Netherlands,war,WarsRecord.csv
+Q2792009,Battle of Portopí,1229,Spain,war,WarsRecord.csv
+Q2887845,Battle of Anbuk-bu,1231,Goryeo,war,WarsRecord.csv
+Q2888869,Battle of Jerez,1231,Spain,war,WarsRecord.csv
+Q2890815,Battle of the Puig,1237,Taifa of Valencia (third period),war,WarsRecord.csv
+Q2724154,Battle of Adrianople,1254,Bulgaria,war,WarsRecord.csv
+Q16871984,Toluid Civil War,1260,Mongol Empire,revolution,Coups.csv
+Q2799746,Battle of Hausbergen,1262,France,war,WarsRecord.csv
+Q2889962,Battle of Settepozzi,1263,Greece,war,WarsRecord.csv
+Q108582422,Hungarian Civil War,1264,Kingdom of Hungary (1000–1301),revolution,Coups.csv
+Q2571558,Battle of Mari,1266,Armenian Kingdom of Cilicia,war,WarsRecord.csv
+Q426430,Mesta,1273,Spain,empire,Treaties.csv
+Q2628082,Battle of Elbistan,1277,Turkey,war,WarsRecord.csv
+Q2527770,Battle of Devina,1279,Bulgaria,war,WarsRecord.csv
+Q4288099,Civil War in Northeast Russia from 1281 to 1293,1281,North-Eastern Rus',revolution,Coups.csv
+Q2888241,Battle of Campaldino,1289,Italy,war,WarsRecord.csv
+Q368643,University of Coimbra,1290,Portugal,empire,Treaties.csv
+Q123171353,Castilian Civil War,1296,Crown of Castile,revolution,Coups.csv
+Q209344,Sapienza University of Rome,1303,Italy,empire,Treaties.csv
+Q402237,Battle of Zappolino,1325,Italy,war,WarsRecord.csv
+Q1432624,Genkō War,1331,Japan,revolution,Coups.csv
+Q826021,Kenmu Restoration,1333,Japan,empire,Treaties.csv
+Q114620,Battle of Minatogawa,1336,Japan,war,WarsRecord.csv
+Q153712,Battle of Parabiago,1339,Italy,war,WarsRecord.csv
+Q667606,Battle of Laupen,1339,Switzerland,war,WarsRecord.csv
+Q616448,Battle of Champtoceaux,1341,France,war,WarsRecord.csv
+Q2658255,Byzantine Civil War of 1341–1347,1341,Byzantine Empire,revolution,Coups.csv
+Q645663,University of Pisa,1343,Italy,empire,Treaties.csv
+Q611827,Battle of Blanchetaque,1346,France,war,WarsRecord.csv
+Q11924838,War of the Union,1347,Crown of Aragon,revolution,Coups.csv
+Q31519,Charles University,1348,Czech Republic,empire,Treaties.csv
+Q6364172,Kannō disturbance,1350,Japan,revolution,Coups.csv
+Q1205962,Castilian Civil War,1351,Crown of Castile,revolution,Coups.csv
+Q201692,Battle of Poitiers,1356,France,war,WarsRecord.csv
+Q624937,Battle of Visby,1361,Sweden,war,WarsRecord.csv
+Q516507,Reconquest of Gallipoli,1366,Turkey,war,WarsRecord.csv
+Q558503,Battle of Rudau,1370,Russia,war,WarsRecord.csv
+Q615922,Battle of the Vozha River,1378,Russia,war,WarsRecord.csv
+Q681702,Battle of Sörenberg,1380,Switzerland,war,WarsRecord.csv
+Q210354,Battle of Kulikovo,1380,Grand Principality of Moscow,war,WarsRecord.csv
+Q12038667,Moravian Margrave Wars,1381,Margraviate of Moravia,revolution,Coups.csv
+Q612288,Battle of Pločnik,1385,Serbia,war,WarsRecord.csv
+Q661759,Battle of Sempach,1386,Switzerland,war,WarsRecord.csv
+Q646532,Battle of Castagnaro,1387,Italy,war,WarsRecord.csv
+Q667460,Battle of Näfels,1388,Old Swiss Confederacy,war,WarsRecord.csv
+Q179288,Battle of Kosovo,1389,Kosovo,war,WarsRecord.csv
+Q212220,Battle of Nicopolis,1396,Second Bulgarian Empire,war,WarsRecord.csv
+Q598069,Battle of Homildon Hill,1402,Kingdom of England,war,WarsRecord.csv
+Q209387,Battle of Ankara,1402,Turkey,war,WarsRecord.csv
+Q166961,Battle of Shrewsbury,1403,Kingdom of England,war,WarsRecord.csv
+Q12504843,Regreg War,1404,Majapahit,revolution,Coups.csv
+Q1021160,Armagnac–Burgundian Civil War,1407,France,revolution,Coups.csv
+Q647112,Battle of Koronowo,1410,Poland,war,WarsRecord.csv
+Q188495,Battle of Agincourt,1415,Kingdom of France,war,WarsRecord.csv
+Q134467758,Assassination of Racek Kobyla,1416,Kingdom of Bohemia,culture,Disasters.csv
+Q425617,Battle of Verneuil,1424,France,war,WarsRecord.csv
+Q4288097,Muscovite Civil War,1425,Grand Principality of Moscow,revolution,Coups.csv
+Q328768,Battle of Detern,1426,Germany,war,WarsRecord.csv
+Q671340,Battle of Maclodio,1427,Italy,war,WarsRecord.csv
+Q648535,Battle of Patay,1429,France,war,WarsRecord.csv
+Q283015,Battle of Beaugency,1429,France,war,WarsRecord.csv
+Q20105067,War of the Infantes of Aragon,1429,Crown of Castile,revolution,Coups.csv
+Q668577,Siege of Compiègne,1430,France,war,WarsRecord.csv
+Q2669939,Lithuanian Civil War of 1432–1438,1432,Grand Duchy of Lithuania,revolution,Coups.csv
+Q56318696,Castilian Civil War,1437,Crown of Castile,revolution,Coups.csv
+Q25501554,War for the Croatian-Hungarian crown in 1440,1440,Kingdom of Hungary,revolution,Coups.csv
+Q5365139,Kakitsu Incident,1441,Japan,culture,Disasters.csv
+Q451404,Battle of St. Jakob an der Sihl,1443,Switzerland,war,WarsRecord.csv
+Q133977,Battle of Caravaggio,1448,Italy,war,WarsRecord.csv
+Q1584610,Navarrese Civil War,1451,Spain,revolution,Coups.csv
+Q615542,Pontifical Croatian College of St. Jerome,1453,Italy,empire,Treaties.csv
+Q551549,Battle of Chojnice,1454,Poland,war,WarsRecord.csv
+Q2568602,First Utrecht Civil War,1456,Netherlands,revolution,Coups.csv
+Q74072,Battle of Albulena,1457,Albania,war,WarsRecord.csv
+Q581401,Battle of Blore Heath,1459,Kingdom of England,war,WarsRecord.csv
+Q281089,Battle of Ludford Bridge,1459,Kingdom of England,war,WarsRecord.csv
+Q620585,Battle of Mortimer's Cross,1461,Kingdom of England,war,WarsRecord.csv
+Q544936,Battle of Ferrybridge,1461,Kingdom of England,war,WarsRecord.csv
+Q634629,Battle of Towton,1461,Kingdom of England,war,WarsRecord.csv
+Q233416,Second Battle of St Albans,1461,Kingdom of England,war,WarsRecord.csv
+Q60826347,Georgian Civil War,1462,Kingdom of Georgia,revolution,Coups.csv
+Q265032,Battle of Montlhéry,1465,France,war,WarsRecord.csv
+Q136772871,Étude notariale VIII (Paris ; 1465-....),1465,France,empire,Treaties.csv
+Q136772888,Étude notariale XIX (Paris ; 1465-....),1465,France,empire,Treaties.csv
+Q532899,Battle of Molinella,1467,Italy,war,WarsRecord.csv
+Q387238,Battle of Tlatelolco,1473,Mexico,war,WarsRecord.csv
+Q163959,Battle of Héricourt,1474,Kingdom of France,war,WarsRecord.csv
+Q153978,University of Tübingen,1477,Germany,empire,Treaties.csv
+Q472614,Battle of Giornico,1478,Switzerland,war,WarsRecord.csv
+Q186285,University of Copenhagen,1479,Denmark,empire,Treaties.csv
+Q136772904,Étude notariale XX (Paris ; 1480-....),1480,France,empire,Treaties.csv
+Q222013,Battle of Bosworth Field,1485,Kingdom of England,war,WarsRecord.csv
+Q431122,Yeomen of the Guard,1485,United Kingdom,empire,Treaties.csv
+Q670094,Battle of Crevola,1487,Italy,war,WarsRecord.csv
+Q221474,first arrival of Christopher Columbus to America,1492,,technology,Inventions.csv
+Q66747128,Columbus explores Rum Cay Bahamas,1492,,technology,Inventions.csv
+Q66747509,Columbus explores Crooked Island,1492,,technology,Inventions.csv
+Q951383,The Portuguese discovery of the sea route to India,1498,India,technology,Inventions.csv
+Q136772895,Étude notariale XLIX (Paris ; 1498-....),1498,France,empire,Treaties.csv
+Q136772897,Étude notariale XLVI (Paris ; 1498-....),1498,France,empire,Treaties.csv
+Q136772917,Étude notariale XXXIII (Paris ; 1498-....),1498,France,empire,Treaties.csv
+Q251597,Battle of Dornach,1499,Switzerland,war,WarsRecord.csv
+Q165136,Swabian War,1499,Switzerland,war,WarsRecord.csv
+Q127751,Wars of the Roses,1500,Kingdom of England,war,WarsRecord.csv
+Q3042917,discovery of Brazil,1500,France,technology,Inventions.csv
+Q473669,Battle of Lake Smolina,1502,Russia,war,WarsRecord.csv
+Q7109927,Ottoman Civil War of 1509–13,1509,Ottoman Empire,revolution,Coups.csv
+Q151663,Revolt of the Comuneros,1520,Crown of Castile,war,WarsRecord.csv
+Q569485,Knights' War,1522,Holy Roman Empire,revolution,Coups.csv
+Q16418251,Safavid Civil War,1524,Safavid Iran,revolution,Coups.csv
+Q178510,Battle of Mohács,1526,Kingdom of Hungary,war,WarsRecord.csv
+Q261872,Battle of Tarcal,1527,Hungary,war,WarsRecord.csv
+Q203366,Battle of Gubel,1531,Switzerland,war,WarsRecord.csv
+Q5364397,Moriyama Kuzure,1536,Japan,culture,Disasters.csv
+Q283288,Battle of Abancay,1537,Peru,war,WarsRecord.csv
+Q5887915,Civil Wars between the conquerors of Peru,1537,Spanish Empire,revolution,Coups.csv
+Q279250,Battle of Baçente,1542,Ethiopian Empire,war,WarsRecord.csv
+Q431806,Arauco War,1546,Chile,war,WarsRecord.csv
+Q477592,Battle of Drakenburg,1547,Germany,war,WarsRecord.csv
+Q233414,Battle of Panipat,1556,India,war,WarsRecord.csv
+Q11872032,Koadjutore war,1556,Livonian confederation,revolution,Coups.csv
+Q10711982,Vadstena Rumble,1559,Sweden,revolution,Coups.csv
+Q497806,Battle of Ergeme,1560,Latvia,war,WarsRecord.csv
+Q349422,Battle of Okehazama,1560,Japan,war,WarsRecord.csv
+Q263799,Battle of Mared,1563,Sweden,war,WarsRecord.csv
+Q474399,Battle of Affane,1565,Kingdom of Ireland,war,WarsRecord.csv
+Q505699,Battle of Heiligerlee,1568,Spanish Netherlands,war,WarsRecord.csv
+Q6762017,Marian civil war,1568,Kingdom of Scotland,revolution,Coups.csv
+Q164432,Eighty Years' War,1568,Seventeen Provinces,revolution,Coups.csv
+Q428369,Battle of Nagashino,1575,Japan,war,WarsRecord.csv
+Q15729012,Ribagorza War,1581,Crown of Aragon,revolution,Coups.csv
+Q225562,Battle of Shizugatake,1583,Japan,war,WarsRecord.csv
+Q60836410,"Assassination of Henry I, Duke of Guise",1588,France,culture,Disasters.csv
+Q5518616,Galileo's Leaning Tower of Pisa experiment,1589,Grand Duchy of Tuscany,technology,Inventions.csv
+Q497034,Battle of Sangju,1592,Joseon,war,WarsRecord.csv
+Q486979,Battle of Ch'ungju,1592,Joseon,war,WarsRecord.csv
+Q484029,Battle of Byeokjegwan,1593,Joseon,war,WarsRecord.csv
+Q64875937,1592–93 London plague,1593,Kingdom of England,culture,Disasters.csv
+Q489057,Battle of Carrickfergus,1597,United Kingdom,war,WarsRecord.csv
+Q371409,Battle of Stångebro,1598,Sweden,war,WarsRecord.csv
+Q546505,Battle of Stegeborg,1598,Sweden,war,WarsRecord.csv
+Q234188,Battle of Sekigahara,1600,Japan,war,WarsRecord.csv
+Q6429210,Kongo Civil War,1600,Kingdom of Kongo,revolution,Coups.csv
+Q2280734,Siamese Civil War of 1610–1612,1610,Ayutthaya Kingdom,revolution,Coups.csv
+Q60832021,Assassination of Henry IV,1610,France,culture,Disasters.csv
+Q109392668,Haile-i Osmaniye,1621,Ottoman Empire,revolution,Coups.csv
+Q4867844,Basque-Vicuña War,1622,,revolution,Coups.csv
+Q56308540,Western Georgian civil war,1623,Kingdom of Imereti,revolution,Coups.csv
+Q380067,Battle of Trzciana,1629,Poland,war,WarsRecord.csv
+Q2280736,Siamese Civil War of 1630–1636,1630,Ayutthaya Kingdom,revolution,Coups.csv
+Q205379,Battle of Breitenfeld,1631,Germany,war,WarsRecord.csv
+Q167259,Battle of Lützen,1632,Germany,war,WarsRecord.csv
+Q481354,Battle of Oldendorf,1633,Germany,war,WarsRecord.csv
+Q42378006,Assassination of Wallenstein,1634,,culture,Disasters.csv
+Q3118949,Acadian Civil War,1635,New France,revolution,Coups.csv
+Q245811,Battle of Chemnitz,1639,Holy Roman Empire,war,WarsRecord.csv
+Q3778584,Piedmontese Civil War,1639,,revolution,Coups.csv
+Q331170,Battle of Montjuïc,1641,Spain,war,WarsRecord.csv
+Q492006,Battle of Julianstown,1641,Kingdom of Ireland,war,WarsRecord.csv
+Q586189,Battle of Powick Bridge,1642,Kingdom of England,war,WarsRecord.csv
+Q261345,Battle of Lleida,1642,Hispanic Monarchy,war,WarsRecord.csv
+Q261738,Battle of Kilrush,1642,Kingdom of Ireland,war,WarsRecord.csv
+Q497787,Battle of Liscarroll,1642,Kingdom of Ireland,war,WarsRecord.csv
+Q80330,English Civil War,1642,,revolution,Coups.csv
+Q125768501,Conflict between Willem Leyel and Bernt Pessart,1643,,revolution,Coups.csv
+Q326417,Battle of Marston Moor,1644,United Kingdom,war,WarsRecord.csv
+Q522168,Battle of Benburb,1646,Kingdom of Ireland,war,WarsRecord.csv
+Q519818,Battle of Zusmarshausen,1648,Germany,war,WarsRecord.csv
+Q656186,Fronde,1648,Kingdom of France,revolution,Coups.csv
+Q493609,Battle of Scarrifholis,1650,Kingdom of Ireland,war,WarsRecord.csv
+Q491997,Battle of Macroom,1650,Kingdom of Ireland,war,WarsRecord.csv
+Q23361,Magdeburg hemispheres,1654,,technology,Inventions.csv
+Q426926,Battle of Warsaw,1656,Poland,war,WarsRecord.csv
+Q541566,Battle of Kolding,1658,Denmark,war,WarsRecord.csv
+Q3263276,Bruneian Civil War of 1660,1660,Bruneian Sultanate,revolution,Coups.csv
+Q123885,Royal Society,1660,United Kingdom,empire,Treaties.csv
+Q170113,Battle of Saint Gotthard,1664,Hungary,war,WarsRecord.csv
+Q323735,Battle of Warksow,1678,Germany,war,WarsRecord.csv
+Q1248576,Affair of the Poisons,1679,Kingdom of France,revolution,Coups.csv
+Q200855,Battle of Vienna,1683,Habsburg monarchy,war,WarsRecord.csv
+Q189508,Glorious Revolution,1688,Kingdom of England,revolution,Coups.csv
+Q138579,Institute of the Brothers of the Christian Schools,1688,New Zealand,empire,Treaties.csv
+Q48785102,Jacobite rising of 1689,1689,,revolution,Coups.csv
+Q517486,Battle of Zenta,1697,Kingdom of Hungary,war,WarsRecord.csv
+Q2494496,Lithuanian Civil War of 1700,1697,Grand Duchy of Lithuania,revolution,Coups.csv
+Q1281398,Gustav III of Sweden's coffee experiment,1700,,technology,Inventions.csv
+Q65206550,Fundació Fiella,1700,Spain,empire,Treaties.csv
+Q704762,Battle of Klissow,1702,Poland,war,WarsRecord.csv
+Q688978,Battle of Cremona,1702,Italy,war,WarsRecord.csv
+Q700316,Battle of Luzzara,1702,Italy,war,WarsRecord.csv
+Q694883,Battle of Erastfer,1702,Estonia,war,WarsRecord.csv
+Q682729,First Battle of Höchstädt,1703,Germany,war,WarsRecord.csv
+Q696945,Battle of Schellenberg,1704,Germany,war,WarsRecord.csv
+Q9377279,Civil War in Poland,1704,,revolution,Coups.csv
+Q704567,Battle of Gemauerthof,1705,Latvia,war,WarsRecord.csv
+Q693282,Siege of Turin,1706,Italy,war,WarsRecord.csv
+Q694068,Battle of Fraustadt,1706,Poland,war,WarsRecord.csv
+Q698166,Battle of Calcinato,1706,Italy,war,WarsRecord.csv
+Q701808,Battle of Castiglione,1706,Italy,war,WarsRecord.csv
+Q697267,Battle of Almenar,1710,Spain,war,WarsRecord.csv
+Q705409,Battle of Helsingborg,1710,Sweden,war,WarsRecord.csv
+Q690096,Toggenburg War,1712,Old Swiss Confederacy,revolution,Coups.csv
+Q694122,Battle of Napue,1714,Sweden,war,WarsRecord.csv
+Q690391,Battle of Petrovaradin,1716,Serbia,war,WarsRecord.csv
+Q620761,Appeal War,1724,,revolution,Coups.csv
+Q1302457,Siamese Civil War of 1733,1733,Siam,revolution,Coups.csv
+Q663435,Battle of Mollwitz,1741,Poland,war,WarsRecord.csv
+Q688448,Battle of Hohenfriedberg,1745,Poland,war,WarsRecord.csv
+Q657406,Battle of Hennersdorf,1745,Poland,war,WarsRecord.csv
+Q1049945,Jacobite rising of 1745,1745,,revolution,Coups.csv
+Q696699,Battle of Lauffeld,1747,Belgium,war,WarsRecord.csv
+Q693265,Battle of Assietta,1747,Italy,war,WarsRecord.csv
+Q60742221,Choctaw Civil War,1747,,revolution,Coups.csv
+Q695485,Battle of Jumonville Glen,1754,Thirteen Colonies,war,WarsRecord.csv
+Q62024627,Fundatie van Renswoude,1754,Netherlands,empire,Treaties.csv
+Q135885527,Corsican Civil War,1755,Corsican Republic,revolution,Coups.csv
+Q696689,Battle of Gross-Jägersdorf,1757,Russia,war,WarsRecord.csv
+Q695312,Battle of Breslau,1757,Poland,war,WarsRecord.csv
+Q677959,Battle of Hastenbeck,1757,Germany,war,WarsRecord.csv
+Q694061,Battle of Reichenberg,1757,Kingdom of Bohemia,war,WarsRecord.csv
+Q656522,Battle of Condore,1758,France,war,WarsRecord.csv
+Q697897,Battle of Carillon,1758,Thirteen Colonies,war,WarsRecord.csv
+Q663405,Battle of Zorndorf,1758,Poland,war,WarsRecord.csv
+Q663450,Battle of Krefeld,1758,Germany,war,WarsRecord.csv
+Q663574,Battle of Ticonderoga,1759,Thirteen Colonies,war,WarsRecord.csv
+Q688986,Battle of Hoyerswerda,1759,Germany,war,WarsRecord.csv
+Q658845,Battle of Wandiwash,1760,India,war,WarsRecord.csv
+Q688802,Battle of Torgau,1760,Germany,war,WarsRecord.csv
+Q701139,Battle of Liegnitz,1760,Poland,war,WarsRecord.csv
+Q689183,Battle of Sainte-Foy,1760,New France,war,WarsRecord.csv
+Q697913,Battle of Landeshut,1760,Poland,war,WarsRecord.csv
+Q697982,Battle of Burkersdorf,1762,Poland,war,WarsRecord.csv
+Q677892,Battle of Freiberg,1762,Germany,war,WarsRecord.csv
+Q9377280,Polish Civil War,1764,Polish–Lithuanian Commonwealth,revolution,Coups.csv
+Q105528223,Veitel Heine Ephraim'sche Lehranstalt,1770,Prussia,empire,Treaties.csv
+Q111795327,assassination of Narayan Rao,1773,,culture,Disasters.csv
+Q692137,Landing at Kip's Bay,1776,United States,war,WarsRecord.csv
+Q668595,Battle of Harlem Heights,1776,United States,war,WarsRecord.csv
+Q106298640,Society of Universal Friends,1776,United States,empire,Treaties.csv
+Q105357564,Societé des antiquités de Casse,1777,Germany,empire,Treaties.csv
+Q63156812,Persian Civil War,1779,,revolution,Coups.csv
+Q21002732,discovery of Uranus,1781,,technology,Inventions.csv
+Q97391448,Česká společnost nauk,1784,Kingdom of Bohemia,empire,Treaties.csv
+Q100742789,E. F. Ohle's Erben,1788,German Reich,empire,Treaties.csv
+Q123376497,Pictet's experiment,1790,,technology,Inventions.csv
+Q4553413,Tripolitanian civil war,1790,,revolution,Coups.csv
+Q18244438,assassination of Gustav III of Sweden,1792,Sweden,culture,Disasters.csv
+Q686995,Battle of Le Mans,1793,France,war,WarsRecord.csv
+Q139073891,Afghan Civil War,1793,Durrani Empire,revolution,Coups.csv
+Q8628,War in the Vendée,1793,French First Republic,revolution,Coups.csv
+Q678227,Battle of Fleurus,1794,Belgium,war,WarsRecord.csv
+Q249960,Chouannerie,1794,France,revolution,Coups.csv
+Q107135780,Female Society of Philadelphia for the relief and employment of the poor,1795,United States,empire,Treaties.csv
+Q656046,Battle of San Juan,1797,United States,war,WarsRecord.csv
+Q685798,Battle of Winterthur,1799,Switzerland,war,WarsRecord.csv
+Q4122570,War of the South,1799,Saint-Domingue,revolution,Coups.csv
+Q620965,coup of 18 Brumaire,1799,French First Republic,revolution,Coups.csv
+Q2998928,Coup of 30 Prairial Year VII,1799,French First Republic,revolution,Coups.csv
+Q889182,Bockenkrieg,1804,Switzerland,revolution,Coups.csv
+Q697034,Battle of Amstetten,1805,Austria,war,WarsRecord.csv
+Q692074,Battle of Ivankovac,1805,Serbia,war,WarsRecord.csv
+Q657502,Battle of Elchingen,1805,Germany,war,WarsRecord.csv
+Q699665,Battle of Dürenstein,1805,Austria,war,WarsRecord.csv
+Q3197905,Ottoman coups of 1807–1808,1807,Ottoman Empire,revolution,Coups.csv
+Q2334896,1809 Swedish coup d'état,1809,Sweden,revolution,Coups.csv
+Q7921192,Vere Street Coterie,1810,United Kingdom,revolution,Coups.csv
+Q61692434,Crédit municipal de Lyon,1810,France,empire,Treaties.csv
+Q65945070,Conseil général des fabriques et manufactures,1810,France,empire,Treaties.csv
+Q61929099,ordre des avocats de Lyon,1810,France,empire,Treaties.csv
+Q61937647,ordre des avocats de Toulouse,1810,France,empire,Treaties.csv
+Q61937736,ordre des avocats de Nantes,1810,France,empire,Treaties.csv
+Q61937835,ordre des avocats de Grenoble,1810,France,empire,Treaties.csv
+Q689471,Battle of Albuera,1811,Kingdom of Spain,war,WarsRecord.csv
+Q96358774,Cuerpo de Letrados de las Cortes Generales,1811,Spain,empire,Treaties.csv
+Q65078310,Real Academia de Medicina y Cirugía de Murcia,1811,Spain,empire,Treaties.csv
+Q61936188,ordre des avocats de Douai,1811,France,empire,Treaties.csv
+Q21005831,assassination of Spencer Perceval,1812,United Kingdom of Great Britain and Ireland,culture,Disasters.csv
+Q2697981,Argentine Civil Wars,1814,Argentina,revolution,Coups.csv
+Q5671681,War between Artigas and the Directory,1814,,revolution,Coups.csv
+Q61961884,ordre des avocats aux conseils,1817,France,empire,Treaties.csv
+Q106268420,Pommersche Provinzial-Zuckersiederei,1817,Germany,empire,Treaties.csv
+Q3733130,Oersted's law,1818,,technology,Inventions.csv
+Q96145829,North Six-Mile Baptist Church,1818,United States,empire,Treaties.csv
+Q5887690,Royalist War,1822,Kingdom of Spain,revolution,Coups.csv
+Q137921128,Herati Civil War,1823,Herat (1793-1863),revolution,Coups.csv
+Q5601911,Greek civil wars of 1823–1825,1823,First Hellenic Republic,revolution,Coups.csv
+Q17633452,First Central American Civil War,1826,El Salvador,revolution,Coups.csv
+Q135797958,Bruneian Civil War of 1826,1826,Bruneian Sultanate,revolution,Coups.csv
+Q3398213,War of the Aggrieved,1827,Spain,revolution,Coups.csv
+Q1237867,Liberal Wars,1828,,revolution,Coups.csv
+Q5098735,Chilean Civil War of 1829-1830,1829,Chile,revolution,Coups.csv
+Q1139213,Metropolitan Police,1829,United Kingdom,empire,Treaties.csv
+Q16199212,assassination of Thomas Ashton,1831,United Kingdom of Great Britain and Ireland,culture,Disasters.csv
+Q5392819,Fourth Argentine Civil War,1832,Argentine Confederation,revolution,Coups.csv
+Q2341073,First Carlist War,1833,Spain,revolution,Coups.csv
+Q16473092,Peruvian Civil War of 1834,1834,Peru,revolution,Coups.csv
+Q5887865,Salaverry-Santa Cruz War,1835,Peru,revolution,Coups.csv
+Q209297,Farroupilha Revolution,1835,,revolution,Coups.csv
+Q1323522,League War,1835,Costa Rica,revolution,Coups.csv
+Q1110685,Colonia,1838,Germany,empire,Treaties.csv
+Q2672972,Uruguayan Civil War,1839,,revolution,Coups.csv
+Q16573170,Peruvian Civil War of 1843-1844,1843,Peru,revolution,Coups.csv
+Q1149510,Mauthe,1844,Germany,empire,Treaties.csv
+Q1356165,discovery of Neptune,1846,United Kingdom,technology,Inventions.csv
+Q3029948,Patuleia,1846,Kingdom of Portugal,revolution,Coups.csv
+Q3025312,Second Carlist War,1846,,revolution,Coups.csv
+Q688297,Sonderbund War,1847,Switzerland,revolution,Coups.csv
+Q5887710,1848–1856 Argentine Civil War,1848,Argentine Confederation,revolution,Coups.csv
+Q1061081,Pol Roger,1849,France,empire,Treaties.csv
+Q55633506,Soninke-Marabout War,1850,Kombo,revolution,Coups.csv
+Q192408,Taiping Rebellion,1851,Qing dynasty,revolution,Coups.csv
+Q5479162,Liberal Revolution of 1854,1853,Peru,revolution,Coups.csv
+Q1068258,University College Dublin,1854,Ireland,empire,Treaties.csv
+Q5887718,Peruvian Civil War of 1856-1858,1856,Peru,revolution,Coups.csv
+Q129864,Indian Mutiny of 1857,1857,India,war,WarsRecord.csv
+Q2091916,Reform War,1857,Mexico,revolution,Coups.csv
+Q76914,Battle of Cepeda,1859,Argentina,war,WarsRecord.csv
+Q3772246,1860 civil conflict in Mount Lebanon and Damascus,1860,Ottoman Empire,revolution,Coups.csv
+Q46603,Sakuradamon Incident,1860,Japan,culture,Disasters.csv
+Q61819670,1860 Plebiscite of the provinces of Emilia,1860,Kingdom of Sardinia,culture,Disasters.csv
+Q180659,Battle of Wilson's Creek,1861,United States,war,WarsRecord.csv
+Q221469,First Battle of Bull Run,1861,United States,war,WarsRecord.csv
+Q109424350,Coup d'état in Colombia of 1861,1861,United States of Colombia,revolution,Coups.csv
+Q1121065,Compagnie Générale Transatlantique,1861,France,empire,Treaties.csv
+Q281850,Battle of Stanwix Station,1862,United States,war,WarsRecord.csv
+Q233343,Second Battle of Bull Run,1862,United States,war,WarsRecord.csv
+Q193993,Battle of Pea Ridge,1862,United States,war,WarsRecord.csv
+Q16674517,Expulsion of Otto of Greece,1862,Kingdom of Greece,revolution,Coups.csv
+Q110112023,assassination of José Santos Guardiola,1862,Honduras,culture,Disasters.csv
+Q243640,Second Battle of Sabine Pass,1863,United States,war,WarsRecord.csv
+Q11517018,Sakuheimon Incident,1863,Japan,culture,Disasters.csv
+Q135468,Battle of Haw's Shop,1864,United States,war,WarsRecord.csv
+Q176216,Battle of Yellow Tavern,1864,United States,war,WarsRecord.csv
+Q195118,Battle of Old Church,1864,United States,war,WarsRecord.csv
+Q194329,Battle of Five Forks,1865,United States,war,WarsRecord.csv
+Q134513300,Discovery of Christians,1865,,technology,Inventions.csv
+Q17633455,Peruvian Civil War of 1865,1865,Peru,revolution,Coups.csv
+Q1025404,assassination of Abraham Lincoln,1865,United States,culture,Disasters.csv
+Q154942,Battle of Königgrätz,1866,Austria–Hungary,war,WarsRecord.csv
+Q107309163,Coup d'état in Colombia of 1867,1867,United States of Colombia,revolution,Coups.csv
+Q17633460,Peruvian Civil War of 1867,1867,Peru,revolution,Coups.csv
+Q1113723,Comboni Missionaries of the Heart of Jesus,1867,Italy,empire,Treaties.csv
+Q4388669,Ōmiya incident,1867,Japan,culture,Disasters.csv
+Q81256,Battle of Ichikawa-Funabashi,1868,Japan,war,WarsRecord.csv
+Q309184,Boshin War,1868,Tokugawa shogunate,revolution,Coups.csv
+Q24204921,Six Years' War,1868,Second Republic,revolution,Coups.csv
+Q254797,Battle of Le Bourget,1870,France,war,WarsRecord.csv
+Q155302,Battle of Loigny-Poupry,1870,France,war,WarsRecord.csv
+Q112872231,Assassination of Wade Perrin,1870,,culture,Disasters.csv
+Q7256073,Assassination of Ma Xinyi,1870,Qing dynasty,culture,Disasters.csv
+Q175513,Battle of Assam,1871,Ethiopian Empire,war,WarsRecord.csv
+Q957532,Third Carlist War,1872,Spain,revolution,Coups.csv
+Q1103174,Vosges Club,1872,France,empire,Treaties.csv
+Q1063152,Chargeurs,1872,France,empire,Treaties.csv
+Q134254356,Liberian–Grebo War,1875,Liberia,revolution,Coups.csv
+Q1204135,Deutsche Seewarte,1875,German Reich,empire,Treaties.csv
+Q205422,Battle of the Little Bighorn,1876,United States,war,WarsRecord.csv
+Q61750249,Veintemilla Revolution,1876,Ecuador,revolution,Coups.csv
+Q1054114,Centralverband Deutscher Industrieller,1876,Germany,empire,Treaties.csv
+Q1094957,Clan Line,1877,United Kingdom,empire,Treaties.csv
+Q1179914,De Groene Amsterdammer,1877,Netherlands,empire,Treaties.csv
+Q519546,Nauruan Civil War,1878,,revolution,Coups.csv
+Q1081101,Les Hydropathes,1878,France,empire,Treaties.csv
+Q11605028,Kioichō Incident,1878,Japan,culture,Disasters.csv
+Q6177105,Jementah Civil War,1879,Malaysia,revolution,Coups.csv
+Q1202039,"Royal Holloway, University of London",1879,United Kingdom,empire,Treaties.csv
+Q1092919,Círculo de Bellas Artes,1880,Spain,empire,Treaties.csv
+Q1131014,Capannelle Racecourse,1881,Italy,empire,Treaties.csv
+Q1066156,Le Coq sportif,1882,France,empire,Treaties.csv
+Q1084446,Christoph & Unmack,1882,Germany,empire,Treaties.csv
+Q2834353,Peruvian Civil War of 1884–1885,1884,Peru,revolution,Coups.csv
+Q1193179,Royal Scottish Geographical Society,1884,United Kingdom,empire,Treaties.csv
+Q881762,Samoan Civil War,1886,,revolution,Coups.csv
+Q1100707,Cleveland Street scandal,1889,United Kingdom,revolution,Coups.csv
+Q2350166,War of Canudos,1893,,revolution,Coups.csv
+Q2523337,Federalist Riograndense Revolution,1893,,revolution,Coups.csv
+Q5887721,Peruvian Civil War of 1894–1895,1894,Peru,revolution,Coups.csv
+Q1822896,Liberal Revolution of Ecuador,1895,Ecuador,revolution,Coups.csv
+Q916340,Jameson Raid,1895,South African Republic,revolution,Coups.csv
+Q1069030,International Cooperative Alliance,1895,Belgium,empire,Treaties.csv
+Q1202050,Deutsche Amphibolin-Werke SE,1895,Germany,empire,Treaties.csv
+Q1071346,International Commission on Zoological Nomenclature,1895,Singapore,empire,Treaties.csv
+Q1115593,Commission du vieux Paris,1897,France,empire,Treaties.csv
+Q17621744,assassination of Cánovas del Castillo,1897,Spain under the Restoration,culture,Disasters.csv
+Q5887712,Federal Revolution of 1899,1898,Bolivia,revolution,Coups.csv
+Q1103888,National Arts Club,1898,United States,empire,Treaties.csv
+Q15220605,Murder of Elisabeth of Austria,1898,Switzerland,culture,Disasters.csv
+Q248979,Battle of Modder River,1899,South Africa,war,WarsRecord.csv
+Q263950,Battle of Elandslaagte,1899,South Africa,war,WarsRecord.csv
+Q247871,Battle of Talana Hill,1899,South Africa,war,WarsRecord.csv
+Q43378,Thousand Days' War,1899,Colombia,revolution,Coups.csv
+Q1106869,Federazione Italiana Nuoto,1899,Italy,empire,Treaties.csv
+Q106194524,1900 Colombia coup d'état,1900,Colombia,revolution,Coups.csv
+Q1054167,Centre Vinicole—Champagne Nicolas Feuillatte,1900,France,empire,Treaties.csv
+Q1061270,Congregation of the Holy Family of Nazareth,1900,Italy,empire,Treaties.csv
+Q2866985,assassination of William McKinley,1901,United States,culture,Disasters.csv
+Q134586693,Carthusians' million affair,1903,France,revolution,Coups.csv
+Q2403418,May Coup,1903,Kingdom of Serbia,revolution,Coups.csv
+Q178842,Battle of Waterberg,1904,Namibia,war,WarsRecord.csv
+Q1054111,"Arbeitskreis Werbe-, Mode-, Industriefotografie",1904,Germany,empire,Treaties.csv
+Q1467948,handkerchief vote,1904,Hungary,culture,Disasters.csv
+Q108196142,assassination of Nikolay Bobrikov,1904,Russian Empire,culture,Disasters.csv
+Q1076729,Vietnam National University,1906,Vietnam,empire,Treaties.csv
+Q97358280,Hafidiya,1907,Morocco,revolution,Coups.csv
+Q1113225,Institution of Structural Engineers,1908,United Kingdom,empire,Treaties.csv
+Q1055811,Port Authority Trans-Hudson,1908,United States,empire,Treaties.csv
+Q16184309,assassination of Itō Hirobumi,1909,Qing dynasty,culture,Disasters.csv
+Q638903,5 October 1910 revolution,1910,Portugal,revolution,Coups.csv
+Q214426,Mexican Revolution,1910,Mexico,revolution,Coups.csv
+Q1125309,Confindustria,1910,Italy,empire,Treaties.csv
+Q77457310,War of the Generals,1911,Ecuador,revolution,Coups.csv
+Q65077988,1911 Paraguayan Civil War,1911,Paraguay,revolution,Coups.csv
+Q1067833,Chartered Insurance Institute,1912,United Kingdom,empire,Treaties.csv
+Q105176315,assassination of Eloy Alfaro,1912,Ecuador,culture,Disasters.csv
+Q8208032,Assassination of José Canalejas,1912,Spain,culture,Disasters.csv
+Q1187198,Ten Tragic Days,1913,Mexico,revolution,Coups.csv
+Q39080987,Ecuadorian Civil War of 1912–1914,1913,Ecuador,revolution,Coups.csv
+Q1074958,Irish Volunteers,1913,Ireland,empire,Treaties.csv
+Q116652795,Assassination of Moritaro Abe,1913,Japan,culture,Disasters.csv
+Q145588,Battle of Gumbinnen,1914,Russia,war,WarsRecord.csv
+Q250383,Action at Néry,1914,France,war,WarsRecord.csv
+Q149560,Battle of Stallupönen,1914,Russia,war,WarsRecord.csv
+Q250747,Race to the Sea,1914,France,war,WarsRecord.csv
+Q23641794,Dominican Civil War of 1914,1914,Dominican Republic,revolution,Coups.csv
+Q124759300,Debrecen bombing,1914,Hungary,culture,Disasters.csv
+Q192050,assassination of Archduke Franz Ferdinand,1914,Austria–Hungary,culture,Disasters.csv
+Q220766,Battle of Manzikert,1915,Turkey,war,WarsRecord.csv
+Q764038,Jungle Movement of Gilan,1915,Qajar Iran,revolution,Coups.csv
+Q1345258,National Protection War,1915,Republic of China,revolution,Coups.csv
+Q106784655,Assassination of  Karl von Stürgkh,1916,Austria–Hungary,culture,Disasters.csv
+Q79911,Russian Civil War,1917,Soviet Union,revolution,Coups.csv
+Q1041813,Manchu Restoration,1917,Republic of China,revolution,Coups.csv
+Q1131145,Dupont,1917,United States,empire,Treaties.csv
+Q199371,Battle of Megiddo,1918,Ottoman Empire,war,WarsRecord.csv
+Q203234,Battle of Épehy,1918,France,war,WarsRecord.csv
+Q211855,Finnish Civil War,1918,Finland,revolution,Coups.csv
+Q1356047,execution of the Romanov family,1918,Russian Socialist Federative Soviet Republic,culture,Disasters.csv
+Q23020255,assassination of Sidónio Pais,1918,,culture,Disasters.csv
+Q208855,Jallianwala Bagh massacre,1919,British Raj,war,WarsRecord.csv
+Q65041294,Eddington experiment,1919,,technology,Inventions.csv
+Q1111537,Associazione Bancaria Italiana,1919,Italy,empire,Treaties.csv
+Q1125610,French Confederation of Christian Workers,1919,France,empire,Treaties.csv
+Q124271325,assassination of Erhard Auer,1919,Weimar Republic,culture,Disasters.csv
+Q114659411,"Assassination of Hugo Haaseat October 8, 1919",1919,German Reich,culture,Disasters.csv
+Q124016877,Murder of Kurt Eisner,1919,Weimar Republic,culture,Disasters.csv
+Q6107183,Agua Prieta Revolution,1920,Mexico,revolution,Coups.csv
+Q19688873,Tragic Week,1920,Guatemala,revolution,Coups.csv
+Q4560844,1920 Jabal al-Gharbi Civil War,1920,Tripolitanian Republic,revolution,Coups.csv
+Q105987834,Assassination of Talat Pasha,1921,Germany,culture,Disasters.csv
+Q8208030,Assassination of Eduardo Dato,1921,Spain,culture,Disasters.csv
+Q11409635,assassination of Hara Takashi,1921,Empire of Japan,culture,Disasters.csv
+Q748042,Irish Civil War,1922,Ireland,revolution,Coups.csv
+Q468823,March on Rome,1922,Kingdom of Italy,revolution,Coups.csv
+Q15927362,Zhili–Fengtian War,1922,Republic of China,revolution,Coups.csv
+Q4763640,Anglo-Irish Treaty Dáil vote,1922,,culture,Disasters.csv
+Q130260599,Assassination of Alois Rašín,1923,Czechoslovakia,culture,Disasters.csv
+Q81510,Continental Barum,1924,Czech Republic,empire,Treaties.csv
+Q137649300,Millikan cosmic ray experiment at Muir Lake (1925),1925,,technology,Inventions.csv
+Q1712418,July Revolution (Ecuador),1925,Ecuador,revolution,Coups.csv
+Q868962,Anti-Fengtian War,1925,Republic of China,revolution,Coups.csv
+Q1553256,Nicaraguan Civil War of 1926–1927,1926,Nicaragua,revolution,Coups.csv
+Q1851730,May Coup,1926,Second Polish Republic,revolution,Coups.csv
+Q179975,Chinese Civil War,1927,Republic of China,revolution,Coups.csv
+Q15902637,First Chinese Civil War,1927,Republic of China,revolution,Coups.csv
+Q10945939,Ning-Han War,1927,Republic of China,revolution,Coups.csv
+Q74662,Luxembourg Stock Exchange,1928,Luxembourg,empire,Treaties.csv
+Q1590641,Rüchardt experiment,1929,,technology,Inventions.csv
+Q111546,Ipsen,1929,France,empire,Treaties.csv
+Q717809,Central Plains War,1930,Republic of China,revolution,Coups.csv
+Q4121073,Chilean naval mutiny of 1931,1931,Chile,revolution,Coups.csv
+Q114794,Radiotelevisione svizzera di lingua italiana,1931,Switzerland,empire,Treaties.csv
+Q1616753,Brocken Experiment,1932,,technology,Inventions.csv
+Q18208081,Ecuadorian Civil War of 1932,1932,Ecuador,revolution,Coups.csv
+Q244926,May 15 Incident,1932,Empire of Japan,culture,Disasters.csv
+Q24866326,assassination of Yun Ki-hyeop,1932,Empire of Japan,culture,Disasters.csv
+Q5492732,Cuban coup d'etat of 1933,1933,Cuba,revolution,Coups.csv
+Q4808510,assassination of Haim Arlosoroff,1933,Mandatory Palestine,culture,Disasters.csv
+Q100699515,Assassination of Luis Miguel Sánchez Cerro,1933,Peru,culture,Disasters.csv
+Q873152,July Putsch,1934,Federal State of Austria,revolution,Coups.csv
+Q9385537,assassination of Bronisław Pieracki,1934,,culture,Disasters.csv
+Q4468587,assassination of Sergei Kirov,1934,,culture,Disasters.csv
+Q10379701,Hebei incident,1935,Republic of China,culture,Disasters.csv
+Q56250974,Aizawa Incident,1935,Empire of Japan,culture,Disasters.csv
+Q287389,Battle of Monte Pelado,1936,Spain,war,WarsRecord.csv
+Q2436825,Spanish coup of July 1936,1936,Spanish Republic at War,revolution,Coups.csv
+Q61995994,assassination of Calvo Sotelo,1936,Spain,culture,Disasters.csv
+Q118455715,assassination of Federico García Lorca,1936,Nationalist zone,culture,Disasters.csv
+Q115854,Lucerne Festival,1938,Switzerland,empire,Treaties.csv
+Q4468581,assassination of Yevhen Konovalets,1938,,culture,Disasters.csv
+Q5556771,Spanish coup of March 1939,1939,Spanish Republic at War,revolution,Coups.csv
+Q65058927,Assassination of Armand Călinescu,1939,Kingdom of Romania,culture,Disasters.csv
+Q269207,Battle of Sedan,1940,France,war,WarsRecord.csv
+Q150939,Operation Weserübung,1940,Denmark,war,WarsRecord.csv
+Q177283,Altmark Incident,1940,Norway,war,WarsRecord.csv
+Q54974569,Bruno Rossi and David B. Hall experiment,1940,,technology,Inventions.csv
+Q4468600,assassination of Leon Trotsky,1940,Mexico,culture,Disasters.csv
+Q162284,Battle of Kiev,1941,Ukraine,war,WarsRecord.csv
+Q169436,Battle of Rostov,1941,Russia,war,WarsRecord.csv
+Q162357,Battle of Smolensk,1941,Soviet Union,war,WarsRecord.csv
+Q151290,Battle of Moscow,1941,Soviet Union,war,WarsRecord.csv
+Q125003,Instituto Nacional de Industria,1941,Spain,empire,Treaties.csv
+Q261776,Battles of Rzhev,1942,Russia,war,WarsRecord.csv
+Q192252,Operation Harling,1942,Greece,war,WarsRecord.csv
+Q270517,Dieppe Raid,1942,France,war,WarsRecord.csv
+Q161033,Demyansk Pocket,1942,Russia,war,WarsRecord.csv
+Q10858950,Reinhard Heydrich assassination,1942,,culture,Disasters.csv
+Q275019,Battle of Smolensk,1943,Russia,war,WarsRecord.csv
+Q153325,Aktion Erntefest,1943,Nazi Germany,war,WarsRecord.csv
+Q130861,Battle of Kursk,1943,Soviet Union,war,WarsRecord.csv
+Q700547,Operation Vengeance,1943,,culture,Disasters.csv
+Q155103,Siege of Budapest,1944,Hungary,war,WarsRecord.csv
+Q167002,Operation Greif,1944,Belgium,war,WarsRecord.csv
+Q2311171,Operation Panzerfaust,1944,Kingdom of Hungary,revolution,Coups.csv
+Q84026,French Institute of Petroleum,1944,France,empire,Treaties.csv
+Q192660,Battle of Okinawa,1945,Empire of Japan,war,WarsRecord.csv
+Q155995,Operation Spring Awakening,1945,Kingdom of Hungary,war,WarsRecord.csv
+Q2633177,Japanese coup d'état in French Indochina,1945,French Indochina,revolution,Coups.csv
+Q207342,Trinity,1945,United States,culture,Disasters.csv
+Q55522337,Assassination of August Gölzer,1945,Protectorate of Bohemia and Moravia,culture,Disasters.csv
+Q28225391,Moon radar experiment,1946,Hungary,technology,Inventions.csv
+Q7096997,Operation Dixie,1946,United States,revolution,Coups.csv
+Q188972,Greek Civil War,1946,Greece,revolution,Coups.csv
+Q11956797,Able,1946,,culture,Disasters.csv
+Q11960019,Baker,1946,,culture,Disasters.csv
+Q108336746,Assassination of Gotthilf Wagner,1946,Mandatory Palestine,culture,Disasters.csv
+Q2119306,1947 Thai coup d'état,1947,Thailand,revolution,Coups.csv
+Q2379101,1947–1948 Civil War in Mandatory Palestine,1947,British Empire,revolution,Coups.csv
+Q111946380,Shubaki family assassination,1947,Mandatory Palestine,culture,Disasters.csv
+Q16709196,assassination of Solomon Mikhoels,1948,Soviet Union,culture,Disasters.csv
+Q3350154,assassination of Mahatma Gandhi,1948,Dominion of India,culture,Disasters.csv
+Q28040625,X-Ray,1948,,culture,Disasters.csv
+Q643510,March 1949 Syrian coup d'état,1949,First Syrian Republic,revolution,Coups.csv
+Q185407,La Violencia,1949,Colombia,revolution,Coups.csv
+Q111054,Taizé Community,1949,France,empire,Treaties.csv
+Q493122,Battle of Sangju,1950,South Korea,war,WarsRecord.csv
+Q624064,Battle of Uijeongbu,1950,South Korea,war,WarsRecord.csv
+Q493131,Battle of Pyongtaek,1950,South Korea,war,WarsRecord.csv
+Q484494,Battle of Osan,1950,South Korea,war,WarsRecord.csv
+Q493252,Battle of Chonan,1950,South Korea,war,WarsRecord.csv
+Q11997117,Ranger Baker,1951,United States,culture,Disasters.csv
+Q19386221,Ranger Able,1951,United States,culture,Disasters.csv
+Q5604164,Item,1951,United States,culture,Disasters.csv
+Q16208438,Assassination of Sir Henry Gurney,1951,Malaysia,culture,Disasters.csv
+Q924138,Operation Hurricane,1952,Australia,culture,Disasters.csv
+Q3246743,Ivy King,1952,United States,culture,Disasters.csv
+Q593774,1953 Iranian coup d'état,1953,Iran,revolution,Coups.csv
+Q98907360,Totem 2,1953,Australia,culture,Disasters.csv
+Q98831752,Test 1,1953,Australia,culture,Disasters.csv
+Q7899257,Upshot-Knothole Simon,1953,United States,culture,Disasters.csv
+Q4052442,Upshot-Knothole Annie,1953,United States,culture,Disasters.csv
+Q4052443,Upshot-Knothole Harry,1953,United States,culture,Disasters.csv
+Q2078341,Upshot-Knothole Grable,1953,United States,culture,Disasters.csv
+Q14099166,Upshot-Knothole Encore,1953,United States,culture,Disasters.csv
+Q976887,1954 Guatemalan coup d'état,1954,Guatemala,revolution,Coups.csv
+Q4386515,RDS-9,1954,Soviet Union,culture,Disasters.csv
+Q4461528,Totskoye nuclear exercise,1954,Soviet Union,culture,Disasters.csv
+Q1303351,Wu experiment,1956,,technology,Inventions.csv
+Q11962539,Breakaway,1956,Australia,culture,Disasters.csv
+Q11962536,Marcoo,1956,Australia,culture,Disasters.csv
+Q11962537,One Tree,1956,Australia,culture,Disasters.csv
+Q1385044,Goldhaber experiment,1957,,technology,Inventions.csv
+Q3798246,1958 Venezuelan coup d'état,1958,Venezuela,revolution,Coups.csv
+Q4114551,1958 Pakistani coup d'état,1958,Pakistan,revolution,Coups.csv
+Q11959409,Aspen,1958,United States,culture,Disasters.csv
+Q11962969,Cactus,1958,United States,culture,Disasters.csv
+Q5656344,Hardtack Teak,1958,United States,culture,Disasters.csv
+Q11256383,assassination of Inejiro Asanuma,1960,Japan,culture,Disasters.csv
+Q875992,Phocomelia due to thalidomide,1961,Germany,revolution,Coups.csv
+Q2529018,assassination of Patrice Lumumba,1961,Democratic Republic of the Congo,culture,Disasters.csv
+Q4691517,Agathe,1961,France,culture,Disasters.csv
+Q4335271,Operation Groza,1961,Soviet Union,culture,Disasters.csv
+Q4335272,Operation Grim,1961,Soviet Union,culture,Disasters.csv
+Q521199,North Yemen civil war,1962,Kingdom of Yemen,revolution,Coups.csv
+Q254652,Starfish Prime,1962,United States,culture,Disasters.csv
+Q449436,November 1963 Iraqi coup d'état,1963,First Republic of Iraq,revolution,Coups.csv
+Q2578241,Ramadan Revolution,1963,First Republic of Iraq,revolution,Coups.csv
+Q119009,Instituto Antártico Chileno,1963,Chile,empire,Treaties.csv
+Q193484,assassination of John F. Kennedy,1963,United States,culture,Disasters.csv
+Q7249319,Project Shoal,1963,United States,culture,Disasters.csv
+Q550500,Battle of Nam Dong,1964,Vietnam,war,WarsRecord.csv
+Q74877,JCDecaux,1964,France,empire,Treaties.csv
+Q588774,Battle of Dong Xoai,1965,Vietnam,war,WarsRecord.csv
+Q955457,Dominican Civil War,1965,Dominican Republic,revolution,Coups.csv
+Q1282732,Guatemalan Civil War,1965,Guatemala,revolution,Coups.csv
+Q781029,Saint-Sylvestre coup d'état,1965,Central African Republic,revolution,Coups.csv
+Q782474,Chadian Civil War of 1965–1979,1965,Chad,revolution,Coups.csv
+Q259526,Battle of Long Tan,1966,Vietnam,war,WarsRecord.csv
+Q16205928,1966 Nigerian coup d'etat,1966,Nigeria,revolution,Coups.csv
+Q3560385,1966 Syrian coup d'état,1966,Syria,revolution,Coups.csv
+Q19839681,1966 Laotian coup,1966,Laos,revolution,Coups.csv
+Q487431,Battle of Tra Binh Dong,1967,Vietnam,war,WarsRecord.csv
+Q979845,Naxalite–Maoist insurgency,1967,India,revolution,Coups.csv
+Q829875,Nigerian Civil War,1967,Nigeria,revolution,Coups.csv
+Q10863956,January Storm,1967,People's Republic of China,revolution,Coups.csv
+Q817206,Cambodian Civil War,1967,Cambodia,revolution,Coups.csv
+Q697053,Battle of Hue,1968,Vietnam,war,WarsRecord.csv
+Q1187550,assassination of Robert F. Kennedy,1968,United States,culture,Disasters.csv
+Q757963,assassination of Martin Luther King Jr.,1968,United States,culture,Disasters.csv
+Q692885,Operation Ivory Coast,1970,Vietnam,war,WarsRecord.csv
+Q122969113,1970 Bolivian coups d'état,1970,Bolivia,revolution,Coups.csv
+Q613594,World Alliance of Reformed Churches,1970,Switzerland,empire,Treaties.csv
+Q124247757,Uruguayan Intrastate War,1972,Uruguay,revolution,Coups.csv
+Q614203,Anhui Normal University,1972,People's Republic of China,empire,Treaties.csv
+Q743358,Battle of Latakia,1973,Syria,war,WarsRecord.csv
+Q654777,1973 Israeli raid on Lebanon,1973,Lebanon,war,WarsRecord.csv
+Q586948,Movimento das Forças Armadas,1973,Portugal,empire,Treaties.csv
+Q555268,East Wind Community,1973,United States,empire,Treaties.csv
+Q571665,KNDS France,1973,France,empire,Treaties.csv
+Q98507168,Pajara,1973,United States,culture,Disasters.csv
+Q4992248,Assassination of Luis Carrero Blanco,1973,Spain,culture,Disasters.csv
+Q601956,Aalborg University,1974,Denmark,empire,Treaties.csv
+Q482456,Fall of Saigon,1975,Vietnam,war,WarsRecord.csv
+Q208484,Lebanese Civil War,1975,Lebanon,revolution,Coups.csv
+Q97381399,East Timorese civil war,1975,Timor-Leste,revolution,Coups.csv
+Q12973831,assassination of Alfred Duraiappah,1975,Sri Lanka,culture,Disasters.csv
+Q17513391,assassination of Khaled Mosharraf,1975,Bangladesh,culture,Disasters.csv
+Q130219592,1976 Ecuadorian coup d'état,1976,Ecuador,revolution,Coups.csv
+Q615679,Khan Research Laboratories,1976,Pakistan,empire,Treaties.csv
+Q63121298,1977 Seychelles coup d'état,1977,Seychelles,revolution,Coups.csv
+Q657661,Mozambican Civil War,1977,Mozambique,revolution,Coups.csv
+Q4808520,assassination of Taha Carım,1977,Italy,culture,Disasters.csv
+Q571142,Antarctic and Southern Ocean Coalition,1978,United States,empire,Treaties.csv
+Q39057172,assassination of Airey Neave,1979,United Kingdom,culture,Disasters.csv
+Q1192659,Vela incident,1979,Israel,culture,Disasters.csv
+Q148574,Operation fence of legs,1981,Indonesia,war,WarsRecord.csv
+Q4808524,assassination of Ziaur Rahman,1981,Bangladesh,culture,Disasters.csv
+Q2756743,assassination of Anwar Sadat,1981,Egypt,culture,Disasters.csv
+Q652284,1982 Ethiopian–Somali Border War,1982,Somalia,war,WarsRecord.csv
+Q570211,Anstalt für Kabelkommunikation,1982,Germany,empire,Treaties.csv
+Q213394,Sri Lankan civil war,1983,Sri Lanka,revolution,Coups.csv
+Q612677,Helduen Alfabetatze eta Berreuskalduntzerako Erakundea,1983,Spain,empire,Treaties.csv
+Q4808502,"assassination of Benigno Aquino, Jr.",1983,Philippines,culture,Disasters.csv
+Q4808507,assassination of Galip Balkar,1983,Yugoslavia,culture,Disasters.csv
+Q1405344,first superstring revolution,1984,,technology,Inventions.csv
+Q28055289,Assassination of Father Jerzy Popiełuszko,1984,Polish People's Republic,culture,Disasters.csv
+Q541051,Nick at Nite,1985,United States,empire,Treaties.csv
+Q83002,First Battle of al-Faw,1986,Iraq,war,WarsRecord.csv
+Q105587935,War in Uganda (1986–1994),1986,Uganda,revolution,Coups.csv
+Q4808503,assassination of Daya Pathirana,1986,Sri Lanka,culture,Disasters.csv
+Q3284177,assassination of Olof Palme,1986,Sweden,culture,Disasters.csv
+Q607693,Tmu-na Theater,1987,Israel,empire,Treaties.csv
+Q82995,Operation Ramadan ul-Mubarak,1988,Iraq,war,WarsRecord.csv
+Q608776,Cadence Design Systems,1988,United States,empire,Treaties.csv
+Q566752,De Dietrich,1988,France,empire,Treaties.csv
+Q635533,Cambodian–Vietnamese War,1989,Vietnam,war,WarsRecord.csv
+Q137399972,Mohawk Civil War,1989,United States,revolution,Coups.csv
+Q673626,Operation Simoom,1990,Poland,war,WarsRecord.csv
+Q734004,Black January,1990,Azerbaijan Soviet Socialist Republic,war,WarsRecord.csv
+Q426722,Rwandan Civil War,1990,Rwanda,revolution,Coups.csv
+Q579473,Numericable,1990,France,empire,Treaties.csv
+Q6058199,assassination of Çetin Emeç,1990,Turkey,culture,Disasters.csv
+Q243620,Somali Civil War,1991,Somalia,revolution,Coups.csv
+Q795269,Sierra Leone Civil War,1991,Sierra Leone,revolution,Coups.csv
+Q60820213,1991-92 Georgian coup d'état,1991,Republic of Georgia (1990–1992),revolution,Coups.csv
+Q594178,Union des Industries Ferroviaires Européennes,1991,Belgium,empire,Treaties.csv
+Q546751,CARNet,1991,Croatia,empire,Treaties.csv
+Q549181,MOL Group,1991,Hungary,empire,Treaties.csv
+Q3423445,assassination of Rajiv Gandhi,1991,India,culture,Disasters.csv
+Q96372201,assassination de Jaime Guzmán,1991,Chile,culture,Disasters.csv
+Q460844,Unified Task Force,1992,Somalia,war,WarsRecord.csv
+Q116681951,Satellite Orbital Debris Characterization Impact Test,1992,,technology,Inventions.csv
+Q102183362,1992 Azerbaijani coup d'état,1992,Azerbaijan,revolution,Coups.csv
+Q862099,1993 Russian constitutional crisis,1992,Russia,revolution,Coups.csv
+Q142529,Algerian Civil War,1992,Algeria,revolution,Coups.csv
+Q593662,United Nations Transitional Authority in Cambodia,1992,Cambodia,empire,Treaties.csv
+Q540754,"Anglican Church in Aotearoa, New Zealand and Polynesia",1992,New Zealand,empire,Treaties.csv
+Q600040,Foreign Office Architects,1992,United Kingdom,empire,Treaties.csv
+Q130379735,Night Time Operation,1992,Lebanon,culture,Disasters.csv
+Q647239,Burundi Civil War,1993,Burundi,revolution,Coups.csv
+Q92231659,Joe Biden sexual assault allegation,1993,United States,revolution,Coups.csv
+Q568992,Operation Bøllebank,1994,Bosnia and Herzegovina,war,WarsRecord.csv
+Q581438,Bouygues Telecom,1994,France,empire,Treaties.csv
+Q68969,Croatian War of Independence,1995,Croatia,war,WarsRecord.csv
+Q3124829,HERMES experiment,1995,Germany,technology,Inventions.csv
+Q11401339,Human Bones Incident in Hokkaido University,1995,Japan,technology,Inventions.csv
+Q594306,Furman Center for Real Estate and Urban Policy,1995,United States,empire,Treaties.csv
+Q599285,Communauté de communes du Pays des Herbiers,1995,France,empire,Treaties.csv
+Q587196,Camp Quest,1996,United States,empire,Treaties.csv
+Q616167,Institute of Peace and Conflict Studies,1996,India,empire,Treaties.csv
+Q592938,Blue Shield International,1996,United Kingdom,empire,Treaties.csv
+Q568899,Look,1998,France,empire,Treaties.csv
+Q2866966,Assassination of Claude Érignac,1998,France,culture,Disasters.csv
+Q404517,Kargil War,1999,Pakistan,war,WarsRecord.csv
+Q5011260,CHOOZ,1999,,technology,Inventions.csv
+Q568183,OVHcloud,1999,France,empire,Treaties.csv
+Q65613535,assassination of Ali Sayyad Shirazi,1999,Iran,culture,Disasters.csv
+Q102253563,decoupling of median wages from productivity,2000,,technology,Inventions.csv
+Q565423,T-Systems International GmbH,2000,Germany,empire,Treaties.csv
+Q590952,Credit Agricole Group,2000,France,empire,Treaties.csv
+Q612617,Powernext,2001,France,empire,Treaties.csv
+Q547951,Vereinte Dienstleistungsgewerkschaft,2001,Germany,empire,Treaties.csv
+Q556308,Ankama,2001,France,empire,Treaties.csv
+Q2903305,Assassination of Rehavam Ze'evi,2001,Israel,culture,Disasters.csv
+Q105359547,Assassination of Laurent-Désiré Kabila,2001,Democratic Republic of the Congo,culture,Disasters.csv
+Q609159,Bolsas y Mercados Españoles,2002,Spain,empire,Treaties.csv
+Q2362167,assassination of Pim Fortuyn,2002,Netherlands,culture,Disasters.csv
+Q179275,insurgency in Khyber Pakhtunkhwa,2004,Pakistan,war,WarsRecord.csv
+Q586738,Communauté de communes du Haut Vallespir,2004,France,empire,Treaties.csv
+Q569048,Louis Bonduelle Foundation,2004,France,empire,Treaties.csv
+Q4808525,assassination of Zelimkhan Yandarbiyev,2004,Qatar,culture,Disasters.csv
+Q2856363,assassination of Theo van Gogh,2004,Netherlands,culture,Disasters.csv
+Q4634100,3-19 shooting incident,2004,Taiwan,culture,Disasters.csv
+Q642100,Operation Steel Curtain,2005,Iraq,war,WarsRecord.csv
+Q544706,Bruegel,2005,Belgium,empire,Treaties.csv
+Q477040,Operation Swarmer,2006,Iraq,war,WarsRecord.csv
+Q545547,Battle of Beledweyne,2006,Somalia,war,WarsRecord.csv
+Q571156,Natixis,2006,France,empire,Treaties.csv
+Q599202,Operation Baja California,2007,Mexico,war,WarsRecord.csv
+Q281145,Battle of Firebase Anaconda,2007,Afghanistan,war,WarsRecord.csv
+Q608518,Unibail Rodamco Westfield,2007,France,empire,Treaties.csv
+Q606670,Hogeschool-Universiteit Brussel,2007,Belgium,empire,Treaties.csv
+Q267418,Uzbin Valley ambush,2008,Afghanistan,war,WarsRecord.csv
+Q698771,Operation Atalanta,2008,Somalia,war,WarsRecord.csv
+Q542401,Angoor Ada raid,2008,Afghanistan,war,WarsRecord.csv
+Q60504015,Affaire de Tarnac,2008,France,revolution,Coups.csv
+Q604063,World Register of Marine Species,2008,Belgium,empire,Treaties.csv
+Q124377954,Hawking's time traveller party,2009,,technology,Inventions.csv
+Q4327279,2009 Norwegian spiral anomaly,2009,Sweden,technology,Inventions.csv
+Q1233032,EisenEx,2009,,technology,Inventions.csv
+Q132049437,assassination of Walter Tróchez,2009,Honduras,culture,Disasters.csv
+Q81889,Operation Chameleon,2010,Colombia,war,WarsRecord.csv
+Q109713976,"Yes, Really",2010,,technology,Inventions.csv
+Q4118404,assassination of Mahmoud Al-Mabhouh,2010,United Arab Emirates,culture,Disasters.csv
+Q13012904,assassination of Khattiya Sawasdipol,2010,Thailand,culture,Disasters.csv
+Q349968,Zawiya skirmish,2011,Libya,war,WarsRecord.csv
+Q277176,Nafusa Mountains campaign,2011,Libya,war,WarsRecord.csv
+Q220388,Operation Dawn of Gulf of Aden,2011,Somalia,war,WarsRecord.csv
+Q506595,Battle of Ajdabiya,2011,Libya,war,WarsRecord.csv
+Q638767,Vatileaks scandal,2011,Vatican City,revolution,Coups.csv
+Q178810,Syrian Civil War,2011,Syria,revolution,Coups.csv
+Q81545,Libyan Civil War,2011,Libya,revolution,Coups.csv
+Q112194636,ISTAT 2011 survey on museums and similar institutions,2011,Italy,culture,Disasters.csv
+Q19085,killing of Osama bin Laden,2011,Pakistan,culture,Disasters.csv
+Q720348,Battle of Ras al-Ayn,2012,Syria,war,WarsRecord.csv
+Q630757,Battle of Douma,2012,Syria,war,WarsRecord.csv
+Q543202,Battle of Tremseh,2012,Syria,war,WarsRecord.csv
+Q4170280,exhumation of Richard III of England,2012,United Kingdom,technology,Inventions.csv
+Q4624917,2012 Boeing 727 crash experiment,2012,Mexico,technology,Inventions.csv
+Q60847313,Virus operation,2012,Switzerland,revolution,Coups.csv
+Q614637,SAREB,2012,Spain,empire,Treaties.csv
+Q123119673,Tuna bonds scandal,2013,Mozambique,revolution,Coups.csv
+Q139236054,Ngogo chimpanzee war,2015,Uganda,revolution,Coups.csv
+Q19362904,assassination of Boris Nemtsov,2015,Russia,culture,Disasters.csv
+Q3393969,Pokémania,2016,,technology,Inventions.csv
+Q104870191,assassination of Deryan Aktert,2016,Turkey,culture,Disasters.csv
+Q28036166,assassination of Andrei Karlov,2016,Turkey,culture,Disasters.csv
+Q113511370,ISTAT 2017 survey on museums and similar institutions,2017,Italy,culture,Disasters.csv
+Q28836436,assassination of Kim Jong-nam,2017,Malaysia,culture,Disasters.csv
+Q56703616,NASA's TESS spacecraft reports its first exoplanet,2018,,technology,Inventions.csv
+Q113166845,assassination of Tomiris Baisafa,2018,Russia,culture,Disasters.csv
+Q112132642,ISTAT 2018 survey on museums and similar institutions,2018,Italy,culture,Disasters.csv
+Q95388989,Kitap radiosi,2019,Russia,technology,Inventions.csv
+Q72067697,2019 Grays incident,2019,United Kingdom,technology,Inventions.csv
+Q74137021,Mnet vote manipulation investigation,2019,South Korea,revolution,Coups.csv
+Q111911432,ISTAT 2019 survey on museums and similar institutions,2019,Italy,culture,Disasters.csv
+Q60614851,assassination of Paweł Adamowicz,2019,Poland,culture,Disasters.csv
+Q113364603,Assassination of K.M. Basheer,2019,India,culture,Disasters.csv
+Q90297029,2020 toilet paper shortage,2020,,technology,Inventions.csv
+Q104849391,CardUP,2020,,technology,Inventions.csv
+Q573356,Mavic,2020,France,empire,Treaties.csv
+Q80754846,assassination of Qasem Soleimani,2020,Iraq,culture,Disasters.csv
+Q112132470,ISTAT 2020 survey on museums and similar institutions,2020,Italy,culture,Disasters.csv
+Q110894549,fusion experiment on 21 December 2021,2021,,technology,Inventions.csv
+Q106967145,Department of Health autism dossiers scandal,2021,Ireland,revolution,Coups.csv
+Q108308869,Saint Boy controversy,2021,Japan,revolution,Coups.csv
+Q105180889,2021 Myanmar coup d'état,2021,Myanmar,revolution,Coups.csv
+Q108060300,Aubrey de Grey sexual harassment allegations,2021,United States,revolution,Coups.csv
+Q110613097,Myanmar civil war,2021,Myanmar,revolution,Coups.csv
+Q107487842,killing of Peter R. de Vries,2021,Netherlands,culture,Disasters.csv
+Q107442287,assassination of Jovenel Moïse,2021,Haiti,culture,Disasters.csv
+Q105629905,Assassination of Luca Attanasio,2021,Democratic Republic of the Congo,culture,Disasters.csv
+Q121366204,2022 FIFA World Cup illicit sale of semi-final tickets (Morocco),2022,Morocco,revolution,Coups.csv
+Q110663445,January 2022 Burkina Faso coup d'état,2022,Burkina Faso,revolution,Coups.csv
+Q115921501,Cough syrup scandal in Uzbekistan,2022,Uzbekistan,revolution,Coups.csv
+Q111968653,killing of Shireen Abu Akleh,2022,Palestine,culture,Disasters.csv
+Q112967003,assassination of Shinzō Abe,2022,Japan,culture,Disasters.csv
+Q131456418,fusion experiment on 3 October 2023,2023,,technology,Inventions.csv
+Q124036381,Almost Naked party,2023,Russia,revolution,Coups.csv
+Q117100709,2023 Nigerien coup d'état,2023,Niger,revolution,Coups.csv
+Q117716414,Sudanese civil war,2023,Sudan,revolution,Coups.csv
+Q125256027,Kobayashi red yeast rice scandal,2024,Japan,revolution,Coups.csv
+Q130374882,2024 Hezbollah headquarters strike,2024,Lebanon,culture,Disasters.csv
+Q131389544,killing of Brian Thompson,2024,United States,culture,Disasters.csv
+Q136487699,2025 Malagasy coup d'état,2025,Madagascar,revolution,Coups.csv
+Q136009028,Assassination of Andriy Parubiy,2025,Ukraine,culture,Disasters.csv
+Q136001786,August 2025 Israeli attack on Sanaa,2025,Yemen,culture,Disasters.csv
+Q134734156,assassination of Miguel Uribe Turbay,2025,Colombia,culture,Disasters.csv
+Q134895058,2025 shootings of Minnesota legislators,2025,United States,culture,Disasters.csv
+Q136210698,assassination of Charlie Kirk,2025,United States,culture,Disasters.csv
+Q138652318,Ponta-Ţoiu scandal,2026,Romania,revolution,Coups.csv
+Q138507700,assassination of Ali Khamenei,2026,Iran,culture,Disasters.csv
+Q138715235,assassination of Ali Larijani,2026,Iran,culture,Disasters.csv

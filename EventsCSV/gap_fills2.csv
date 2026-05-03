@@ -1,0 +1,141 @@
+id,label,year,country,tag,source_file
+Q8470314,Despoblat d'Esplugallonga,1100,Spain,exploration,exploration_gap2
+Q5946979,Daruneh Cave,1200,Iran,exploration,exploration_gap2
+Q2110676,Prinzenhöhle,1455,Germany,exploration,exploration_gap2
+Q3117235,Grotta del Gelo,1614,Italy,exploration,exploration_gap2
+Q21478835,Cova de Joncadella,1701,Spain,exploration,exploration_gap2
+Q110747406,Gruta de la Fuente de las Ranas,1794,Spain,exploration,exploration_gap2
+Q137754584,Cova d'en Garriga,1801,Spain,exploration,exploration_gap2
+Q131466092,Cova del Bosc d'en Peret Borreguer,1801,Spain,exploration,exploration_gap2
+Q133822802,Cova de Cal Simó,1801,Spain,exploration,exploration_gap2
+Q133966350,Cova de sauló de la Font del Roure,1801,Spain,exploration,exploration_gap2
+Q4946548,Borra Caves,1807,India,exploration,exploration_gap2
+Q1049423,Castle Clinton,1808,United States,exploration,exploration_gap2
+Q110747407,Gruta del Laberinto,1835,Spain,exploration,exploration_gap2
+Q713124,Artis,1838,Netherlands,exploration,exploration_gap2
+Q965731,California Academy of Sciences,1853,United States,exploration,exploration_gap2
+Q3328425,Museu Paraense Emílio Goeldi,1866,Brazil,exploration,exploration_gap2
+Q6970399,National Aquarium,1873,United States,exploration,exploration_gap2
+Q67210584,Gruta da Quinta da Boa Vista,1876,Brazil,exploration,exploration_gap2
+Q21478965,Santa Cova (la Nou de Berguedà),1880,Spain,exploration,exploration_gap2
+Q106949873,Livingstone Cave,1880,Botswana,exploration,exploration_gap2
+Q685710,Grotte aux Fées,1890,Switzerland,exploration,exploration_gap2
+Q3034599,domain of the caves of Han,1895,Belgium,exploration,exploration_gap2
+Q1060884,New York Aquarium,1896,United States,exploration,exploration_gap2
+Q101499948,New York Aquarium,1896,United States,exploration,exploration_gap2
+Q8187791,Aquário Vasco da Gama,1898,Portugal,exploration,exploration_gap2
+Q49485672,Edenton National Fish Hatchery,1900,United States,exploration,exploration_gap2
+Q11915963,Cova del Penitent,1901,Spain,exploration,exploration_gap2
+Q7589986,St. Mark's School of Texas,1906,United States,science,science_gap2
+Q502326,Tierpark Hagenbeck,1907,Germany,exploration,exploration_gap2
+Q123456955,Jacques Huber Aquarium,1911,Brazil,exploration,exploration_gap2
+Q317985,Aquarium Berlin,1911,Germany,exploration,exploration_gap2
+Q11674044,Uozu Aquarium,1913,Japan,exploration,exploration_gap2
+Q126919382,Miami Beach Aquarium,1921,United States,exploration,exploration_gap2
+Q108917411,cave of ashes,1922,Nigeria,exploration,exploration_gap2
+Q98594806,Steinhart Aquarium,1923,United States,exploration,exploration_gap2
+Q2070096,Perak Tong,1926,Malaysia,exploration,exploration_gap2
+Q7980491,Welaka National Fish Hatchery,1926,United States,exploration,exploration_gap2
+Q1282056,Ecomare,1929,Netherlands,exploration,exploration_gap2
+Q31689,Alexandria Aquarium,1930,Egypt,exploration,exploration_gap2
+Q2166515,Shedd Aquarium,1930,United States,exploration,exploration_gap2
+Q11536832,Katsurahama Aquarium,1931,Japan,exploration,exploration_gap2
+Q2859191,Aquarium du palais de la Porte Dorée,1931,France,exploration,exploration_gap2
+Q2376025,Ouwehands Dierenpark,1932,Netherlands,exploration,exploration_gap2
+Q25452144,Labyrinth of Buda Castle,1935,Hungary,exploration,exploration_gap2
+Q114958441,Toledo Zoo Aquarium,1936,United States,exploration,exploration_gap2
+Q546844,Bangkok Aquarium,1940,Thailand,exploration,exploration_gap2
+Q5469303,Forestville/Mystery Cave State Park,1941,United States,exploration,exploration_gap2
+Q54824962,Düsselbacher Wand,1948,Germany,exploration,exploration_gap2
+Q221742,Chýnovská jeskyně,1949,Czech Republic,exploration,exploration_gap2
+Q1847362,Grottenaquarium Valkenburg,1950,Netherlands,exploration,exploration_gap2
+Q11502657,Enoshima Aquarium,1952,Japan,exploration,exploration_gap2
+Q11572836,Tamano Marine Museum,1953,Japan,exploration,exploration_gap2
+Q49478574,Cleveland Aquarium,1954,United States,exploration,exploration_gap2
+Q5612362,Grutas de Lanquín,1955,Guatemala,exploration,exploration_gap2
+Q1073067,Toba Aquarium,1955,Japan,exploration,exploration_gap2
+Q11599117,Takeshima Aquarium,1956,Japan,exploration,exploration_gap2
+Q185228,Vancouver Aquarium,1956,Canada,exploration,exploration_gap2
+Q2582633,Zee Aquarium Bergen aan Zee,1956,Netherlands,exploration,exploration_gap2
+Q460607,Haus des Meeres,1957,Austria,exploration,exploration_gap2
+Q12719946,Constanța Aquarium,1958,Romania,exploration,exploration_gap2
+Q26765632,B'nai B'rith cave,1959,Israel,exploration,exploration_gap2
+Q122060064,Mračna pećina,1959,Bosnia and Herzegovina,exploration,exploration_gap2
+Q11261729,Otaru Aquarium,1959,Japan,exploration,exploration_gap2
+Q2859192,Aquarium du Québec,1959,Canada,exploration,exploration_gap2
+Q122060895,Puzavac,1960,Bosnia and Herzegovina,exploration,exploration_gap2
+Q29329,Bergen Aquarium,1960,Norway,exploration,exploration_gap2
+Q12284801,Lepenitsa cave,1962,Bulgaria,exploration,exploration_gap2
+Q14713888,Seattle Marine Aquarium,1962,United States,exploration,exploration_gap2
+Q40680,Aquarium-Muséum,1962,Belgium,exploration,exploration_gap2
+Q121296332,Aquarium Piran,1964,Slovenia,exploration,exploration_gap2
+Q1509783,Jeskyně Na Pomezí,1965,Czech Republic,exploration,exploration_gap2
+Q1643788,Kapova Cave,1965,Russia,exploration,exploration_gap2
+Q120197308,Lipljan marble cave,1966,Serbia,exploration,exploration_gap2
+Q11371781,Zero Distance Aquarium Ise Sea Paradise,1966,Japan,exploration,exploration_gap2
+Q2584900,Himeji City Aquarium,1966,Japan,exploration,exploration_gap2
+Q2859179,Montreal Aquarium,1966,Canada,exploration,exploration_gap2
+Q6980626,Natural Tunnel State Park,1967,United States,exploration,exploration_gap2
+Q11361202,Shimoda Aquarium,1967,Japan,exploration,exploration_gap2
+Q11502898,Niigata City Aquarium Marinepia Nihonkai,1967,Japan,exploration,exploration_gap2
+Q1259107,Driny,1968,Slovakia,exploration,exploration_gap2
+Q1585579,Harmanecká Cave,1968,Slovakia,exploration,exploration_gap2
+Q11374325,Keikyu Aburatsubo Marine Park,1968,Japan,exploration,exploration_gap2
+Q11596319,Wakkanai Noshappu Aquarium,1968,Japan,exploration,exploration_gap2
+Q2859185,New England Aquarium,1969,United States,exploration,exploration_gap2
+Q8035359,World Aquarium,1971,United States,exploration,exploration_gap2
+Q6948918,Mystic Aquarium & Institute for Exploration,1973,United States,exploration,exploration_gap2
+Q4754087,Anderson High School,1973,United States,science,science_gap2
+Q4849544,Seattle Aquarium,1977,United States,exploration,exploration_gap2
+Q2945366,Centre de la mer et des eaux,1978,France,exploration,exploration_gap2
+Q6935857,Mundo Marino,1979,Argentina,exploration,exploration_gap2
+Q4763399,Anglesey Sea Zoo,1983,United Kingdom,exploration,exploration_gap2
+Q4803495,Asamushi Aquarium,1983,Japan,exploration,exploration_gap2
+Q5493664,Acuario Municipal (Santa Pola),1983,Spain,exploration,exploration_gap2
+Q5413044,Curaçao Sea Aquarium,1984,Curaçao,exploration,exploration_gap2
+Q4641942,63 Seaworld,1985,South Korea,exploration,exploration_gap2
+Q5421418,Exploris,1987,United Kingdom,exploration,exploration_gap2
+Q7306796,Reef HQ,1987,Australia,exploration,exploration_gap2
+Q6764266,Marine World Uminonakamichi,1988,Japan,exploration,exploration_gap2
+Q6765784,Maritime Aquarium at Norwalk,1988,United States,exploration,exploration_gap2
+Q4925165,Tokyo Sea Life Park,1989,Japan,exploration,exploration_gap2
+Q5711821,Alborania-Aula del Mar Museum,1989,Spain,exploration,exploration_gap2
+Q6792384,Maui Ocean Center,1989,United States,exploration,exploration_gap2
+Q3337173,Nausicaà Centre National de la Mer,1991,France,exploration,exploration_gap2
+Q4112966,Oceanarium of Vladivostok,1991,Russia,exploration,exploration_gap2
+Q6112842,Aquaria water museum,1991,Sweden,exploration,exploration_gap2
+Q5211449,Dallas World Aquarium,1992,United States,exploration,exploration_gap2
+Q7231211,Port of Nagoya Public Aquarium,1992,Japan,exploration,exploration_gap2
+Q7700014,Tennessee Aquarium,1992,United States,exploration,exploration_gap2
+Q7400110,Kujukushima Pearl Sea Resort,1994,Japan,exploration,exploration_gap2
+Q3074266,Florida Aquarium,1995,United States,exploration,exploration_gap2
+Q4712807,Albuquerque Aquarium,1996,United States,exploration,exploration_gap2
+Q7389560,SEA LIFE Minnesota Aquarium,1996,United States,exploration,exploration_gap2
+Q6478947,Lakes Aquarium,1997,United Kingdom,exploration,exploration_gap2
+Q11259022,Kagoshima City Aquarium,1997,Japan,exploration,exploration_gap2
+Q4782759,Aquarium of the Pacific,1998,United States,exploration,exploration_gap2
+Q4929628,Blue Planet Aquarium,1998,United Kingdom,exploration,exploration_gap2
+Q3398288,Aquarium Finisterrae,1999,Spain,exploration,exploration_gap2
+Q7883060,UnderWater World Guam,1999,United States,exploration,exploration_gap2
+Q4782699,Aquamarine Fukushima,2000,Japan,exploration,exploration_gap2
+Q5599417,Great Lakes Aquarium,2000,United States,exploration,exploration_gap2
+Q7566553,South Carolina Aquarium,2000,United States,exploration,exploration_gap2
+Q9047113,Mar del Plata Museum of the Sea,2000,Argentina,exploration,exploration_gap2
+Q11361443,Shimonoseki Marine Science Museum Kaikyōkan,2001,Japan,exploration,exploration_gap2
+Q4782624,Aqua World,2002,Japan,exploration,exploration_gap2
+Q7729542,The Deep,2002,United Kingdom,exploration,exploration_gap2
+Q4063085,Alushta Aquarium,2003,Russia,exploration,exploration_gap2
+Q5303351,"Downtown Aquarium, Houston",2003,United States,exploration,exploration_gap2
+Q5459553,Flint RiverQuarium,2004,United States,exploration,exploration_gap2
+Q11282869,Aquatotto Gifu,2004,Japan,exploration,exploration_gap2
+Q6636970,Sea Life Bangkok Ocean World,2005,Thailand,exploration,exploration_gap2
+Q8187792,Aquarium of Gijón,2006,Spain,exploration,exploration_gap2
+Q4332496,Moscow Oceanarium,2007,Russia,exploration,exploration_gap2
+Q4059427,Dubai Aquarium and Underwater Zoo,2008,United Arab Emirates,exploration,exploration_gap2
+Q4809463,Sea Life İstanbul,2009,Turkey,exploration,exploration_gap2
+Q7934109,Virginia Aquarium,2009,United States,exploration,exploration_gap2
+Q5600498,Greater Cleveland Aquarium,2012,United States,exploration,exploration_gap2
+Q8134074,Sumida Aquarium,2012,Japan,exploration,exploration_gap2
+Q11375621,Kyoto Aquarium,2012,Japan,exploration,exploration_gap2
+Q11360163,Joetsu Aquarium,2018,Japan,exploration,exploration_gap2
+Q3312744,Sea Life London Aquarium,2026,United Kingdom,exploration,exploration_gap2
