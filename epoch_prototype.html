@@ -411,6 +411,52 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;paddin
   font-family:"EB Garamond",Georgia,serif;font-size:15px;letter-spacing:.2em;
   font-variant-numeric:tabular-nums;color:var(--accent);margin-left:2px;
 }
+
+/* ── instructions modal ── */
+.instr-modal{
+  position:absolute;inset:0;z-index:50;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:28px 24px 32px;
+  background:radial-gradient(900px 700px at 50% 30%,#1a2850 0%,#07091a 80%);
+  opacity:0;pointer-events:none;transition:opacity .3s;
+  overflow-y:auto;
+}
+.instr-modal.show{opacity:1;pointer-events:auto}
+.instr-logo{font-family:"EB Garamond",Georgia,serif;font-size:42px;letter-spacing:.1em;margin-bottom:4px}
+.instr-logo b{color:var(--accent)}
+.instr-sub{font-size:11px;letter-spacing:.22em;color:var(--ink-dim);text-transform:uppercase;margin-bottom:28px}
+.instr-steps{display:flex;flex-direction:column;gap:16px;width:100%;max-width:380px;margin-bottom:28px}
+.instr-step{display:flex;align-items:flex-start;gap:14px}
+.instr-step-icon{
+  width:40px;height:40px;border-radius:12px;flex-shrink:0;
+  background:#151e3a;border:1px solid rgba(255,255,255,.1);
+  display:flex;align-items:center;justify-content:center;font-size:20px;
+}
+.instr-step-body{min-width:0}
+.instr-step-title{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:3px}
+.instr-step-desc{font-size:12px;color:var(--ink-dim);line-height:1.5}
+.instr-got-it{
+  padding:14px 36px;border-radius:999px;
+  background:linear-gradient(180deg,#ecc47a,#b97e2a);
+  color:#21170a;font-weight:700;letter-spacing:.08em;font-size:15px;
+  box-shadow:0 10px 30px rgba(232,176,89,.4);
+  width:100%;max-width:380px;
+}
+.instr-hint-link{
+  margin-top:14px;font-size:12px;color:var(--ink-dim);
+  text-decoration:underline;text-underline-offset:3px;cursor:pointer;
+  background:none;border:none;
+}
+
+/* ── help button ── */
+.help-btn{
+  width:36px;height:36px;border-radius:10px;flex-shrink:0;
+  background:#151e3a;border:1px solid rgba(255,255,255,.08);
+  display:flex;align-items:center;justify-content:center;
+  font-size:16px;color:var(--ink-dim);font-weight:700;
+  transition:background .2s,color .2s;
+}
+.help-btn:active{background:#1e2a50;color:var(--ink)}
 </style>
 </head>
 <body>
@@ -430,7 +476,10 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;paddin
   <!-- Top bar -->
   <div class="topbar">
     <div class="brand serif"><b>EPOCH</b> · <span id="modeLabel">Daily Chronicle</span></div>
-    <button class="pause-btn" id="pauseBtn" aria-label="Menu">☰</button>
+    <div style="display:flex;gap:8px">
+      <button class="help-btn" id="helpBtn" aria-label="How to play">?</button>
+      <button class="pause-btn" id="pauseBtn" aria-label="Menu">☰</button>
+    </div>
   </div>
 
   <!-- Prompt -->
@@ -521,6 +570,51 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;paddin
     <div class="decks-grid" id="decksGrid"></div>
 
     <button class="mm-play" id="menuResume">Resume Round →</button>
+  </div>
+
+  <!-- Instructions modal -->
+  <div class="instr-modal" id="instrModal">
+    <div class="instr-logo serif"><b>EPOCH</b></div>
+    <div class="instr-sub">A game of when</div>
+    <div class="instr-steps">
+      <div class="instr-step">
+        <div class="instr-step-icon">📜</div>
+        <div class="instr-step-body">
+          <div class="instr-step-title">Read the event</div>
+          <div class="instr-step-desc">You'll see a description of a real historical moment — but not the year it happened.</div>
+        </div>
+      </div>
+      <div class="instr-step">
+        <div class="instr-step-icon">🎚️</div>
+        <div class="instr-step-body">
+          <div class="instr-step-title">Drag to your guess</div>
+          <div class="instr-step-desc">Slide the year dial anywhere from 1000 to 2026. Use the ±1 and ±10 nudge buttons to fine-tune.</div>
+        </div>
+      </div>
+      <div class="instr-step">
+        <div class="instr-step-icon">🗺️</div>
+        <div class="instr-step-body">
+          <div class="instr-step-title">Tap countries for clues</div>
+          <div class="instr-step-desc">Glowing countries on the map have historical hints. Each hint costs one of your 6 slots and reduces your score slightly.</div>
+        </div>
+      </div>
+      <div class="instr-step">
+        <div class="instr-step-icon">🔢</div>
+        <div class="instr-step-body">
+          <div class="instr-step-title">Reveal a year digit</div>
+          <div class="instr-step-desc">After using 2 country hints, you can spend one more to reveal a hidden digit of the actual year.</div>
+        </div>
+      </div>
+      <div class="instr-step">
+        <div class="instr-step-icon">🎮</div>
+        <div class="instr-step-body">
+          <div class="instr-step-title">Unlock themed decks</div>
+          <div class="instr-step-desc">Complete 5 rounds in any category — Wars, Science, Gaming and more — to unlock that themed deck in the menu.</div>
+        </div>
+      </div>
+    </div>
+    <button class="instr-got-it" id="instrGotIt">Let's play →</button>
+    <button class="instr-hint-link" id="instrSkip">Skip to endless mode</button>
   </div>
 
   <!-- Reveal overlay -->
@@ -928,12 +1022,15 @@ const STATE={
   zoom:0, zoomedCountry:null,
   score:0, streak:0, locked:false,
   // deck system
-  tagProgress:{},      // tag → # of completed rounds
+  tagProgress:{},
   unlockedDecks:new Set(),
-  activeDeckTag:null,  // null = all events
+  activeDeckTag:null,
   // digit reveal
   digitRevealed:false,
-  revealedDigits:{},   // digit position (0-3) → revealed char
+  revealedDigits:{},
+  // persistence
+  dailyResult:{},
+  seenInstructions:false,
 };
 
 const range    = document.getElementById('range');
@@ -1245,6 +1342,13 @@ function lockIn(){
     }
   }
 
+  // Save daily result
+  if(STATE.mode==='daily'){
+    const todayKey = new Date().toISOString().slice(0,10);
+    STATE.dailyResult[todayKey] = { guess, actual, score: pts, hintsUsed: STATE.hintsUsed };
+  }
+  persistSave();
+
   animateSliderTo(actual, ()=>{
     rActual.textContent = actual;
     const diff = err === 0 ? 'Bullseye!' : 'Off by ' + err + ' year' + (err === 1 ? '' : 's');
@@ -1323,27 +1427,107 @@ function newRound(){
   setYear(1500);
 }
 
+// ── Local storage persistence ──
+const SAVE_KEY = 'epoch_v1';
+
+function loadSave(){
+  try {
+    const raw = localStorage.getItem(SAVE_KEY);
+    if(!raw) return;
+    const s = JSON.parse(raw);
+    STATE.tagProgress   = s.tagProgress   || {};
+    STATE.unlockedDecks = new Set(s.unlockedDecks || []);
+    STATE.streak        = s.streak        || 0;
+    STATE.dailyResult   = s.dailyResult   || {};
+    STATE.seenInstructions = s.seenInstructions || false;
+    streakVal.textContent = STATE.streak;
+  } catch(e){}
+}
+
+function persistSave(){
+  try {
+    localStorage.setItem(SAVE_KEY, JSON.stringify({
+      tagProgress:       STATE.tagProgress,
+      unlockedDecks:     [...STATE.unlockedDecks],
+      streak:            STATE.streak,
+      dailyResult:       STATE.dailyResult,
+      seenInstructions:  STATE.seenInstructions,
+    }));
+  } catch(e){}
+}
+
+// ── Instructions modal ──
+const instrModal = document.getElementById('instrModal');
+
+function showInstructions(){
+  instrModal.classList.add('show');
+}
+function hideInstructions(){
+  instrModal.classList.remove('show');
+  STATE.seenInstructions = true;
+  persistSave();
+}
+
+document.getElementById('instrGotIt').addEventListener('click', ()=>{
+  hideInstructions();
+  if(EVENTS.length === 0){
+    showToast('Still loading events — one moment…', 'Loading…');
+  } else {
+    _doStartGame('daily');
+  }
+});
+document.getElementById('instrSkip').addEventListener('click', ()=>{
+  hideInstructions();
+  if(EVENTS.length === 0){
+    showToast('Still loading events — one moment…', 'Loading…');
+  } else {
+    _doStartGame('endless');
+  }
+});
+document.getElementById('helpBtn').addEventListener('click', showInstructions);
+
 // ── Start screen ──
+function _doStartGame(mode){
+  document.getElementById('start').classList.add('hidden');
+  STATE.mode = mode;
+  document.getElementById('mmDailyBtn').classList.toggle('active', mode==='daily');
+  document.getElementById('mmEndlessBtn').classList.toggle('active', mode==='endless');
+  modeLabel.textContent = mode==='daily' ? 'Daily Chronicle' : 'Endless Run';
+
+  // If daily already played today, show yesterday's result instead of playing again
+  const todayKey = new Date().toISOString().slice(0,10);
+  if(mode==='daily' && STATE.dailyResult[todayKey]){
+    const r = STATE.dailyResult[todayKey];
+    const err = Math.abs(r.guess - r.actual);
+    showToast(
+      `You already played today! Your guess: <b>${r.guess}</b>, actual: <b>${r.actual}</b> (off by ${err} yr, +${r.score} pts)`,
+      '📅 Already played today'
+    );
+    // Still start a new round in endless so they can keep playing
+    STATE.mode='endless';
+    modeLabel.textContent='Endless Run';
+  }
+  newRound();
+}
+
 function startGame(mode){
   if(EVENTS.length === 0){
     showToast('Still loading events — try again in a moment.', 'Loading…');
     return;
   }
-  document.getElementById('start').classList.add('hidden');
-  STATE.mode=mode;
-  document.getElementById('mmDailyBtn').classList.toggle('active', mode==='daily');
-  document.getElementById('mmEndlessBtn').classList.toggle('active', mode==='endless');
-  modeLabel.textContent=mode==='daily'?'Daily Chronicle':'Endless Run';
-  newRound();
-  // Brief tutorial toast on first play
-  setTimeout(()=>showToast(
-    'Tap any <b>glowing country</b> on the map for a clue. After 2 hints, you can reveal a digit of the mystery year!',
-    '💡 How to play'
-  ), 1400);
+  if(!STATE.seenInstructions){
+    // Show instructions first; the Got It / Skip buttons will call _doStartGame
+    showInstructions();
+    return;
+  }
+  _doStartGame(mode);
 }
 window.startGame=startGame;
 
 // ── Init ──
+STATE.dailyResult = STATE.dailyResult || {};
+STATE.seenInstructions = STATE.seenInstructions || false;
+loadSave();
 buildHintSlots();
 setYear(1500);
 loadAssets();
