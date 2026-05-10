@@ -24,11 +24,12 @@
 }
 *{box-sizing:border-box}
 html,body{
-  margin:0;padding:0;height:100%;
+  margin:0;padding:0;height:100%;height:100dvh;
   background:var(--bg-0);color:var(--ink);overflow:hidden;
   font-family:-apple-system,BlinkMacSystemFont,"Inter","Segoe UI",Roboto,sans-serif;
   -webkit-tap-highlight-color:transparent;
   user-select:none;-webkit-user-select:none;
+  overscroll-behavior:none;
 }
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;padding:0}
 .serif{font-family:"EB Garamond","Cormorant Garamond",Georgia,serif;font-variant:small-caps;letter-spacing:.04em}
@@ -40,7 +41,8 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;paddin
     radial-gradient(1200px 800px at 50% -10%,hsl(var(--era-h),42%,18%) 0%,transparent 55%),
     radial-gradient(900px 700px at 10% 110%,hsl(var(--era-h),35%,12%) 0%,transparent 55%),
     linear-gradient(180deg,#07091a 0%,#0a0f1c 100%);
-  transition:background 900ms ease-out;
+  transition:background 400ms ease-out;
+  contain:layout style;
 }
 
 /* ── topbar ── */
@@ -87,7 +89,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;paddin
     hsl(var(--era-h),55%,38%,.22),
     hsl(calc(var(--era-h) - 20),50%,28%,.06));
   mix-blend-mode:screen;
-  transition:background 900ms ease-out;
+  transition:background 400ms ease-out;
 }
 .map-svg{
   position:absolute;inset:0;width:100%;height:100%;
@@ -101,9 +103,13 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;paddin
 .cp{
   fill:hsl(var(--era-h),var(--era-s),var(--era-l));
   stroke:rgba(255,255,255,.1);stroke-width:.35;
-  transition:fill 700ms ease-out,filter 300ms;
+  transition:fill 150ms ease-out,filter 200ms;
   vector-effect:non-scaling-stroke;
 }
+/* suppress all transitions while dragging the slider for 60fps */
+.dragging-slider .cp{ transition:none }
+.dragging-slider .era-tint,.dragging-slider .app{ transition:none }
+#mapGroup{ will-change:transform }
 .cp.has-data{fill:hsl(var(--era-h),calc(var(--era-s) + 8%),calc(var(--era-l) + 4%));stroke:rgba(255,255,255,.18)}
 .cp.hot{
   fill:hsl(calc(var(--era-h) + 15),50%,38%);
@@ -528,8 +534,8 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;paddin
       <div class="year-read"><span id="yearVal">1500</span></div>
       <div class="score-chip"><span>Score</span><b id="scoreVal">0</b></div>
     </div>
-    <input class="range" id="range" type="range" min="1000" max="2026" step="1" value="1500"/>
-    <div class="slider-endcaps"><span>1000</span><span>2026</span></div>
+    <input class="range" id="range" type="range" min="1526" max="2026" step="1" value="1776"/>
+    <div class="slider-endcaps"><span>1526</span><span>2026</span></div>
     <div class="nudge-row">
       <div class="nudges">
         <button data-d="-10">−10</button>
@@ -847,6 +853,7 @@ async function loadAssets(){
     buildMarkers();
     buildLabels();
     buildOrnaments();
+    cacheMapNodes();
     document.getElementById('mapLoad').classList.add('hidden');
 
   } catch(err){
@@ -906,6 +913,16 @@ const ORNAMENT_DEFS = [
   {id:'signal', emoji:'📡', x:200, y:160, yStart:1970, yEnd:2026},
 ];
 
+// Cached DOM refs — populated after map renders
+let _edots=[], _cpData=[], _ornElems=[];
+const ORNAMENT_MAP=new Map(ORNAMENT_DEFS.map(d=>[d.id,d]));
+
+function cacheMapNodes(){
+  _edots=[...document.querySelectorAll('.edot')];
+  _cpData=[...document.querySelectorAll('.cp.has-data')];
+  _ornElems=[...document.querySelectorAll('.orn')];
+}
+
 function buildOrnaments(){
   const NS='http://www.w3.org/2000/svg';
   const g=document.getElementById('orns');g.innerHTML='';
@@ -920,13 +937,11 @@ function buildOrnaments(){
 }
 
 function updateOrnaments(y){
-  document.querySelectorAll('.orn').forEach(el=>{
-    const id=el.getAttribute('data-id');
-    const def=ORNAMENT_DEFS.find(d=>d.id===id);
-    if(!def) return;
-    const vis = y>=def.yStart && y<=def.yEnd;
-    el.classList.toggle('vis',vis);
-  });
+  for(const el of _ornElems){
+    const def=ORNAMENT_MAP.get(el.getAttribute('data-id'));
+    if(!def) continue;
+    el.classList.toggle('vis', y>=def.yStart && y<=def.yEnd);
+  }
 }
 
 // ── Pan gestures ──
@@ -980,9 +995,7 @@ function showToast(body, kicker){
 // ── Era color system ──
 // Each entry: [yearFrom, hue, sat%, light%]
 const ERA_PALETTE = [
-  [1000, 240, 32, 22],
-  [1300, 248, 30, 22],
-  [1500, 28,  40, 24],
+  [1526, 28,  40, 24],
   [1650, 210, 32, 22],
   [1800, 198, 28, 20],
   [1900, 355, 22, 20],
@@ -1000,13 +1013,11 @@ function lerpEra(y){
       return {h:Math.round(ha+(hb-ha)*t), s:Math.round(sa+(sb-sa)*t), l:Math.round(la+(lb-la)*t)};
     }
   }
-  return {h:240,s:32,l:22};
+  return {h:28,s:40,l:24};
 }
 
 const ERAS=[
-  [1000,1300,'High Middle Ages'],
-  [1300,1500,'Late Medieval'],
-  [1500,1650,'Early Modern · Renaissance'],
+  [1526,1650,'Age of Exploration'],
   [1650,1800,'Age of Enlightenment'],
   [1800,1900,'Industrial Age'],
   [1900,1945,'World Wars'],
@@ -1016,7 +1027,7 @@ const ERAS=[
 
 // ── Slider & year state ──
 const STATE={
-  mode:'daily', roundEvent:null, currentYear:1500,
+  mode:'daily', roundEvent:null, currentYear:1776,
   hintsUsed:0, maxHints:6,
   hintedCountries:new Set(), usedInPrompts:new Set(),
   zoom:0, zoomedCountry:null,
@@ -1060,13 +1071,14 @@ const drLabel  = document.getElementById('drLabel');
 
 let _lastDecade = null;
 
+let _dotRafPending = false;
+
 function setYear(y){
-  y=Math.max(1000,Math.min(2026,Math.round(y)));
-  const prev=STATE.currentYear;
+  y=Math.max(1526,Math.min(2026,Math.round(y)));
   STATE.currentYear=y;
   yearVal.textContent=y;
   range.value=y;
-  const norm=(y-1000)/1026;
+  const norm=(y-1526)/500;
   document.documentElement.style.setProperty('--yearNorm',norm.toFixed(4));
   // Era color — drives background, country fills, tint, year glow
   const {h,s,l}=lerpEra(y);
@@ -1076,35 +1088,35 @@ function setYear(y){
   // Era ribbon text
   const era=ERAS.find(e=>y>=e[0]&&y<e[1])||ERAS[ERAS.length-1];
   eraRibbon.textContent=era[2];
-  // Decade pulse — fire when crossing a decade boundary
+  // Decade pulse — setTimeout avoids forced reflow
   const decade=Math.floor(y/10);
   if(_lastDecade!==null && decade!==_lastDecade){
     const el=document.querySelector('.year-read');
     el.classList.remove('pulse');
-    void el.offsetWidth; // reflow to restart animation
-    el.classList.add('pulse');
+    setTimeout(()=>el.classList.add('pulse'),0);
   }
   _lastDecade=decade;
-  updateDotsForYear(y);
-  updateOrnaments(y);
+  // RAF-coalesce expensive DOM dot/ornament updates
+  if(!_dotRafPending){
+    _dotRafPending=true;
+    requestAnimationFrame(()=>{ _dotRafPending=false; updateDotsForYear(STATE.currentYear); updateOrnaments(STATE.currentYear); });
+  }
 }
 
 function updateDotsForYear(y){
-  document.querySelectorAll('.edot').forEach(d=>{
+  for(const d of _edots){
     const code=d.getAttribute('data-code');
-    const events=byCountry[code]||[];
-    const near=events.some(e=>Math.abs(e.year-y)<=15);
+    const near=(byCountry[code]||[]).some(e=>Math.abs(e.year-y)<=15);
     d.classList.toggle('hot', near && !STATE.hintedCountries.has(code));
     if(STATE.hintedCountries.has(code)) d.classList.add('used');
-  });
-  document.querySelectorAll('.cp.has-data').forEach(p=>{
+  }
+  for(const p of _cpData){
     const code=p.getAttribute('data-code');
-    if(!code) return;
-    const events=byCountry[code]||[];
-    const near=events.some(e=>Math.abs(e.year-y)<=15);
+    if(!code) continue;
+    const near=(byCountry[code]||[]).some(e=>Math.abs(e.year-y)<=15);
     p.classList.toggle('hot', near && !STATE.hintedCountries.has(code));
     if(STATE.hintedCountries.has(code)) p.classList.add('used');
-  });
+  }
 }
 
 // ── Hint logic ──
@@ -1153,6 +1165,9 @@ function buildHintSlots(){
 }
 
 // ── Slider input ──
+range.addEventListener('pointerdown',()=>document.documentElement.classList.add('dragging-slider'));
+range.addEventListener('pointerup',()=>document.documentElement.classList.remove('dragging-slider'));
+range.addEventListener('pointercancel',()=>document.documentElement.classList.remove('dragging-slider'));
 range.addEventListener('input',e=>setYear(+e.target.value));
 document.querySelectorAll('.nudges button').forEach(b=>{
   b.addEventListener('click',()=>setYear(STATE.currentYear+parseInt(b.dataset.d,10)));
@@ -1420,11 +1435,11 @@ function newRound(){
   const cnames={EU:'Europe',AS:'Asia',AF:'Africa',NA:'North America',SA:'South America',OC:'Oceania'};
   promptContinent.textContent=cnames[COUNTRIES[pick.country]?.cont]||'—';
 
-  // Reset score dot states
-  document.querySelectorAll('.cp').forEach(p=>p.classList.remove('used'));
-  document.querySelectorAll('.edot').forEach(d=>d.classList.remove('used'));
+  // Reset score dot states (use cached refs when available)
+  for(const p of _cpData) p.classList.remove('used','hot');
+  for(const d of _edots) d.classList.remove('used','hot');
 
-  setYear(1500);
+  setYear(1776);
 }
 
 // ── Local storage persistence ──
@@ -1529,7 +1544,7 @@ STATE.dailyResult = STATE.dailyResult || {};
 STATE.seenInstructions = STATE.seenInstructions || false;
 loadSave();
 buildHintSlots();
-setYear(1500);
+setYear(1776);
 loadAssets();
 </script>
 </body>
